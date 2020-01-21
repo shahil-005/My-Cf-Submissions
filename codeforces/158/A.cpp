@@ -1,29 +1,52 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+
 int main()
-{ 
-    
-    
-      int n,k;
-      cin>>n>>k;
-      int a[n];
-      int count=0;
-      for(int i=0;i<n;i++)
-      {
-        cin>>a[i];
-      }
-      sort(a,a+n,greater<int>());
-    
-     
-        for(int i=0;i<n;i++)
-          {
-            if((a[i]>0)&&(a[i]>=a[k-1]))
+    {
+        int n,k;
+        cin >> n >> k;
+        int a[n];
+        for(int i=1;i<=n;i++)
+        {
+            cin >> a[i];
+        }
+        int c = a[k];
+
+        int sum =0;
+        for(int l=1;l<=n;l++)
+        {
+            sum = sum + a[l];
+        }
+        if(sum == 0)
+        {
+            cout << sum;
+        }
+
+        else
+        {
+            int count =0;
+            for(int j=1;j<=n;j++)
             {
-                count++;
+                if(c !=0)
+                {
+                    if(a[j] > c || a[j] == c)
+                    {
+                        count++;
+                    }
+                }
+
+                else
+                {
+                    if(a[j] > c)
+                    {
+                        count++;
+                    }
+                }
             }
-          }
-         cout<<count<<endl;
-        
-   return 0;
-  
-}
+
+            cout << count;
+        }
+
+    return 0;
+    }
