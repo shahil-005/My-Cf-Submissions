@@ -14,7 +14,7 @@ int main()
            char a = s[i];
            if(a == 'A' || a == 'O' || a == 'Y' || a == 'E' || a == 'U' || a == 'I' || a == 'a' || a == 'o' || a == 'y' || a == 'e' || a == 'u' || a == 'i')
            {
-                continue;
+
            }
 
            else if(a>64 && a<91)
