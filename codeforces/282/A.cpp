@@ -10,15 +10,19 @@ int main()
     for(int i=0;i<n;i++)
     {
         string s,x1,x2,y1,y2;
+        x1 = "++X";
+        x2 = "X++";
+        y1 = "--X";
+        y2 = "X--";
         cin >> s;
-        if(s == "++X" || s == "X++")
+        if(s == x1 || s == x2)
         {
             r +=1;
         }
 
-        if(s == "--X" || s == "X--")
+        if(s == y1 || s == y2)
         {
-            r -=1;
+            r = r-1;
         }
     }
 
