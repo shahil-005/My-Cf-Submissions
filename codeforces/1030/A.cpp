@@ -10,29 +10,23 @@ int main()
     std::cout.tie(NULL);
 
     int n;
-    cin >> n;
-
-    bool b = false;
-
-    while(n--)
+    std::cin >> n;
+    int a[n];
+    int sum =0;
+    for(int i=0;i<n;i++)
     {
-        int x;
-        cin >> x;
-
-        if(x == 1)
-        {
-            b = true;
-        }
+        std::cin >> a[i];
+        sum += a[i];
     }
 
-    if(b)
+    if(sum == 0)
     {
-        cout << "HARD";
+        std::cout << "EASY";
     }
 
     else
     {
-        cout << "EASY";
+        std::cout << "HARD";
     }
     return 0;
 }
