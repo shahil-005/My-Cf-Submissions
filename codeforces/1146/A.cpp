@@ -23,11 +23,19 @@ int32_t main()
         }
     }
 
-    while(a < (n/2)+1)
+    if(a >= (n/2)+1)
+    {
+        std::cout << n;
+    }
+
+    else
+    {
+        while(a < (n/2)+1)
         {
             n--;
         }
 
         std::cout << n;
-return 0;
+    }
+    return 0;
 }
