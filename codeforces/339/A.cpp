@@ -15,26 +15,7 @@ const long long INIT=(long long)(1e6+1);
 
 int32_t main()
 {
-    //2nd sol
     string s;
-    cin >> s;
-    vector<int> v;
-    for(int i=0;i<s.length();i+=2)
-    {
-        v.push_back(s[i] - '0');
-    }
-
-    sort(v.begin(),v.end());
-
-    for(int i=0;i<v.size()-1;i++)
-    {
-        cout << v[i] << "+";
-    }
-
-    cout << *v.rbegin();
-
-    //1st sol
-    /*string s;
     cin >> s;
     int n = s.size();
     int m = n/2 +1;
@@ -50,7 +31,7 @@ int32_t main()
     {
         cout << a[i] << "+";
     }
-    cout << a[m-1];*/
+    cout << a[m-1];
 
 	return 0;
 }
