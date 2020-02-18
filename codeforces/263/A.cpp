@@ -25,7 +25,7 @@ int32_t main()
             if(a[i][j] == 1)
             {
                 cout << abs(i-2) + abs(j-2);
-                break;
+                return 0;
             }
         }
     }
