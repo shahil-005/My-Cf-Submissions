@@ -18,14 +18,13 @@ int32_t main()
     string s;
     cin >> s;
 
-    if(isupper(s[0]))
+    if(s[0] <91)
     {
-       cout << s;
+        cout << s;
     }
-
     else
     {
-        s[0] = toupper(s[0]);
+        s[0] = s[0] -32;
         cout << s;
     }
 
