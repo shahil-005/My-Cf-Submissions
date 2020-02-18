@@ -24,13 +24,13 @@ int32_t main()
             cin >> a[i][j];
             if(a[i][j] == 1)
             {
-                cout << abs(i-2) + abs(j-2);
-                return 0;
+                x=i;
+                y=j;
             }
         }
     }
 
-    
+    cout << abs(x-2) + abs(y-2);
 
 
 	return 0;
