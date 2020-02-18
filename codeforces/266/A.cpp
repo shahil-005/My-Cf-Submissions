@@ -19,13 +19,19 @@ int32_t main()
     cin >> n;
     string s;
     cin >> s;
-    int count=0;
+    int a=0,count=0;
     for(int i=1;i<n;i++)
     {
-        if(s[i] ==  s[i-1])
+        if(s[i] ==  s[a])
         {
             count++;
         }
+
+        else if(s[i]  != s[a])
+        {
+            a = i;
+        }
+        //cout << i << " " << a << " " << count << endl;
     }
 
     cout << count;
