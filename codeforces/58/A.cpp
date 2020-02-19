@@ -29,14 +29,13 @@ int32_t main()
     string s;
     cin >> s;
     int n = s.length();
-    string c = "hello";
+    char c[6] = "hello";
 
     int a=0,e=0,res;
-
+    //char d = c[e];
     while(e<5)
     {
-        char d = c[e];
-        res = string_search(s,a,n-1,d);
+        res = string_search(s,a,n-1,c[e]);
         if(res != -1)
         {
            a =  res+1;
