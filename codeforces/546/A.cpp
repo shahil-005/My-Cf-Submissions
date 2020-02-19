@@ -18,7 +18,12 @@ int32_t main()
     int k,n,w;
     cin>> k >> n >> w;
 
-    int sum = (k*w*(w+1))/2;
+    int sum =0,i=1;
+    while(i<w+1)
+    {
+        sum += k*i;
+        i++;
+    }
 
     if(n>=sum)
     {
