@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF71461461": {
+    "contest_id": 58,
+    "language": "GNU C++14",
+    "path": "codeforces/58/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Chat room",
+    "problem_url": "https://codeforces.com/contest/58/problem/A",
+    "submission_id": "CF71461461",
+    "submission_url": "https://codeforces.com/contest/58/submission/71461461",
+    "tags": [
+      "greedy",
+      "strings",
+      "*1000"
+    ],
+    "timestamp": "Feb/20/2020 02:02"
+  },
   "CF71462344": {
     "contest_id": 122,
     "language": "GNU C++14",
