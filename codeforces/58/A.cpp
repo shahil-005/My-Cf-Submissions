@@ -12,7 +12,7 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
-/*int string_search(string str,int a,int b,char c)
+int string_search(string str,int a,int b,char c)
 {
     for(int i=a;i<=b;i++)
     {
@@ -22,7 +22,7 @@ const long long INIT=(long long)(1e6+1);
         }
     }
     return -1;
-}*/
+}
 
 int32_t main()
 {
@@ -31,30 +31,7 @@ int32_t main()
     int n = s.length();
     string c = "hello";
 
-    int j=0;
-    for(int i=0;i<n;i++)
-    {
-        if(s[i] == c[j])
-        {
-            j++;
-        }
-        if(j==5)
-        {
-            break;
-        }
-    }
-
-    if(j==5)
-    {
-        cout << "YES";
-    }
-
-    else
-    {
-        cout << "NO";
-    }
-
-    /*int a=0,e=0,res;
+    int a=0,e=0,res;
 
     while(e<5)
     {
@@ -80,7 +57,7 @@ int32_t main()
     else
     {
         cout << "YES";
-    }*/
+    }
 
 	return 0;
 }
