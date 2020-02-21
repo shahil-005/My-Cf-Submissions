@@ -17,15 +17,24 @@ int32_t main()
 {
     int n;
     cin >> n;
-    
-    if(n%5 ==0)
+    int ans=0;
+    while(n>0)
     {
-        cout << n/5;
+        if(n>=5)
+        {
+            ans += n/5;
+            n = n%5;
+        }
+
+        else
+        {
+            ans += 1;
+            n = 0;
+        }
+        
     }
-    
-    else
-        cout << n/5 +1;
-    
+
+    cout << ans;
     return 0;
 }
 
