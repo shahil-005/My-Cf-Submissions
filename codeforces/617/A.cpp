@@ -18,7 +18,13 @@ int32_t main()
     int n;
     cin >> n;
     
-    cout << (n+4)/5;
+    if(n%5 ==0)
+    {
+        cout << n/5;
+    }
+    
+    else
+        cout << n/5 +1;
     
     return 0;
 }
