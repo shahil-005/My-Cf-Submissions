@@ -12,30 +12,73 @@ using namespace std;
 const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
+int islucky(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    else
+    {
+        vector<int> a;
+        int l=0,r;
+        while(n>0)
+        {
+            r=n%10;
+            a.push_back(r);
+            l++;
+            n=n/10;
+        }
+        int count=0;
+        for(int i=0;i<l;i++)
+        {
+            if(a[i] == 4 || a[i] == 7)
+            {
+                count++;
+            }
+        }
+
+        if(count == l)
+        {
+            return 1;
+        }
+
+        else
+        {
+            return 0;
+        }
+    }
+}
 
 int32_t main()
 {
-    int n;
-    cin >> n;
-    int count=0;
-    int r;
-    while(n>0)
+    string s;
+    cin >> s;
+
+    int n= s.size();
+    int a[n];
+    for(int i=0;i<n;i++)
     {
-        r = n%10;
-        if(r==4 || r==7)
+        a[i] = s[i] - 48;
+    }
+    int res=0;
+    for(int i=0;i<n;i++)
+    {
+        if(a[i] == 4 || a[i] == 7)
         {
-            count++;
+            res++;
         }
-        n=n/10;
     }
 
-    if(count==4 || count==7)
+    int check = islucky(res);
+    if(check ==1)
     {
         cout << "YES";
     }
 
     else
         cout << "NO";
+
     return 0;
 }
 
