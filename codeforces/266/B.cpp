@@ -24,16 +24,19 @@ int32_t main()
     while(t>0)
     {
         int k=0;
-        for(int i=k;i<=l-2;i++)
+        for(int i=k;i<=l-2;i=k)
         {
             if(s[i] == 'B' && s[i+1] == 'G')
             {
                 s[i] = 'G';
                 s[i+1] = 'B';
-                i++;
+                k=i+2;
                 //cout << s << endl;
             }
-            
+            else
+            {
+                k++;
+            }
         }
 
         t--;
