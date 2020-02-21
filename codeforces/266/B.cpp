@@ -26,14 +26,16 @@ int32_t main()
         int k=0;
         for(int i=k;i<=l-2;i++)
         {
-            if(s[i]<s[i+1])
+            if(s[i] == 'B' && s[i+1] == 'G')
             {
                 s[i] = 'G';
                 s[i+1] = 'B';
                 i++;
+                //cout << s << endl;
             }
             
         }
+
         t--;
     }
 
