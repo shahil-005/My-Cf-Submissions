@@ -26,12 +26,26 @@ int32_t main()
             n = n%5;
         }
 
-        else
+        else if(n ==4)
         {
             ans += 1;
             n = 0;
         }
-        
+        else if(n ==3)
+        {
+            ans += 1;
+            n = 0;
+        }
+        else if(n ==2)
+        {
+            ans += 1;
+            n = 0;
+        }
+        else if(n ==1)
+        {
+            ans += 1;
+            n = 0;
+        }
     }
 
     cout << ans;
