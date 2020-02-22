@@ -24,12 +24,12 @@ int32_t main()
         cin >> a[i];
     }
     sort(a,a+n);
-    int dif = INT_MAX;
-    for(int i=0;i<=n-m ;i++)
+    int dif = 1001;
+    for(int i=0,j=m-1;i<=n-m && j<=n-1;i++,j++)
     {
-        if((a[i+m-1] - a[i])< dif)
+        if((a[j] - a[i])< dif)
         {
-            dif = a[i+m-1] - a[i];
+            dif = a[j] - a[i];
         }
     }
     cout << dif;
