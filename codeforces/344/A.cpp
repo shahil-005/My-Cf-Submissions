@@ -17,17 +17,20 @@ int32_t main()
 {
     int n;
     cin >> n;
-    string s[n];
-    int ans=1;
-    for(int i=0;i<n;i++)
+
+    string a,b;
+    cin >> a;
+    int count=0;
+    for(int i=1;i<n;i++)
     {
-        cin >> s[i];
-        if(s[i] != s[i-1] && i!=0)
+        cin >> b;
+        if(b != a)
         {
-            ans++;
+            count++;
         }
+        a = b;
     }
-    cout << ans;
+    cout << count+1;
     return 0;
 }
 
