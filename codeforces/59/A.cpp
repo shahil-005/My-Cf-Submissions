@@ -21,12 +21,12 @@ int32_t main()
     int a=0,b=0;
     for(int i=0;i<n;i++)
     {
-        if(isupper(s[i]))
+        if(s[i] > 64 && s[i] < 91)
         {
             a++;
         }
 
-        if(islower(s[i]))
+        if(s[i] > 96 && s[i] < 123)
         {
             b++;
         }
