@@ -13,23 +13,54 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
+void fun(int a[],int x,int k)
+{
+    int p=0,q=0,r=0;
+    int c=0;
+    while(c<2)
+    {
+        r=x%10;
+        if(c==0)
+        {
+           p = r;
+        }
+        if(c==1)
+        {
+           q = r;
+        }
+        c++;
+        x=x/10;
+    }
+    a[k] = q;
+    a[k+1] = p;
+    //a.push_back(q);
+    //a.push_back(p);
+}
+
 int32_t main()
 {
     int n;
     cin >> n;
-
-    string a,b;
-    cin >> a;
-    int count=0;
-    for(int i=1;i<n;i++)
+    int m= 2*n;
+    int a[m] = {0};
+    for(int j=0;j<n;j++)
     {
-        cin >> b;
-        if(b != a)
+        int x;
+        cin >> x;
+        fun(a,x,2*j);
+    }
+
+
+
+    int count=0;
+    for(int i=0;i<=m-2;i++)
+    {
+        if(a[i+1] == a[i])
         {
             count++;
         }
-        a = b;
     }
+
     cout << count+1;
     return 0;
 }
