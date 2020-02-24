@@ -19,26 +19,25 @@ int32_t main()
     cin >> s;
     int n= s.size();
     int flag =0;
-    string r = "";
-    for(int i=0;i<=n-1;i++)
+
+    /*for(int i=0;i<=n-1;i++)
 	{
 		if(s[i] == 'W' && s[i+1] == 'U' && s[i+2] == 'B')
 		{
 			i+=2;
 			if(flag ==1)
             {
-                r += " ";
+                cout << " ";
             }
 		}
 
 		else
         {
-            r += s[i];
+            cout << s[i];
             flag =1;
         }
-	}
-	cout << r;
-    /*int i=0;
+	}*/
+    int i=0;
     while(i<n)
     {
 
@@ -57,7 +56,7 @@ int32_t main()
         }
 
         i++;
-    }*/
+    }
 
     return 0;
 }
