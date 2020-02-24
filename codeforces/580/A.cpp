@@ -38,7 +38,7 @@ int main()
         ll x=1;
         f(i,1,n)
         {
-            if(a[i-1] <= a[i])
+            if(a[i-1] <= a[i] && i!=0)
             {
                 x++;
             }
@@ -65,3 +65,4 @@ int main()
     
     return 0;
 }
+
