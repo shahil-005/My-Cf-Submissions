@@ -20,7 +20,7 @@ int32_t main()
     int n= s.size();
     int flag =0;
 
-    /*for(int i=0;i<=n-1;i++)
+    for(int i=0;i<n;i++)
 	{
 		if(s[i] == 'W' && s[i+1] == 'U' && s[i+2] == 'B')
 		{
@@ -36,27 +36,22 @@ int32_t main()
             cout << s[i];
             flag =1;
         }
-	}*/
-    int i=0;
-    while(i<n)
+	}
+    /*while(i<n)
     {
+        if(s[i] != 'W' && s[i+1] != 'U' && s[i+2] != 'B')
+        {
+            cout << s[i];
+        }
 
         if(s[i] == 'W' && s[i+1] == 'U' && s[i+2] == 'B')
         {
             i+=2;
-            if(flag ==1)
-            {
-                cout << " ";
-            }
-        }
-        else
-        {
-            cout << s[i];
-            flag =1;
+            cout << " ";
         }
 
         i++;
-    }
+    }*/
 
     return 0;
 }
