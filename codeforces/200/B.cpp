@@ -26,8 +26,7 @@ int main()
         cin >> a[i];
         sum+= a[i];
     }
-    std::cout << std::fixed;
-    std::cout << std::setprecision(12);
+
     cout << sum/n;
 
     return 0;
