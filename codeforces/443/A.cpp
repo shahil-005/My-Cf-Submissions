@@ -17,13 +17,15 @@ int main()
     string s;
     getline(cin, s);
     int l = s.size();
-    
+    /*vector<int> h(27);
+     for(int i=1;i<=26;i++){
+        h[i] == 0;
+    }*/
     if(l==2){
         cout << 0;
     }
     else{
-        //int h[27] = {0};
-        vector<int> h(27);
+        int h[27] = {0};
         for(int i=0;i<l;++i){
             char c = s[i];
             if(i%3==1){
