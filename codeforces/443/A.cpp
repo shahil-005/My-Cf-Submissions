@@ -25,8 +25,9 @@ int main()
         //int h[27] = {0};
         vector<int> h(27);
         for(int i=0;i<l;++i){
+            char c = s[i];
             if(i%3==1){
-                h[s[i]-96]++;
+                h[c-96]++;
             }
         }
         
