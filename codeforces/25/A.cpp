@@ -12,34 +12,35 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
-int n;
-int a[N];
-vector<int> m[2];
+int findindex(vector<int> arr,int n){
+    if (arr[0] == arr[1] && arr[0] != arr[2])
+        return 2;
+    if (arr[0] == arr[2] && arr[0] != arr[1])
+        return 1;
+    if (arr[1] == arr[2] && arr[0] != arr[1])
+        return 0;
 
+    for (int i = 3; i < n; i++)
+        if (arr[i] != arr[i - 1])
+            return i;
+
+    return -1;
+}
+
+int n;
+vector<int> v;
 int main()
 {   IOS;
 
-    cin>>n;
-	for(int i=1;i<=n;i++){
-		cin>>a[i];
-		m[a[i]%2].push_back(i);
-	}
-
-	if(m[0].size()==1)
-		cout<<m[0][0];
-	else if(m[1].size()==1)
-		cout<<m[1][0];
-		
-    /*int x = m[0].size();
-    int y = m[1].size();
-	for(int i=0;i<x;i++)
-    {
-        cout << m[0][i] << " ";
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(int i=0;i<n;i++){
+        cin >> v[i];
+        v[i] = v[i]%2;
     }
-    cout <<  " " << endl;
-    for(int i=0;i<y;i++)
-    {
-        cout << m[1][i] << " ";
-    }*/
+
+    int ans = findindex(v,n);
+    cout << ans+1;
     return 0;
 }
