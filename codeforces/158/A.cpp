@@ -12,7 +12,7 @@ int main()
       {
         cin>>a[i];
       }
-      //sort(a,a+n,greater<int>());
+      sort(a,a+n,greater<int>());
     
      
         for(int i=0;i<n;i++)
