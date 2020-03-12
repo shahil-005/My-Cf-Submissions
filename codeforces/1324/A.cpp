@@ -13,34 +13,36 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n,count1=0,count2=0;
+        int n;
         cin>>n;
         int a[n];
         for(int i=0;i<n;i++)
         {
             cin>>a[i];
         }
+
         if(n>1)
         {
+            int odd =0,even =0;
             for(int i=0;i<n;i++)
             {
                 if(a[i]%2==0)
                 {
-                    count1++;
+                    even++;
                 }
                 else if(a[i]%2!=0)
                 {
-                    count2++;
+                    odd++;
                 }
             }
-            if(count1==n || count2==n)
+            if(even==n || odd==n)
             {
                 cout<<"YES"<<endl;
             }
             else
             {
                 cout<<"NO"<<endl;
-            } 
+            }
         }
         else
         {
