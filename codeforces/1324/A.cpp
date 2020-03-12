@@ -10,45 +10,39 @@ int main()
     cin.tie(NULL);
 
     int t;
-    cin>>t;
+    cin >> t;
     while(t--)
     {
         int n;
-        cin>>n;
+        cin >> n;
+        
         int a[n];
         for(int i=0;i<n;i++)
         {
-            cin>>a[i];
+            cin >> a[i];
+        }
+        sort(a,a+n);
+        int flag =0;
+        for(int i=0;i<=n-2;i++)
+        {
+            int x = a[i+1]-a[i];
+            if(x%2 != 0)
+            {
+                flag =1;
+                break;
+            }
         }
 
-        if(n>1)
+        if(flag == 1)
         {
-            int odd =0,even =0;
-            for(int i=0;i<n;i++)
-            {
-                if(a[i]%2==0)
-                {
-                    even++;
-                }
-                else if(a[i]%2!=0)
-                {
-                    odd++;
-                }
-            }
-            if(even==n || odd==n)
-            {
-                cout<<"YES"<<endl;
-            }
-            else
-            {
-                cout<<"NO"<<endl;
-            }
+            cout << "NO" << endl;
         }
         else
         {
-            cout<<"YES"<<endl;
+            cout << "YES" << endl;
         }
-    }
 
+
+    }
     return 0;
 }
