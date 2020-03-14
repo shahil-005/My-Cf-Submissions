@@ -15,7 +15,7 @@ int32_t main()
     cin >> s;
 
     map<string, int> m;
-
+    int ans =0;
 
     for(int i=0;i<=n-2;i++)
     {
@@ -24,18 +24,17 @@ int32_t main()
         r += s[i+1];
 
         m[r]++;
+        ans = max(ans,m[r]);
     }
-    int ans =0;
-    string finalans;
-    //for(auto it = m.begin(); it != m.end(); it++)
-    for(auto &it:m)
+
+    //for(int it = m.begin(); it != m.end(); it++)
+    for(auto it:m)
     {
-        if(it.second > ans)
+        if(it.second == ans)
         {
-            ans = it.second;
-            finalans = it.first;
+            cout << it.first;
+            break;
         }
     }
-    cout << finalans;
     return 0;
 }
