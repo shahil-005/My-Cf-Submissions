@@ -9,15 +9,22 @@ using namespace std;
 int32_t main()
 {   IOS;
 
-    set<int> s;
+    map<int, int> m;
     int n=4;
     while(n--)
     {
         int x;
         cin >> x;
-        s.insert(x);
+        m[x]++;
     }
-    int ans =4 - s.size();
+    int ans =4;
+    for(auto it:m)
+    {
+        if(it.second > 0)
+        {
+            ans--;
+        }
+    }
     cout << ans;
     return 0;
 }
