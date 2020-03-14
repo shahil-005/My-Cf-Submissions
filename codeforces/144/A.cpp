@@ -1,28 +1,40 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define ll long long int
-#define fast ios_base:: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+
+#define endl '\n'
+#define int long long
+#define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 
-int main(){
-    int n; cin>>n;
-    int *arr=new int[n];
-    for(int i=0;i<n;++i)
-        cin>>arr[i];
+int32_t main()
+{   IOS;
 
-    int max=0,min=n-1;
+    int n;
+    cin >> n;
+    int v[n];
+    int x=100,y=0,a,b;
+    for(int i=0;i<n;i++)
+    {
+          cin >> v[i];
 
-    for(int i=0;i<n;++i){
-        if(arr[i]>arr[max])
-            max=i;
+          if(v[i] <= x)
+          {
+              x = v[i];
+              a = i;
+          }
+          if(v[i] > y)
+          {
+              y = v[i];
+              b = i;
+          }
+    }
+    int ans = (n-1-a)+ (b);
+
+    if(a<b)
+    {
+        ans--;
     }
 
-    for(int i=n-1;i>=0;--i)
-        if(arr[min]>arr[i])
-            min=i;
-
-    if(max<min)
-        cout<<max+n-1-min;
-    else
-        cout<<max+n-2-min;
+    cout << ans << endl;
+    return 0;
 }
