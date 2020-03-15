@@ -11,9 +11,22 @@ int32_t main()
     
     int n,m;
     cin >> n >> m;
-    int x = min(n,m);
-    
-    (x & 1) ? cout << "Akshat" : cout << "Malvika";
+    string s = "Malvika";
+    while(n>0 && m>0)
+    {
+        n--;
+        m--;
+        if(s == "Akshat")
+        {
+            s = "Malvika";
+        }
+        else if(s == "Malvika")
+        {
+            s = "Akshat";
+        }
+        //cout << s << endl;
+    }
+    cout << s;
 
     return 0;
 }
