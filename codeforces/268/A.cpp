@@ -11,20 +11,24 @@ int32_t main()
     
     int n;
     cin >> n;
-    int a[101] ={0},b[101]={0};
+    int a[n],b[n];
     for(int i=0;i<n;i++)
     {
-        int x,y;
-        cin >> x >> y;
-        a[x]++;
-        b[y]++;
+        cin >> a[i];
+        cin >> b[i];
     }
-    int sum =0;
-    for(int i=1;i<=100;i++)
+    int ans =0;
+    for(int i=0;i<n;i++)
     {
-        sum += a[i]*b[i];
+        for(int j=0;j<n;j++)
+        {
+            if(i!=j && a[i] == b[j])
+            {
+                ans++;
+            }
+        }
     }
-    cout << sum << endl;
+    cout << ans;
 
     return 0;
 }
