@@ -22,12 +22,7 @@ int32_t main()
         x = m;
     }
     
-    //(x & 1) ? cout << "Akshat" : cout << "Malvika";
-    if (x % 2 == 0) {
-		cout << "Malvika" << endl;
-	} else {
-		cout << "Akshat" << endl;
-	}
+    (x & 1) ? cout << "Akshat" : cout << "Malvika";
 
     return 0;
 }
