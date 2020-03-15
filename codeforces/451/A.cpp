@@ -11,16 +11,7 @@ int32_t main()
     
     int n,m;
     cin >> n >> m;
-    int x;
-    //int x = min(n,m);
-    if(m>n)
-    {
-        x = n;
-    }
-    else
-    {
-        x = m;
-    }
+    int x = min(n,m);
     
     (x & 1) ? cout << "Akshat" : cout << "Malvika";
 
