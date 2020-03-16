@@ -11,25 +11,28 @@ int32_t main()
 
     int n;
     cin >> n;
-    string s;
-    cin >> s;
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    string su;
+    cin >> su;
+    transform(su.begin(), su.end(), su.begin(), ::tolower);
 
-    map<char, int> m;
-    
+    int h[27] = {0};
     for(int i=0;i<n;i++)
     {
-        m[s[i]]++;
+        h[su[i]-96]++;
     }
-    /*for(auto it:m)
+    int flag =0;
+    for(int i=1;i<=26;i++)
     {
-        cout << it.first << " " << it.second << endl;
-    }*/
-    int x = m.size();
-    if(x == 26)
+        if(h[i] == 0)
+        {
+            cout << "NO";
+            flag =1;
+            break;
+        }
+    }
+    if(flag ==0)
+    {
         cout <<"YES";
-        
-    else
-        cout <<"NO";
+    }
     return 0;
 }
