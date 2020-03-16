@@ -15,13 +15,11 @@ int32_t main()
     cin >> s;
     transform(s.begin(), s.end(), s.begin(), ::tolower);
 
-    map<string, int> m;
+    map<char, int> m;
     
     for(int i=0;i<n;i++)
     {
-        string r = "";
-        r += s[i];
-        m[r]++;
+        m[s[i]]++;
     }
     /*for(auto it:m)
     {
