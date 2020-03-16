@@ -35,13 +35,14 @@ int main()
 
     fe(i,4,n-4)
     {
-        if(isComposite(i)==1 && isComposite(n-i) == 1)
+        for(ll j=n-4;j>=4;j--)
         {
-            cout << i << " " << n-i;
-            return 0;
+            if(isComposite(i)==1 && isComposite(j) == 1 && i+j == n)
+            {
+                cout << i << " " << j;
+                return 0;
+            }
         }
     }
-    
-      
     return 0;
 }
