@@ -26,15 +26,13 @@ int main()
     {
         string s;
         cin >> s;
-        if(m[s] == 0)
+        m[s]++;
+        if(m[s] == 1)
         {
             cout << "OK" << endl;
         }
         else
-        {
-            cout << s << m[s]<< endl;
-        }
-        m[s]++;
+            cout << s << m[s] -1<< endl;
     }
     return 0;
 }
