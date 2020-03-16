@@ -21,10 +21,12 @@ int main()
 
     ll s,n;
     cin >> s >> n;
-    vector<pair<int, int>>a(n);
+    vector<pair<int, int> > a;
     f(i,0,n)
     {
-        cin >> a[i].first >> a[i].second;
+        ll x,y;
+        cin >> x >> y;
+        a.push_back({x, y});
     }
     sort(a.begin(), a.end());
     f(i,0,n)
