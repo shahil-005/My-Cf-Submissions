@@ -15,17 +15,19 @@ int32_t main()
     cin >> s;
     transform(s.begin(), s.end(), s.begin(), ::tolower);
 
-   set<char> se;
+    map<string, int> m;
     
     for(int i=0;i<n;i++)
     {
-        se.insert(s[i]);
+        string r = "";
+        r += s[i];
+        m[r]++;
     }
     /*for(auto it:m)
     {
         cout << it.first << " " << it.second << endl;
     }*/
-    int x = se.size();
+    int x = m.size();
     if(x == 26)
         cout <<"YES";
         
