@@ -27,12 +27,18 @@ int main()
         cin >> v[i];
     }
     sort(v.begin(),v.end());
-    ld ans = 2*max(v[0],l-v[n-1]);
+    ld x =0;
     fe(i,1,n-1)
     {
-        ans = max(ans,v[i]-v[i-1]);
+        x = max(x,v[i]-v[i-1]);
     }
-    ans = ans/2;
-    cout << fixed << setprecision(10) << ans;
+    x = x/2;
+    ld p = v[0] - 0;
+    ld q = l - v[n-1];
+    ld ans = max(p,q);
+    ans = max(x,ans);
+    std::cout << std::fixed;
+    std::cout << std::setprecision(10);
+    cout << ans;
     return 0;
 }
