@@ -15,13 +15,11 @@ int32_t main()
     cin >> s;
     transform(s.begin(), s.end(), s.begin(), ::tolower);
 
-   set<string> se;
+   set<char> se;
     
     for(int i=0;i<n;i++)
     {
-        string r = "";
-        r += s[i];
-        se.insert(r);
+        se.insert(s[i]);
     }
     /*for(auto it:m)
     {
