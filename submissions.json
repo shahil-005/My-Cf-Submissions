@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF73447742": {
+    "contest_id": 935,
+    "language": "GNU C++17",
+    "path": "codeforces/935/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Fafa and his Company",
+    "problem_url": "https://codeforces.com/contest/935/problem/A",
+    "submission_id": "CF73447742",
+    "submission_url": "https://codeforces.com/contest/935/submission/73447742",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Mar/17/2020 06:52"
+  },
   "CF73448273": {
     "contest_id": 867,
     "language": "GNU C++17",
