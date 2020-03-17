@@ -16,17 +16,31 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
+int isComposite(int n)
+{
+
+    if (n%2 == 0 || n%3 == 0) return 1;
+
+    for (int i=5; i*i<=n; i=i+6)
+        if (n%i == 0 || n%(i+2) == 0)
+           return 1;
+
+    return 0;
+}
 int main()
 {   IOS;
 
     ll n;
     cin >> n;
 
-    if(n%2 == 0)
-        cout << 4 << " " << n-4;
-    
-    else
-        cout << 9 << " " << n-9;
+    fe(i,4,n-4)
+    {
+        if(isComposite(i)==1 && isComposite(n-i) == 1)
+        {
+            cout << i << " " << n-i;
+            return 0;
+        }
+    }
     
       
     return 0;
