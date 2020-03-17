@@ -22,7 +22,11 @@ int main()
     ll n;
     cin >> n;
 
-    (n&1) ? cout << 9 << " " << n-9 : cout << 4 << " " << n-4;
+    if(n%2 == 0)
+        cout << 4 << " " << n-4;
+    
+    else
+        cout << 9 << " " << n-9;
     
       
     return 0;
