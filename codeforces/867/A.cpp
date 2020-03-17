@@ -23,8 +23,20 @@ int main()
     cin >> n;
     string s;
     cin >> s;
+    string r;
+    map<int,int> m;
+    fe(i,0,n-2)
+    {
+        r = "";
+        r += s[i];
+        r += s[i+1];
+        if(r == "SF")
+            m[0]++;
+        if(r == "FS")
+            m[1]++;
+    }
 
-    if(s[0] == 'S' && s[n-1] =='F')
+    if(m[0] > m[1])
         cout << "YES";
 
     else
