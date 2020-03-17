@@ -23,19 +23,16 @@ int main()
     cin >> n;
     string s;
     cin >> s;
-    ll ans =0;
+    map<string,ll> m;
     fe(i,0,n-3)
     {
         string r = "";
         r+= s[i];
         r+= s[i+1];
         r+= s[i+2];
-        if(r=="xxx")
-        {
-            ans++;
-        }
+        m[r]++;
     }
-    cout << ans << endl;
+    cout << m["xxx"] << endl;
     
 
 
