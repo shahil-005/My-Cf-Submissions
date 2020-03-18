@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF73538618": {
+    "contest_id": 245,
+    "language": "GNU C++17",
+    "path": "codeforces/245/A.cpp",
+    "problem_index": "A",
+    "problem_name": "System Administrator",
+    "problem_url": "https://codeforces.com/contest/245/problem/A",
+    "submission_id": "CF73538618",
+    "submission_url": "https://codeforces.com/contest/245/submission/73538618",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Mar/18/2020 10:21"
+  },
   "CF73539842": {
     "contest_id": 750,
     "language": "GNU C++17",
