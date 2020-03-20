@@ -15,12 +15,17 @@ int main(){
         visited[i] = false;
     }
     for(int i = 1 ; i <= n ; ++i){
-        if(!visited[i]){
+        if(!visited[i])
+        {
             ++ans;
             visited[i] = true;
-            for(int j = 1 ; j <= n ; ++j){
-                if((x[i] - x[0])*(y[j] - y[0]) == (x[j] - x[0])*(y[i] - y[0])){
-                    visited[j] = true;
+            for(int j = 1 ; j <= n ; ++j)
+            { 
+                if(!visited[j])
+                {
+                    if((x[i] - x[0])*(y[j] - y[0]) == (x[j] - x[0])*(y[i] - y[0])){
+                        visited[j] = true;
+                    }
                 }
             }
         }
