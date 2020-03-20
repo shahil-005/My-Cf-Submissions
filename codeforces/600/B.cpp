@@ -7,8 +7,6 @@ using namespace std;
 //Defines:-------------------------------------------------------------------------------------------------------------
 #define endl        '\n'
 //#define IOS       ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-#define c0(x)       cout<<(x)<<" "
-#define c1(x)       cout<<(x)<<endl
 #define loop        for(ll i = 0 ; i < n ; i++)
 #define f(i,s,n)    for(ll i = s ; i < n ; i++)
 #define fe(i,s,n)   for(ll i = s ; i <= n ; i++)
@@ -62,44 +60,28 @@ ll power(ll x,ll y)
 
 //Solve::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-int bins(ll v[],ll n,ll k)
-{
-    ll l=0;
-    ll h=n-1;
-    ll ans=0;
-    while(l<=h)
-    {
-       ll m=(l+h)/2;
-       if(v[m]<=k)
-       {
-           ans=m+1;
-           l=m+1;
-       }
-       else
-       {
-           h=m-1;
-       }
-    }
-    return ans;
-}
 void solve(){
 
     ll n,m;
     cin>>n>>m;
-    ll a[n],b[m];
+    vl v(n);
+    ll b[m];
     f(i,0,n)
     {
-        cin>>a[i];
+        cin>>v[i];
     }
     f(i,0,m)
     {
         cin>>b[i];
     }
-    sort(a,a+n);
+    sort(v.begin(),v.end());
 
     f(i,0,m)
     {
-        c0(bins(a,n,b[i]));
+        vector<ll>::iterator upper;
+        cin>>b[i];
+        upper = upper_bound(v.begin(),v.end(),b[i]);
+        cout<<upper-v.begin() << " ";
     }
 
 
