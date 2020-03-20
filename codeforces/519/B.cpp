@@ -73,20 +73,33 @@ int main ()
     {
         cin>>a[i];
     }
+    sort(a, a+n);
     f(i,0,n-1)
     {
         cin>>b[i];
     }
+    sort(b, b+n-1);
     f(i,0,n-2)
     {
         cin>>c[i];
     }
-    ll sum1=0,sum2=0,sum3=0;
-    sum1 = accumulate(a,a+n,sum1);
-    sum2 = accumulate(b,b+n-1,sum2);
-    sum3 = accumulate(c,c+n-2,sum3);
-    cout<<sum1-sum2<<endl;
-    cout<<sum2-sum3<<endl;
+    sort(c, c+n-2);
+    fe(i,0,n-1)
+    {
+        if(a[i]!=b[i] || i==n-1)
+        {
+            cout<<a[i] <<endl;
+            break;
+        }
+    }
+    fe(i,0,n-2)
+    {
+        if(b[i]!=c[i] || i==n-2)
+        {
+            cout<<b[i] <<endl;
+            break;
+        }
+    }
 
 
 
