@@ -71,13 +71,19 @@ void solve(){
     ll ans=0;
     fe(i,0,n-3)
     {
-        fe(j,i+1,n-2)
+        if(s[i]=='Q')
         {
-            fe(k,j+1,n-1)
+            fe(j,i+1,n-2)
             {
-                if(s[i]=='Q' && s[j] == 'A' && s[k]=='Q')
+                if(s[j] == 'A')
                 {
-                    ans++;
+                    fe(k,j+1,n-1)
+                    {
+                        if(s[k]=='Q')
+                        {
+                            ans++;
+                        }
+                    }
                 }
             }
         }
