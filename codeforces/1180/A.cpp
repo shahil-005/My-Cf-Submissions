@@ -66,7 +66,21 @@ void solve(){
 
     ll n;
     cin>>n;
-    cout<<1+2*(n-1)*(n)<<endl;
+    if(n==1)
+    {
+        cout<<1<<endl;
+    }
+    else
+    {
+        ll dp[n+1];
+        dp[1] = 1;
+        fe(i,2,n)
+        {
+            dp[i] = dp[i-1] + 4*(i-1);
+            //cout<<dp[i] <<endl;
+        }
+        cout<<dp[n]<<endl;
+    }
 
 
 
