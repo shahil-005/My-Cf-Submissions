@@ -72,20 +72,20 @@ void solve(){
     {
         cin>>a[i];
     }
-    ll x=1,ans=1;
-    f(i,1,n)
+    ll dp[n];
+    dp[0]=1;
+    fe(i,1,n-1)
     {
-        if(a[i]>a[i-1])
+        dp[i] =1;
+        if(a[i-1]<a[i])
         {
-            x++;
-            ans=max(ans,x);
+            dp[i] = dp[i-1]+1;
         }
-        else
-        {
-            x=1;
-        }
+        //cout<<dp[i] <<endl;
+
     }
-    cout<<ans<<endl;
+    sort(dp,dp+n);
+    cout<<dp[n-1];
 
 
 
