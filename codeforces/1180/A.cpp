@@ -66,8 +66,7 @@ void solve(){
 
     ll n;
     cin>>n;
-    ll ans=pow(n,2)+pow(n-1,2);
-    cout<<ans<<endl;
+    cout<<1+2*(n-1)*(n)<<endl;
 
 
 
