@@ -60,45 +60,11 @@ ll power(ll x,ll y)
 
 	return (y%2 == 0)? p : (x * p) % MOD;
 }
-inline ll in()
-{
-    ll x = 0, flag = 1; char ch = getchar();
-    while (ch < '0' || ch > '9') { if (ch == '-') flag = -1; ch = getchar(); }
-    while (ch >= '0' && ch <= '9') x = (x << 3) + (x << 1) + (ch ^ 48), ch = getchar();
-    return x * flag;
-}
 
 //Solve::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 void solve(){
-    
-    //DP SOLUTION
-    /*
-    int n, m;
-    LL a[MAXN], f[MAXN][3], g[MAXN][3];
-    LL ans;
-     
-    int main()
-    {
-        n = in();
-        for (int i = 1; i <= n; ++ i)
-        {
-            a[i] = in();
-            f[i][0] = 1LL * abs(a[i] - 1LL);
-            f[i][1] = 1LL * abs(-1LL - a[i]);
-        }
-        for (int i = 1; i <= n; ++ i)
-            g[i][0] = g[i][1] = 1LL * 2e18;
-        g[1][0] = f[1][0];
-        g[1][1] = f[1][1];
-        for (int i = 2; i <= n; ++ i)
-        {
-            g[i][1] = min(g[i - 1][0] + f[i][1], g[i - 1][1] + f[i][0]);
-            g[i][0] = min(g[i - 1][0] + f[i][0], g[i - 1][1] + f[i][1]);
-        }
-        printf("%lld\n", g[n][0]);
-        return 0;
-    }
-    */
+
+
     ll n;
     cin>>n;
     ll a[n];
