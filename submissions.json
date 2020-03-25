@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF74341881": {
+    "contest_id": 835,
+    "language": "GNU C++17",
+    "path": "codeforces/835/B.cpp",
+    "problem_index": "B",
+    "problem_name": "The number on the board",
+    "problem_url": "https://codeforces.com/contest/835/problem/B",
+    "submission_id": "CF74341881",
+    "submission_url": "https://codeforces.com/contest/835/submission/74341881",
+    "tags": [
+      "greedy",
+      "*1100"
+    ],
+    "timestamp": "Mar/26/2020 05:10"
+  },
   "CF74342559": {
     "contest_id": 835,
     "language": "GNU C++17",

@@ -145,35 +145,30 @@ void solve()
     string s;
     cin>>k>>s;
 
-    ll n= s.size();
-    ll h[10]={0};
+    ll x= s.size();
+    ll a[x];
     ll sum=0;
-    f(i,0,n)
+    f(i,0,x)
     {
-        ll x = s[i] -48;
-        h[x]++;
-        sum+= x;
+        a[i] = s[i]-48;
+        sum+= a[i];
     }
+    //cout<<"sumofdigits: " <<sum<<endl;
     if(sum>=k)
     {
         cout<<0<<endl;
     }
     else
     {
+        sort(a,a+x);
         ll ans=0;
-        fe(i,0,9)
+        f(i,0,x)
         {
-            fe(j,1,h[i])
+            sum+= 9-a[i];
+            ans++;
+            if(sum>=k)
             {
-                if(sum>=k)
-                {
-                    break;
-                }
-                else if(sum<k)
-                {
-                    ans++;
-                    sum+= 9-i;
-                }
+                break;
             }
         }
         cout<<ans<<endl;
