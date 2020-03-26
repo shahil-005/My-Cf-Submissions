@@ -144,15 +144,27 @@ void solve()
     ll n;
     cin>>n;
     ll a[n],p[n];
-    ll x=INT_MAX;
-    ll ans=0;
     rep
     {
         cin>>a[i]>>p[i];
-        x=min(x,p[i]);
-        ans+= a[i]*x;
     }
-    
+    ll dp[n]={0};
+    ll k=0;
+    dp[0]=a[0];
+    fe(i,1,n-1)
+    {
+        if(p[i]<p[k])
+        {
+            k=i;
+
+        }
+        dp[k]+=a[i];
+    }
+    ll ans=0;
+    rep
+    {
+        ans+= dp[i]*p[i];
+    }
     cout<<ans<<endl;
 
 
