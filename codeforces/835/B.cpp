@@ -117,14 +117,15 @@ static inline void amin(T &x, U y)          // Same as min_val = min (min_val,va
     if (y < x)                              //maximum = amax(max_val, val);
         x = y;                              //minimum = amin (min_val, val);
 }
-//....................................................................................//
+
+// call by reference is used in x
 template<typename T, typename U>
 static inline void amax(T &x, U y)
 {
     if (x < y)
         x = y;
 }
-//....................................................................................//
+
 ll power(ll x,ll y)
 {
 	if (y == 0)
@@ -135,8 +136,7 @@ ll power(ll x,ll y)
 	return (y%2 == 0)? p : (x * p) % MOD;
 }
 //....................................................................................//
-template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
-template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
+
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 void solve()
 {
@@ -144,14 +144,16 @@ void solve()
     ll k;
     string s;
     cin>>k>>s;
+
     ll n= s.size();
+    ll h[10]={0};
     ll sum=0;
     f(i,0,n)
     {
         ll x = s[i] -48;
+        h[x]++;
         sum+= x;
     }
-    sort(all(s));
     if(sum>=k)
     {
         cout<<0<<endl;
@@ -159,16 +161,19 @@ void solve()
     else
     {
         ll ans=0;
-        fe(i,0,n-1)
+        fe(i,0,9)
         {
-            if(sum>=k)
+            fe(j,1,h[i])
             {
-                break;
-            }
-            else if(sum<k)
-            {
-                ans++;
-                sum+= (9-(s[i]-48));
+                if(sum>=k)
+                {
+                    break;
+                }
+                else if(sum<k)
+                {
+                    ans++;
+                    sum+= 9-i;
+                }
             }
         }
         cout<<ans<<endl;
