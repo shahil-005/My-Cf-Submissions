@@ -140,17 +140,20 @@ template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(a
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 void solve()
 {
-    int mn = 999;
-    int a , p;
-    int n;
-    int ans=0;
-    scanf("%d" , &n);
-    while(n--){
-        scanf("%d %d" , &a , &p);
-        mn = min(mn , p);
-        ans += mn * a;
+
+    ll n;
+    cin>>n;
+    ll a[n],p[n];
+    ll x=INT_MAX;
+    ll ans=0;
+    rep
+    {
+        cin>>a[i]>>p[i];
+        x=min(x,p[i]);
+        ans+= a[i]*x;
     }
-    printf("%d\n" , ans);
+    
+    cout<<ans<<endl;
 
 
 }
