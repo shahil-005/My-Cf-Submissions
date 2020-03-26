@@ -138,13 +138,12 @@ ll power(ll x,ll y)
 template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-int mn = 999;
+void solve()
+{
+    int mn = 999;
     int a , p;
     int n;
     int ans=0;
-void solve()
-{
-    
     scanf("%d" , &n);
     while(n--){
         scanf("%d %d" , &a , &p);
