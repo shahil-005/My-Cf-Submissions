@@ -155,24 +155,26 @@ void solve()
     string s;
     cin>>s;
     ll n=s.size();
+    string ans="";
     f(i,0,n)
     {
         if(s[i]=='.')
         {
-            cout<<0;
+            ans+='0';
         }
-        else if(s[i+1]=='.')
+        else if(s[i]=='-'&&s[i+1]=='.')
         {
-            cout<<1;
+            ans+='1';
             i++;
         }
-        else if(s[i+1]=='-')
+        else if(s[i]=='-'&& s[i+1]=='-')
         {
-            cout<<2;
+            ans+='2';
             i++;
         }
 
     }
+    cout<<ans;
 
 
 
