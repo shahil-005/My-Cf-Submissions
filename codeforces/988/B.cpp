@@ -150,7 +150,7 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-bool comp(string a,string b)
+bool comp(string &a,string &b)
 {
     int sz1 =a.size();
 	int sz2 =b.size();
@@ -159,7 +159,7 @@ bool comp(string a,string b)
     else
         return a<b;
 }
-bool check(string a,string b)
+bool check(string &a,string &b)
 {
     if(b.find(a)==string::npos)
     {
