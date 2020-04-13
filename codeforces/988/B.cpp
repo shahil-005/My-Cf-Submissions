@@ -150,22 +150,29 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-bool comp(string &a,string &b)
+bool comp(string a,string b)
 {
-    int sz1 =a.size();
-	int sz2 =b.size();
-	if(sz1!=sz2)
-		return sz1<sz2;
-    else
-        return a<b;
+    return(a.size()<b.size());
 }
-bool check(string &a,string &b)
+int isSubstring(string s1, string s2)
 {
-    if(b.find(a)==string::npos)
-    {
-        return 0;
+    int M = s1.length();
+    int N = s2.length();
+
+    /* A loop to slide pat[] one by one */
+    for (int i = 0; i <= N - M; i++) {
+        int j;
+
+        /* For current index i, check for pattern match */
+        for (j = 0; j < M; j++)
+            if (s2[i + j] != s1[j])
+                break;
+
+        if (j == M)
+            return 1;
     }
-    return 1;
+
+    return -1;
 }
 void solve()
 {
@@ -178,10 +185,22 @@ void solve()
     }
     sort(s,s+n,comp);
     ll flag=0;
-    fe(i,0,n-2)
+    fe(i,1,n-1)
     {
-        ll x = check(s[i],s[i+1]);
-        if(x==0)
+        ll c=0;
+        fe(j,0,i-1)
+        {
+            ll res = isSubstring(s[j],s[i]);
+            if(res == 1)
+            {
+                c++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(c != i)
         {
             flag=1;
             break;
@@ -199,6 +218,7 @@ void solve()
             cout<<s[i]<<endl;
         }
     }
+
 
 
 
