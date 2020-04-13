@@ -150,34 +150,46 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+int linearSearch(ll arr[],ll n, ll x)
+{
+    f(i,0,n)
+    {
+        if(arr[i]==x)
+            return i;
+    }
+}
 void solve()
 {
     ll n,k;
     cin>>n>>k;
-    ll a[101],b[101] = {0};
-    vl v;
-    fe(i,1,n)
+    ll a[n];
+    mll m;
+    f(i,0,n)
     {
         cin>>a[i];
-        if(b[a[i]] == 0)
-        {
-            v.pb(i);
-            b[a[i]] =1;
-        }
+        m[a[i]]++;
     }
-    if(v.size()<k)
+    if(m.size() >=k)
     {
-        cout<<"NO";
+        //cout<<m.size()<<endl;
+        cout<<"YES"<<endl;
+        auto(m)
+        {
+            if(k>0)
+            {
+                ll y = it.first;
+                //cout<<y << " ";
+                ll x = linearSearch(a,n,y);
+                //cout<<x<<endl;
+                cout<<x+1<<" ";
+                k--;
+            }
+        }
     }
     else
     {
-        cout<<"YES"<<endl;
-        f(i,0,k)
-        {
-            cout<<v[i]<<" ";
-        }
+        cout<<"NO"<<endl;
     }
-
 
 
 
@@ -198,7 +210,7 @@ int main ()
     oTC(t)
     {
         solve();
-        cout<<endl;
+        //cout<<endl;
     }
     return 0;
 }
