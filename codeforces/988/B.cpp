@@ -150,24 +150,38 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+bool comp(string a,string b)
+{
+    int sz1 =a.size();
+	int sz2 =b.size();
+	if(sz1!=sz2)
+		return sz1<sz2;
+    else
+        return a<b;
+}
+bool check(string a,string b)
+{
+    if(b.find(a)==string::npos)
+    {
+        return 0;
+    }
+    return 1;
+}
 void solve()
 {
     ll n;
     cin>>n;
-    vector<pair<ll,string> > v;
+    string s[n];
     f(i,0,n)
     {
-        string s;
-        cin>>s;
-        v.pb({s.size(),s});
+        cin>>s[i];
     }
-    sort(all(v));
+    sort(s,s+n,comp);
     ll flag=0;
-    f(i,0,n-1)
+    fe(i,0,n-2)
     {
-        string a = v[i].second;
-        string b = v[i+1].second;
-        if(b.find(a) == string::npos)
+        ll x = check(s[i],s[i+1]);
+        if(x==0)
         {
             flag=1;
             break;
@@ -180,9 +194,9 @@ void solve()
     else
     {
         cout<<"YES"<<endl;
-        auto(v)
+        f(i,0,n)
         {
-            cout<<it.second<<endl;
+            cout<<s[i]<<endl;
         }
     }
 
