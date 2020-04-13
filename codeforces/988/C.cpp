@@ -36,8 +36,6 @@ using namespace std;
 #define vrsort(v)   reverse(all(v))
 #define Max(x,y,z)  max(x,max(y,z))
 #define Min(x,y,z)  min(x,min(y,z))
-#define F           first
-#define S           second
 //#define ps(x,y)     fixed<<setprecision(y)<<x
 //#define ps(x)       std::cout << std::fixed; std::cout << std::setprecision(x);
 #define clz(a)      __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
@@ -153,57 +151,47 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-set<ll> s;
-map<ll ,pair<ll,ll> > m;
-
-
 void solve()
 {
     ll k;
     cin>>k;
-    ll flag=0;
-    fe(i,1,k)
+    vector<pair<ll, pair<ll, ll>>> v;
+    //vector<pair<int, pair<int, int>>> a;
+    f(i,0,k)
     {
         ll n;
         cin>>n;
-        ll a[n];
-        ll sum =0;
-        fe(j,1,n)
+        vl a(n);
+        f(j,0,n)
         {
             cin>>a[j];
-            sum+= a[j];
         }
-        fe(j,1,n)
+        ll sum = accumulate(all(a),0);
+        f(j,0,n)
         {
-            if(s.find(sum-a[j])!=s.end())
-            {
-                cout<<"YES"<<endl;
-                cout<<m[sum-a[j]].F<<" "<<m[sum-a[j]].S<<endl;
-                cout<<i<< " "<<j<<endl;
-                flag=1;
-                break;
-            }
+            v.pb(mp(sum-a[j], mp(i,j)));
         }
-        fe(j,1,n)
+    }
+    sort(all(v));
+    ll flag=0;
+    ll y = v.size();
+    /*fe(i,0,y-1)
+    {
+        cout<< "("<<v[i].first << " , " << v[i].second.first << " , "<<v[i].second.second << ")" <<endl;
+    }*/
+    fe(i,0,y-2)
+    {
+        if(v[i].first == v[i+1].first && v[i].second.first != v[i+1].second.first)
         {
-            s.insert(sum-a[j]);
-            m[sum-a[j]] = {i,j};
-        }
-        
-        if(flag==1)
-        {
+            flag=1;
+            cout << "YES"<<endl;
+            cout<< v[i].second.first +1<< " " << v[i].second.second +1 <<endl;
+            cout<< v[i+1].second.first +1<< " " << v[i+1].second.second +1 <<endl;
             break;
         }
-
     }
     if(flag==0)
-    {
-        cout<<"NO"<<endl;
-    }
-
-
+        cout<<"NO";
 
 
 
