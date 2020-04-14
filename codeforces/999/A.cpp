@@ -163,23 +163,33 @@ void solve()
 
     ll n,k;
     cin>>n>>k;
-    deque<ll> d;
+    ll a[n];
     f(i,0,n)
     {
-        ll x;
-        cin>>x;
-        d.pb(x);
+        cin>>a[i];
     }
-    while(d.size() > 0 && d.front() <= k)
+    ll vis[n] = {0};
+    f(i,0,n)
     {
-        d.pop_front();
+        if(a[i]>k)
+            break;
+        
+        vis[i] =1;
     }
-    while(d.size() > 0 && d.back() <= k)
+    rfe(i,n-1,0)
     {
-        d.pop_back();
+        if(a[i]>k)
+            break;
+        
+        vis[i] =1;
     }
-    cout<<n-d.size()<<endl;
-    
+    ll ans=0;
+    f(i,0,n)
+    {
+        if(vis[i])
+            ans++;
+    }
+    cout<<ans<<endl;
 
 
 
