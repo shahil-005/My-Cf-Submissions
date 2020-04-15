@@ -156,46 +156,100 @@ template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(a
 
 void solve()
 {
-        ll a,b,x;
-        cin>>a>>b>>x;
-        ll f=0;
-        if(a<b){
-               f=1; 
-        }
-        while(x--)
-        {
-                cout<<f;
-                if(f==0) a--;
-                else b--;
-                f=!f;
-        }
-        if(f==1)
-        {
-                while(a--)
-                {
-                        cout<<0;
-                }
-                while(b--)
-                {
-                        cout<<1;
-                }
-        }
-        else
-        {
-                while(b--)
-                {
-                        cout<<1;
-                }
-                while(a--)
-                {
-                        cout<<0;
-                }
-        }
-        
-
-
-
-
+   ll a,b,x;
+   cin>>a>>b>>x;
+   ll n=a+b;
+   if(x==1)
+   {
+       while(a--)
+       {
+           cout<<0;
+       }
+       while(b--)
+       {
+           cout<<1;
+       }
+   }
+   else if(a>=b)
+   {
+       ll f=0;
+       while(x>0)
+       {
+           if(f==0)
+           {
+               a--;
+           }
+           if(f==1)
+           {
+               b--;
+           }
+           cout<<f;
+           f=!f;
+           x--;
+       }
+       if(f==1)
+       {
+           while(a--)
+           {
+               cout<<0;
+           }
+           while(b--)
+           {
+               cout<<1;
+           }
+       }
+       if(f==0)
+       {
+           while(b--)
+           {
+               cout<<1;
+           }
+           while(a--)
+           {
+               cout<<0;
+           }
+       }
+   }
+   else if(b>a)
+   {
+       ll f=1;
+       while(x>0)
+       {
+           if(f==0)
+           {
+               a--;
+           }
+           if(f==1)
+           {
+               b--;
+           }
+           cout<<f;
+           f=!f;
+           x--;
+       }
+       if(f==1)
+       {
+           while(a--)
+           {
+               cout<<0;
+           }
+           while(b--)
+           {
+               cout<<1;
+           }
+       }
+       if(f==0)
+       {
+           while(b--)
+           {
+               cout<<1;
+           }
+           while(a--)
+           {
+               cout<<0;
+           }
+       }
+   }
 
 
 
