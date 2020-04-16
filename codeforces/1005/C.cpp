@@ -153,7 +153,21 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+int check(ll n)
+{
+   if(n==0 || n==1)
+   return 0;
 
+   if(ceil(log2(n)) == floor(log2(n))){
+      return 1;
+   }
+   else{
+        return 0;
+   }
+
+
+
+}
 map<ll,ll> m;
 map<ll,ll> k;
 void solve()
@@ -172,30 +186,25 @@ void solve()
         {
                 b[i] = b[i-1] * 2;
         }
-        auto(m)
+        f(i,0,n)
         {
-                if(k[it.F] !=0)
+                fe(j,1,30)
                 {
-                        fe(j,1,30)
+                        ll x = b[j] - a[i];
+                        if(x>0 && ((x == a[i] && m[x]>=2) || (x!=a[i] && m[x]>=1)))
                         {
-                                ll x = b[j] - it.F;
-                                if(x>0 && ((x == it.F && it.S>=2) || (x !=it.F && m[x]>=1)))
-                                {
-                                        k[it.F] =0;
-                                        k[x] =0;
-                                        //cout<<it.F << " " << x <<endl;
-                                }
+                                k[a[i]] =0;
+                                k[x] =0;
                         }
                 }
         }
         ll ans=0;
-        for(auto &itt:k)
+        auto(k)
         {
-             //cout<<itt.F<<" " <<itt.S<<endl;
-             ans+=itt.S;
+             ans+=it.S;
         }
         cout<<ans<<endl;
-
+        
 
 
 
