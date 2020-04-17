@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF77033714": {
+    "contest_id": 1006,
+    "language": "GNU C++17",
+    "path": "codeforces/1006/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Adjacent Replacements",
+    "problem_url": "https://codeforces.com/contest/1006/problem/A",
+    "submission_id": "CF77033714",
+    "submission_url": "https://codeforces.com/contest/1006/submission/77033714",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Apr/17/2020 09:53"
+  },
   "CF77033920": {
     "contest_id": 1006,
     "language": "GNU C++17",
