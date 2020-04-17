@@ -154,43 +154,45 @@ template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(a
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-vector<pair<ll,ll> > a;
-vl v;
+
 void solve()
 {
         ll n,k;
         cin>>n>>k;
-        fe(i,1,n)
+        ll a[n];
+        ll b[n];
+        f(i,0,n)
         {
-                ll x;
-                cin>>x;
-                a.pb({x,i});
+                cin>>a[i];
+                b[i] = a[i];
         }
-
-        sort(all(a));
-        reverse(all(a));
-        
-        v.pb(0);
+        sort(b,b+n,greater<ll>());
+        map<ll,ll> m;
         ll sum=0;
         f(i,0,k)
         {
-                sum+= a[i].F;
-                v.pb(a[i].S);
+                m[b[i]]++;
+                sum+= b[i];
         }
-        sort(all(v));
         cout<<sum<<endl;
-        fe(i,1,k)
+        ll x=-1;
+        ll c=1;
+        f(i,0,n)
         {
-                if(i!=k){
-                        cout<<v[i]-v[i-1] <<" ";  
+                if(m[a[i]] > 0 && c<k && k!=1)
+                {
+                        cout<< i-x<<" ";
+                        x=i;
+                        m[a[i]]--;
+                        c++;
                 }
-                else{
-                        cout<<n-v[i-1];
+                else if(m[a[i]] > 0 && c==k)
+                {
+                        cout<< n-x-1;
+                        c++;
                 }
-                
         }
-        
-        
+
 
 
 
