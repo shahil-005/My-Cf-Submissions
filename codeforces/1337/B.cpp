@@ -1,217 +1,210 @@
-
-// Problem: B. Kana and Dragon Quest game
-// Contest: Codeforces - Codeforces Round #635 (Div. 2)
-// URL: https://codeforces.com/contest/1337/problem/B
-// Memory Limit: 256 MB
-// Time Limit: 1000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 #include <bits/stdc++.h>
+#include <climits>
+//#include <boost/math/common_factor.hpp>
 using namespace std;
-#pragma GCC optimize("-Ofast")
-#pragma GCC optimize("trapv")
-//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-//#pragma GCC optimize("-O2")
-//#pragma GCC target("AVX")
-#define fastIO                  ios_base::sync_with_stdio(false);cin.tie(NULL);
-#define endl                    '\n'
-#define rep()                   for(LL i = 0 ; i < n ; i++)
-#define f(i,s,n)                for(LL i = s ; i < n ; i++)
-#define fe(i,s,n)               for(LL i = s ; i <= n ; i++)
-#define rfe(i,s,n)              for(LL i = s ; i >= n ; i--)
-#define each(it,x)		for(auto &it:x)
-#define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
-#define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
-#define TCs(x)                  LL x; cin>>x; while(x--)
-#define TC(x)                   LL x=1; while(x--)
-#define google(x)		cout<<"Case #"<<x<<": ";
-#define mp                      make_pair
-#define pb                      push_back
-#define ff                      first
-#define ss                      second
-#define all(v)                  v.begin(), v.end()
-#define mem(a,x)                memset(a,x,sizeof(a))
-#define Max(x,y,z)              max(x,max(y,z))
-#define Min(x,y,z)              min(x,min(y,z))
-#define imin                    INT_MIN
-#define imax                    INT_MAX
-#define sz(x)       		(LL)x.size()
-#define ps(x)                   std::cout << std::fixed; std::cout << std::setprecision(x);
-#define clz(a)                  __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
-#define ctz(a)                  __builtin_ctz(a) // count trailing zeroes
-#define popc(a)                 __builtin_popcount(a) // count set bits (for ints only diff for ll)
-#define d1(x)                   cout<<#x<<": "<<x<<endl
-#define d2(x, y)                cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
-#define d3(x, y, z)             cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
-#define d4(a, b, c, d)          cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<endl
-#define d5(a, b, c, d, e)       cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<endl
-#define d6(a, b, c, d, e, f)    cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<" | "<<#f<<": "<<f<<endl
-#define c(a,n);                 LL a[n];f(i,0,n){cin>>a[i];}
-#define ce(a,n);                LL a[n+1];fe(i,1,n){cin>>a[i];}
 
-typedef string                  S;
-typedef long long               LL;
-typedef long double             LD;
-typedef unsigned long long      ULL;
-typedef vector<long long>       VL;
-typedef vector<VL>              VVL;
-typedef vector<string>          VS;
-typedef vector<char>            VC;
-typedef pair<LL,LL>             PLL;
-typedef pair<string,LL>         PSL;
-typedef pair<LL,string>         PLS;
-typedef pair<char,LL>           PCL;
-typedef pair<LL,char>           PLC;
-typedef pair<string,string>     PSS;
-typedef pair<char,char>         PCC;
-typedef vector<PLL>             VPLL;
-typedef vector<PSL>             VPSL;
-typedef vector<PLS>             VPLS;
-typedef vector<PCL>             VPCL;
-typedef vector<PLC>             VPLC;
-typedef vector<PSS>             VPSS;
-typedef vector<PCC>             VPCC;
-typedef map<LL,LL>              MLL;
-typedef map<string,LL>          MSL;
-typedef map<char,LL>            MCL;
-typedef map<char,char>          MCC;
-typedef set<LL>                 SL;
-typedef set<string>             SS;
-typedef set<char>               SC;
-typedef priority_queue<LL>	PQLL;
-typedef priority_queue<LL,VL,greater<LL>>	mPQLL;
+#define endl        '\n'
+//#define IOS       ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define c0(x)       cout<<(x)<<" "
+#define c1(x)       cout<<(x)<<endl
+#define rep         for(ll i = 0 ; i < n ; i++)
+#define f(i,s,n)    for(ll i = s ; i < n ; i++)
+#define fe(i,s,n)   for(ll i = s ; i <= n ; i++)
+#define rfe(i,s,n)  for(ll i = s ; i >= n ; i--)
+#define TC(x)       ll x; cin>>x; while(x--)
+#define oTC(x)      ll x=1; while(x--)
+#define f2(it,v)    for(it = v.begin(); it != v.end(); ++it)
+#define auto(m)     for(auto &it:m)
+#define ip(n,a)     ll n;cin>>n;ll a[n];rep{cin>>a[i];}
+#define ip2(n,a,b)  ll n;cin>>n;ll a[n];ll b[n];rep{cin>>a[i];} rep{cin>>b[i];}
+//#define ip(n,a)   ll n;cin>>n;ll a[n];rep{cin>>a[i];}
+#define op(n,a)     f(i,0,n){cout<<a[i]<<" ";}
+#define i2p(n,k,a)  ll n,k;cin>>n>>k;ll a[n];rep{cin>>a[i];}
+//#define ll        long long
+//#define ld        long double
+//#define vl        vector<ll>
+#define mll         map<ll, ll>
+#define mcl         map<char, ll>
+#define msl         map<string, ll>
+#define mp          make_pair
+#define pii         pair<ll, ll>
+#define pb          push_back
+#define ff          first
+#define ss          second
+#define all(v)      v.begin(), v.end()
+#define vsort(v)    sort(all(v))
+#define vrsort(v)   reverse(all(v))
+#define Max(x,y,z)  max(x,max(y,z))
+#define Min(x,y,z)  min(x,min(y,z))
+#define F           first
+#define S           second
+//#define ps(x,y)     fixed<<setprecision(y)<<x
+//#define ps(x)       std::cout << std::fixed; std::cout << std::setprecision(x);
+#define clz(a)      __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
+#define ctz(a)      __builtin_ctz(a) // count trailing zeroes
+#define popc(a)     __builtin_popcount(a) // count set bits (for ints only diff for ll)
+#define GCD(A,B)    __gcd(A,B)
+//#define LCM(A,B)    boost::math::lcm(A,B)
+//#define COUNT(v,x)    count(all(v),x)
+//#define COUNT(v,x)    count(all(s),'x')
 
-LL mxm() {return LLONG_MIN;}
-template<typename... Args>
-LL mxm(LL a, Args... args) { return max(a,mxm(args...)); }
- 
-LL mnm() {return LLONG_MAX;}
-template<typename... Args>
-LL mnm(LL a, Args... args) { return min(a,mnm(args...)); }
- 
-template<class T> ostream& operator<<(ostream& os,vector<T> V){
-	os<<"[ ";for(auto v:V)os<<v<<" ";return os<<"]";
-}
-template<class L,class R> ostream& operator<<(ostream& os,pair<L,R> P){
-	return os<<"("<<P.first<<","<<P.second<<")";
-}
+//Typedefs:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+typedef long long ll;
+typedef long double ld;
+//typedef pair<int,int> pii;
+typedef pair<long long,long long> pll;
+typedef pair<string,string> pss;
+typedef vector<int> vi;
+typedef vector<long long> vl;
+typedef pair<ll, ll> pairs;
+//typedef vector<pair<ll, pair<ll, ll>>> vppl;
 
-#define TRACE
-#ifdef TRACE
-#define trace(...) __f(#__VA_ARGS__,__VA_ARGS__)
-template<typename Arg1>
-void __f(const char* name,Arg1&& arg1){
-	cout<<name<<" : "<<arg1<<endl;
-}
-template <typename Arg1,typename... Args>
-void __f(const char* names,Arg1&& arg1,Args&&... args){
-	const char* comma=strchr(names+1,',');cout.write(names,comma-names)<<" : "<<arg1<<" | ";__f(comma+1,args...);
-}
-#else
-#define trace(...) 1
-#endif
-bool isprime(LL n) 	//O(sqrt(n)) approach
-{ 
-    if(n <= 1){return false;} 
-    if(n <= 3){return true; }
-    if(n%2 == 0 || n%3 == 0){return false;} 
-    for (int i=5; i*i<=n; i=i+6){
-        if(n%i == 0 || n%(i+2) == 0){
-        	return false;
-        }  
-    }
-    return true; 
-}
-bool isprimeMR(LL n)	//Miller-Robin O(logn) approach
-{
-    if(n<2){return false;}
-    for(LL x:{2,3,5,7,11,13,17,19,23,29,31,37})
-    {
-        if(n==x)
-            return true;
-        bool flag=true;
-        LL r=1;
-        LL t=1;
-        while(r<=((n-1)>>__builtin_ctzll(n-1)))
-        {
-            if(r&((n-1)>>__builtin_ctzll(n-1)))
-                t=(t*x)%n;
-            x=(x*x)%n;
-            r<<=1;
-        }
-        if(t==1||t==n-1)
-            flag=false;
-        for(r=0;r<__builtin_ctzll(n-1);r++)
-        {
-            t=(t*t)%n;
-            if(t==n-1)
-                flag=false;
-        }
-        if(flag)
-            return false;
-    }
-    return true;
-} 
-bool prime[1000001];    
-void sieve() 
-{
-    LL n=1000000;
-    memset(prime, true, sizeof(prime)); 
-    prime[1]=false;
-    for (LL p=2; p*p<=n; p++) 
-    { 
-        if (prime[p] == true) 
-        { 
-            for (LL i=p*p; i<=n; i += p) 
-                prime[i] = false; 
-        } 
-    } 
-}
-LL power(LL x,LL y){if(y == 0){return 1;} LL p = power(x, y/2); p = (p * p); return (y%2 == 0)? p : (x * p);}  
-LL powm(LL x,LL y,LL m){LL ans=1,r=1;x%=m;while(r>0&&r<=y){if(r&y){ans*=x;ans%=m;} r<<=1;x*=x;x%=m;}return ans;}   
-LL gcd(LL a,LL b) { if (b == 0){return a;} return gcd(b, a % b);}  
-LL lcm(LL a,LL b){LL lar = max(a, b);LL small = min(a, b);for (LL i = lar; ; i += lar) { if (i % small == 0){ return i;} } }
-bool sortbysec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ss<b.ss); }
-bool sortbydec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ff>b.ff); }
-void dex(int a){ if(a==1){cout<<"YES";} if(a==2){cout<<"NO";} if(a==3){cout<<"Yes";} if(a==4){cout<<"No";}}
-LL mod(LL n,LL MOD){
-	n=(n+MOD)%MOD;
-	return n;
-}
-const long long N=(long long)(1e5+1);
+const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
-const long long INF=(long long)(2e18);
-
-void solve(LL tc)
+const long long INIT=(long long)(1e6+1);
+//Functions:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+inline string IntToString(ll a)
 {
-	//When x<=20 ,applying op1 will increase the value of x
-	//when x>20 & x<=40,applying op1 will lead to x=20 in some operations
-	//So just try to use op2 as much as possible so that it reaches value 20
-	LL x,n,m;
-	cin>>x>>n>>m;
-	while(n--){
-		if(x<=20){
-			break;
-		}
-		x=(x/2)+10;
-		//d1(x);
-	}
-	LL y=(x+10-1)/10;
-	if(y<=m){
-		cout<<"YES"<<endl;
-	}
-	else{
-		cout<<"NO"<<endl;
-	}
+    char x[100];
+    sprintf(x, "%lld", a);
+    string s = x;
+    return s;
 }
-int main()
+//....................................................................................//
+inline ll StringToInt(string a)
 {
-        fastIO
-        LL cnt=1;
-        TCs(t){
-        	//google(cnt);
-                solve(cnt);
-                cnt++;
+    char x[100];
+    ll res;
+    strcpy(x, a.c_str());
+    sscanf(x, "%lld", &res);
+    return res;
+}
+//....................................................................................//
+inline string GetString(void)
+{
+    char x[1000005];
+    scanf("%s", x);
+    string s = x;
+    return s;
+}
+//....................................................................................//
+inline string uppercase(string s)
+{
+    int n = s.size();
+    f(i,0, n)
+    if (s[i] >= 'a' && s[i] <= 'z')
+        s[i] = s[i] - 'a' + 'A';
+    return s;
+}
+//....................................................................................//
+inline string lowercase(string s)
+{
+    int n = s.size();
+    f(i,0,n)
+    if (s[i] >= 'A' && s[i] <= 'Z')
+        s[i] = s[i] - 'A' + 'a';
+    return s;
+}
+//....................................................................................//
+inline void OPEN(string s)
+{
+#ifndef TESTING
+    freopen((s + ".in").c_str(), "r", stdin);
+    freopen((s + ".out").c_str(), "w", stdout);
+#endif
+}
+//....................................................................................//
+
+template<typename T, typename U>            // Same as max_val = max (max_val, val)
+static inline void amin(T &x, U y)          // Same as min_val = min (min_val,val)
+{
+    if (y < x)                              //maximum = amax(max_val, val);
+        x = y;                              //minimum = amin (min_val, val);
+}
+//....................................................................................//
+template<typename T, typename U>
+static inline void amax(T &x, U y)
+{
+    if (x < y)
+        x = y;
+}
+//....................................................................................//
+ll power(ll x,ll y)
+{
+    if (y == 0)
+        return 1;
+    ll p = power(x, y/2) % MOD;
+    p = (p * p) % MOD;
+
+    return (y%2 == 0)? p : (x * p) % MOD;
+}
+//....................................................................................//
+int lcm(ll a, ll b)
+{
+    ll lar = max(a, b);
+    ll small = min(a, b);
+    for (ll i = lar; ; i += lar) {
+        if (i % small == 0)
+            return i;
+    }
+}
+//....................................................................................//
+template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
+template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
+//int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
+//Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ll m[100][100];
+ll v[100][100];
+void solve()
+{
+
+        ll x,n,m;
+        cin>>x>>n>>m;
+        while(n>0 && x>20)
+        {
+                x = x/2 + 10;
+                n--;
         }
-        return 0;
+        while(m>0)
+        {
+                x = x-10;
+                m--;
+        }
+        if(x>0)
+        {
+                cout<<"NO"<<endl;
+        }
+        else
+        {
+                cout<<"YES"<<endl;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+int main ()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    TC(t)
+    {
+        solve();
+    }
+    return 0;
 }
