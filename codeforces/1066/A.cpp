@@ -158,7 +158,11 @@ void solve()
 {
         ll n,v,l,r;
         cin>>n>>v>>l>>r;
-        ll ans = (n/v)-(r/v)+((l-1)/v);
+        ll ans = n/v;
+        ans -= ((r/v)-(l/v));
+        if(l%v==0){
+                ans--;
+        }
         cout<<ans<<endl;
 
 
