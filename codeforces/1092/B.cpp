@@ -8,7 +8,6 @@ using namespace std;
 #define c1(x)       cout<<(x)<<endl
 #define rep         for(ll i = 0 ; i < n ; i++)
 #define f(i,s,n)    for(ll i = s ; i < n ; i++)
-#define fxx(i,s,n,xx) for(ll i = s ; i < n ; i+=xx)
 #define fe(i,s,n)   for(ll i = s ; i <= n ; i++)
 #define rfe(i,s,n)  for(ll i = s ; i >= n ; i--)
 #define TCs(x)      ll x; cin>>x; while(x--)
@@ -177,10 +176,12 @@ void solve()
         ip(n,a);
         sort(a,a+n);
         ll ans=0;
-        fxx(i,0,n,2)
+        f(i,0,n)
         {
-                ans+= a[i+1]-a[i];
-                
+                if(i%2 == 0)
+                {
+                        ans+= a[i+1]-a[i];
+                }
         }
         cout<<ans<<endl;
 
