@@ -175,10 +175,22 @@ void solve()
 {
         ll a,b;
         cin>>a>>b;
-        ll d=abs(a-b);
-        ll x=d/2;
-        ll y=d-x;
-        cout<< (x*(x+1))/2 + (y*(y+1))/2;
+        ll x=abs(a-b);
+        ll i=1;
+        ll ans=0;
+        while(x>0)
+        {
+                x--;
+                ans+=i;
+                if(x==0){break;}
+                else{
+                        x--;
+                        ans+=i;
+                }
+                i++;
+        }
+        cout<<ans<<endl;
+        
         
 
 
