@@ -184,19 +184,30 @@ void solve()
 		cin>>a[i];
 		sum+=a[i];
 	}
+	
+	//sum=accumulate(a,a+n,sum);
 	vector<pair<ll,ll> > v(n);
 	ll s2um=0;
-	ll ans=0;
 	f(i,0,n)
 	{
 		v[i].ss=sum-s2um;
 		s2um+=a[i];
 		v[i].ff=s2um;
-		if(i>0 && v[i-1].ff == v[i].ss){
+		//v[i].ff=accumulate(a,a+i+1,sum);
+		//v[i].ss=accumulate(a+i,a+n,sum);
+	}
+	/*f(i,0,n)
+	{
+		cout<<i<< " "<< v[i].ff<< " "<<v[i].ss<<endl;
+		//trace3(i,v[i].ff,v[i].ss);
+	}*/
+	ll ans=0;
+	fe(i,0,n-2)
+	{
+		if(v[i].ff == v[i+1].ss){
 			ans++;
 		}
 	}
-	
 	cout<<ans;
 
 
