@@ -1,170 +1,294 @@
-
-// Problem: B. Same Parity Summands
-// Contest: Codeforces - Codeforces Round #640 (Div. 4)
-// URL: https://codeforces.com/contest/1352/problem/B
-// Memory Limit: 256 MB
-// Time Limit: 1000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
-//g++ -Wall
-//g++ -static -DONLINE_JUDGE -Wl,--stack=268435456 -O2 -std=c++17
 #include <bits/stdc++.h>
+#include <climits>
 using namespace std;
-#pragma GCC optimize("-Ofast")
-#pragma GCC optimize("trapv")
-//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-//#pragma GCC optimize("-O2")
-//#pragma GCC target("AVX")
-#define fastIO                  ios_base::sync_with_stdio(false);cin.tie(NULL);
+
 #define endl                    '\n'
-#define rep()                   for(LL i = 0 ; i < n ; i++)
-#define f(i,s,n)                for(LL i = s ; i < n ; i++)
-#define fe(i,s,n)               for(LL i = s ; i <= n ; i++)
-#define rfe(i,s,n)              for(LL i = s ; i >= n ; i--)
-#define each(it,x)		for(auto &it:x)
+//#define IOS                   ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define rep                     for(ll i = 0 ; i < n ; i++)
+#define f(i,s,n)                for(ll i = s ; i < n ; i++)
+#define fe(i,s,n)               for(ll i = s ; i <= n ; i++)
+#define rfe(i,s,n)              for(ll i = s ; i >= n ; i--)
+#define TCs(x)                  ll x; cin>>x; while(x--)
+#define TC(x)                   ll x=1; while(x--)
 #define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
 #define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
-#define TCs(x)                  LL x; cin>>x; while(x--)
-#define TC(x)                   LL x=1; while(x--)
-#define google(x)		cout<<"Case #"<<x<<": ";
+#define auto(m)                 for(auto &it:m)
+#define ip(n,a)                 ll n;cin>>n;ll a[n];rep{cin>>a[i];}
+#define ip2(n,a,b)              ll n;cin>>n;ll a[n];ll b[n];rep{cin>>a[i];} rep{cin>>b[i];}
+//#define ip(n,a)               ll n;cin>>n;ll a[n];rep{cin>>a[i];}
+#define op(n,a)                 f(i,0,n){cout<<a[i]<<" ";}
+#define i2p(n,k,a)              ll n,k;cin>>n>>k;ll a[n];rep{cin>>a[i];}
+//#define ll                    long long
+//#define ld                    long double
+//#define vl                    vector<ll>
+#define mll                     map<ll, ll>
+#define mcl                     map<char, ll>
+#define msl                     map<string, ll>
 #define mp                      make_pair
+#define pii                     pair<ll, ll>
 #define pb                      push_back
 #define ff                      first
 #define ss                      second
 #define all(v)                  v.begin(), v.end()
-#define mem(a,x)                memset(a,x,sizeof(a))
+#define vsort(v)                sort(all(v))
+#define vrsort(v)               reverse(all(v))
 #define Max(x,y,z)              max(x,max(y,z))
 #define Min(x,y,z)              min(x,min(y,z))
-#define imin                    INT_MIN
-#define imax                    INT_MAX
-#define sz(x)       		(LL)x.size()
-#define ps(x)                   std::cout << std::fixed; std::cout << std::setprecision(x);
+//#define ps(x,y)               fixed<<setprecision(y)<<x
+//#define ps(x)                 std::cout << std::fixed; std::cout << std::setprecision(x);
 #define clz(a)                  __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
 #define ctz(a)                  __builtin_ctz(a) // count trailing zeroes
+//#define ctz(a)                __builtin_ctzll(a)
 #define popc(a)                 __builtin_popcount(a) // count set bits (for ints only diff for ll)
-#define d1(x)                   cout<<#x<<": "<<x<<endl
-#define d2(x, y)                cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
-#define d3(x, y, z)             cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
-#define d4(a, b, c, d)          cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<endl
-#define d5(a, b, c, d, e)       cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<endl
-#define d6(a, b, c, d, e, f)    cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<" | "<<#f<<": "<<f<<endl
+#define GCD(A,B)                __gcd(A,B)
+//#define LCM(A,B)              boost::math::lcm(A,B)
+//#define COUNT(v,x)             count(all(v),x)
+//#define COUNT(v,x)             count(all(s),'x')
+#define trace1(x)                cerr<<#x<<": "<<x<<endl
+#define trace2(x, y)             cerr<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
+#define trace3(x, y, z)          cerr<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
+#define trace4(a, b, c, d)       cerr<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<endl
+#define trace5(a, b, c, d, e)    cerr<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<endl
+#define trace6(a, b, c, d, e, f) cerr<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<" | "<<#f<<": "<<f<<endl
 
-typedef string                  S;
-typedef long long               LL;
-typedef long double             LD;
-typedef unsigned long long      ULL;
-typedef vector<long long>       VL;
-typedef vector<VL>              VVL;
-typedef vector<string>          VS;
-typedef vector<char>            VC;
-typedef pair<LL,LL>             PLL;
-typedef pair<string,LL>         PSL;
-typedef pair<LL,string>         PLS;
-typedef pair<char,LL>           PCL;
-typedef pair<LL,char>           PLC;
-typedef pair<string,string>     PSS;
-typedef pair<char,char>         PCC;
-typedef vector<PLL>             VPLL;
-typedef vector<PSL>             VPSL;
-typedef vector<PLS>             VPLS;
-typedef vector<PCL>             VPCL;
-typedef vector<PLC>             VPLC;
-typedef vector<PSS>             VPSS;
-typedef vector<PCC>             VPCC;
-typedef map<LL,LL>              MLL;
-typedef map<string,LL>          MSL;
-typedef map<LL,string>          MLS;
-typedef map<char,LL>            MCL;
-typedef map<LL,char>            MLC;
-typedef map<char,char>          MCC;
-typedef map<string,string>      MSS;
-typedef set<LL>                 SL;
-typedef set<string>             SS;
-typedef set<char>               SC;
-typedef priority_queue<LL>	PQLL;
-typedef priority_queue<LL,VL,greater<LL>>	mPQLL;
+//Typedefs:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+typedef long long ll;
+typedef long double ld;
+//typedef pair<int,int> pii;
+typedef pair<long long,long long> pll;
+typedef pair<string,string> pss;
+typedef vector<int> vi;
+typedef vector<long long> vl;
+typedef pair<ll, ll> pairs;
+//typedef vector<pair<ll, pair<ll, ll>>> vppl;
 
-//Time
-#define debug(...) fprintf(stderr, __VA_ARGS__), fflush(stderr)
-
-#define time__(d) \
-    for ( \
-        auto blockTime = make_pair(chrono::high_resolution_clock::now(), true); \
-        blockTime.second; \
-        debug("%s: %lld ms\n", d, chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - blockTime.first).count()), blockTime.second = false \
-    )           
-// #define time__(d) for(long blockTime = 0; (blockTime == 0 ? (blockTime=clock()) != 0 : false); debug("%s time : %.4fs", d, (double)(clock() - blockTime) / CLOCKS_PER_SEC))
-
-//Functions
-LL power(LL x,LL y){if(y == 0){return 1;} LL p = power(x, y/2); p = (p * p); return (y%2 == 0)? p : (x * p);}  
-LL powm(LL x,LL y,LL m){LL ans=1,r=1;x%=m;while(r>0&&r<=y){if(r&y){ans*=x;ans%=m;} r<<=1;x*=x;x%=m;}return ans;}   
-LL gcd(LL a,LL b) { if (b == 0){return a;} return gcd(b, a % b);}  
-LL lcm(LL a,LL b){LL lar = max(a, b);LL small = min(a, b);for (LL i = lar; ; i += lar) { if (i % small == 0){ return i;} } }
-bool sortbysec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ss<b.ss); }
-bool sortbydec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ff>b.ff); }
-void dex(int a){ if(a==1){cout<<"YES";} if(a==2){cout<<"NO";} if(a==3){cout<<"Yes";} if(a==4){cout<<"No";}}
-//Use LLONG_MAX & LLONG_MIN
-const long long N=(long long)(1e5+1);
+const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
-const long long INF=(long long)(2e18);
-
-void solve(LL tc)
+const long long INIT=(long long)(1e6+1);
+//Functions:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+inline string IntToString(ll a)
 {
-	LL n,k;
-	cin>>n>>k;
-	if(n%2==0){
-		if(k<=n/2){
-			cout<<"YES"<<endl;
-			fe(i,1,k-1){
-				cout<<2<<" ";
-			}
-			cout<<n-(k-1)*2<<endl;
-		}
-		else{
-			if(k%2==0 && k<=n){
-				cout<<"YES"<<endl;
-				fe(i,1,k-1){
-					cout<<1<<" ";
-				}
-				cout<<n-(k-1)<<endl;
-			}
-			else{
-				cout<<"NO"<<endl;
-			}
-		}
-	}
-	else{
-		if(k%2==0){
-			cout<<"NO"<<endl;
-		}
-		else{
-			if(k<=n){
-				cout<<"YES"<<endl;
-				fe(i,1,k-1){
-					cout<<1<<" ";
-				}
-				cout<<n-(k-1)<<endl;
-			}
-			else{
-				cout<<"NO"<<endl;
-			}
-		}
-	}
+    char x[100];
+    sprintf(x, "%lld", a);
+    string s = x;
+    return s;
 }
-int main()
+//....................................................................................//
+inline ll StringToInt(string a)
 {
-// #ifndef ONLINE_JUDGE
-        // freopen("input.txt","r",stdin);
-        // freopen("output.txt","w",stdout);
-// #endif
-        fastIO
-        LL cnt=1;
-        TCs(t){
-        	// google(cnt);
-                time__("solve"){
-	                solve(cnt);
-	        }
-                cnt++;
+    char x[100];
+    ll res;
+    strcpy(x, a.c_str());
+    sscanf(x, "%lld", &res);
+    return res;
+}
+//....................................................................................//
+inline string GetString(void)
+{
+    char x[1000005];
+    scanf("%s", x);
+    string s = x;
+    return s;
+}
+//....................................................................................//
+inline string uppercase(string s)
+{
+    int n = s.size();
+    f(i,0, n)
+    if (s[i] >= 'a' && s[i] <= 'z')
+    s[i] = s[i] - 'a' + 'A';
+    return s;
+}
+//....................................................................................//
+inline string lowercase(string s)
+{
+    int n = s.size();
+    f(i,0,n)
+    if (s[i] >= 'A' && s[i] <= 'Z')
+    s[i] = s[i] - 'A' + 'a';
+    return s;
+}
+//....................................................................................//
+inline void OPEN(string s)
+{
+#ifndef TESTING
+    freopen((s + ".in").c_str(), "r", stdin);
+    freopen((s + ".out").c_str(), "w", stdout);
+#endif
+}
+//....................................................................................//
+
+template<typename T, typename U>            // Same as max_val = max (max_val, val)
+static inline void amin(T &x, U y)          // Same as min_val = min (min_val,val)
+{
+    if (y < x)                              //maximum = amax(max_val, val);
+    x = y;                              //minimum = amin (min_val, val);
+}
+//....................................................................................//
+template<typename T, typename U>
+static inline void amax(T &x, U y)
+{
+    if (x < y)
+    x = y;
+}
+//....................................................................................//
+ll power(ll x,ll y)
+{
+    if (y == 0)
+    return 1;
+    ll p = power(x, y/2);
+    p = (p * p);
+
+    return (y%2 == 0)? p : (x * p);
+}
+//....................................................................................//
+int lcm(ll a, ll b)
+{
+    ll lar = max(a, b);
+    ll small = min(a, b);
+    for (ll i = lar; ; i += lar) {
+    if (i % small == 0)
+        return i;
+    }
+}
+//....................................................................................//
+int bsearch(ll arr[],ll l,ll r,ll x)
+{
+    while (l <= r)
+    {
+    ll m = l + (r - l) / 2;
+    if (arr[m] == x){
+        return m;
+    }
+    if (arr[m] < x){
+        l = m + 1;
+    }
+    else
+        r = m - 1;
+    }
+    return -1;
+}
+//....................................................................................//
+template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
+template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
+//int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
+//Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 
+void solve()
+{
+        
+        ll n,k;
+        cin>>n>>k;
+        if(n%2 == 0)
+        {
+                if(k==1)
+                {
+                        cout<<"YES"<<endl;
+                        cout<<n<<endl;
+                }
+                else if(k%2==0)
+                {
+                        if(n-k+1 <= 0)
+                        {
+                                cout<<"NO"<<endl;
+                        }
+                        else
+                        {
+                                cout<<"YES"<<endl;
+                                fe(i,1,k-1)
+                                {
+                                        cout<<1<<" ";
+                                }
+                                cout<<n-k+1<<" "<<endl;
+                        }
+                }
+                else if(k%2!=0)
+                {
+                        if(n-2*(k-1) <= 0)
+                        {
+                                cout<<"NO"<<endl;
+                        }
+                        else
+                        {
+                                cout<<"YES"<<endl;
+                                fe(i,1,k-1)
+                                {
+                                        cout<<2<<" ";
+                                }
+                                cout<<n-2*(k-1)<<endl;
+                        }
+                }
         }
-        return 0;
+        else if(n%2 !=0)
+        {
+                if(k==1)
+                {
+                        cout<<"YES"<<endl;
+                        cout<<n<<endl;
+                }
+                else if(k%2==0)
+                {
+                        
+                        cout<<"NO"<<endl;
+                }
+                else if(k%2!=0)
+                {
+                        if(n-k+1 <= 0)
+                        {
+                                cout<<"NO"<<endl;
+                        }
+                        else
+                        {
+                                cout<<"YES"<<endl;
+                                fe(i,1,k-1)
+                                {
+                                        cout<<1<<" ";
+                                }
+                                cout<<n-k+1<<" "<<endl;
+                        }
+                }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+int main ()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+#ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+#endif
+
+
+    TCs(t)
+    {
+        solve();
+    }
+#ifdef LOCAL
+    cerr << "Time elapsed: " << (double)clock() / CLOCKS_PER_SEC * 1000 << " ms.\n";
+#endif // LOCAL 
+    return 0;
 }
