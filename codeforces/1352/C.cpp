@@ -173,19 +173,25 @@ template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
 //int bsearch(ll arr[], ll l, ll r, ll x){while (l <= r){ll m = l + (r - l) / 2;if(arr[m] == x){return m;}if(arr[m] < x){l = m + 1;}else{r = m - 1;}}}
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+ 
 void solve()
 {
+        
         ll n,k;
         cin>>n>>k;
-        ll mod = n - 1;
-        if(k % mod == 0) {
-                cout << (n * (k / mod)) - 1 << '\n';
-        }
-        else {
-                cout << (n * (k / mod)) + (k % mod) << '\n';
-        }
-    
+        ll x=0;
+        ll temp=0;
+        ll y=10;
+        while(y>0)
+        {
+                x=k/n;
+                y=x-temp;
+                k+=y;
+                temp=x;
+                //cout<<x<<" "<<y<<" "<<k<<" "<<temp<<endl;
 
+        }
+        cout<<k<<endl;
 
 
 
