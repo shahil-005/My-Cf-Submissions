@@ -112,7 +112,6 @@ void solve()
         i2p(n,d,a)
         ll ans=2;
         fe(i,0,n-2){
-                if(a[i + 1]-a[i]<2*d){continue;}
                 if(a[i+1]-a[i]>2*d){ans+=2;}
                 else if(a[i+1]-a[i]==2*d){ans++;}
                 //trace2(i,ans);
