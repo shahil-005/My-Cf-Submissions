@@ -127,69 +127,19 @@ void solve()
 {
         ll n;
         cin>>n;
-        ll s[n];
-        map<ll,ll> p;
-        map<ll,ll> q;
-        vl a;
+        map<ll,ll> m; 
+        ll a[n];
         f(i,0,n)
         {
-                cin>>s[i];
-                p[s[i]]++;
-                q[s[i]]++;
-                if(p[s[i]] == 1){
-                        a.pb(s[i]);
-                }
-               
+                cin>>a[i];
+                m[a[i]]++;
         }
-        sort(all(a));
-        ll sz=p.size();
-        if(sz==1){
-                cout<<0;
+        ll maxf=0;
+        auto(m)
+        {
+                maxf=max(maxf,it.ss);
         }
-        else{
-                ll siz=a.size();
-                ll ans=0;
-                ll i=0,j=1;
-                while(i<siz && j<siz)
-                {
-                        if(p[a[i]] < q[a[j]]){
-                                ans+=p[a[i]];
-                                q[a[j]]-=p[a[i]];
-                                i++;
-                                if(i==j){
-                                        j++;
-                                }
-
-                        }  
-                        else if(p[a[i]] > q[a[j]]){
-                                ans+=q[a[j]];
-                                p[a[i]]-=q[a[j]];
-                                j++;
-                        }
-                        else{
-                                ans+=q[a[j]];
-                                i++;
-                                j++;
-                        } 
-                        
-                }
-                cout<<ans;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        cout<<n-maxf;
 
 
 
