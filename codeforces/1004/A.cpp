@@ -109,12 +109,34 @@ template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(a
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 void solve()
 {
-        i2p(n,d,a)
-        ll ans=2;
-        fe(i,0,n-2){
-                if(a[i+1]-a[i]>2*d){ans+=2;}
-                else if(a[i+1]-a[i]==2*d){ans++;}
-                //trace2(i,ans);
+        ll n,k;
+        cin>>n>>k;
+        ll a[n];
+        f(i,0,n)
+        {
+                cin>>a[i];
+        }
+        set<ll> s;
+        ll flag=0;
+        ll ans=0;
+        f(i,0,n)
+        {
+                s.insert(a[i]-k);
+                s.insert(a[i]+k);
+        }
+        auto(s)
+        {
+                ll flag=0;
+                f(i,0,n)
+                {
+                        if(abs(a[i] - it)<k){
+                                flag=1;
+                                break;
+                        } 
+                }
+                if(flag==0){
+                        ans++;
+                }
         }
         cout<<ans<<endl;
                 
