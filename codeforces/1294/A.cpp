@@ -98,22 +98,6 @@ int bsearch(ll arr[],ll l,ll r,ll x)
     }
     return -1;
 }
-bool isPrime(ll n) 
-{ 
-    // Corner cases 
-    if (n <= 1)  return false; 
-    if (n <= 3)  return true; 
-  
-    // This is checked so that we can skip  
-    // middle five numbers in below loop 
-    if (n%2 == 0 || n%3 == 0) return false; 
-  
-    for (int i=5; i*i<=n; i=i+6) 
-        if (n%i == 0 || n%(i+2) == 0) 
-           return false; 
-  
-    return true; 
-} 
 //....................................................................................//
 template<typename T> T gcd(T a,T b) { if(a==0) return b; return gcd(b%a,a); }
 template<typename T> T pow(T a,T b, ll m){T ans=1; while(b>0){ if(b%2==1) ans=(ans*a)%m; b/=2; a=(a*a)%m; } return ans%m; }
@@ -125,23 +109,32 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 {
-        ll a,b,c,n;
-        cin>>a>>b>>c>>n;
-        if((a+b+c+n)%3!=0){
-                cout<<"NO"<<endl;
+        ll a[3],n;
+        f(i,0,3){
+                cin>>a[i];
+        }
+        cin>>n;
+        sort(a,a+3);
+        ll x = 2*a[2] - a[1]-a[0];
+        if(x<0 || x>n){
+                cout<<"NO";
         }
         else{
-                ll m=(a+b+c+n)/3;
-                if(m<a || m<b || m<c){
-                        cout<<"NO"<<endl;
+                x=n-x;
+                if(x%3==0){
+                        cout<<"YES";
                 }
                 else{
-                        cout<<"YES"<<endl;
+                        cout<<"NO";
                 }
         }
-        /*A + a = B + b = C + c = m
-        so m - a >= 0 && m - b >= 0 && m - c >= 0
-        this must hold otherwise the answer is NO.*/
+        cout<<endl;
+
+                
+
+
+
+
 
 
 
@@ -164,21 +157,21 @@ void solve()
 
 int main ()
 {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
 #ifndef ONLINE_JUDGE
-        freopen("input.txt","r",stdin);
-        freopen("output.txt","w",stdout);
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
 #endif
 
 
-        TCs(t)
-        {
-                solve();
-        }
-#ifndef LOCAL_RELEASE
+    TCs(t)
+    {
+        solve();
+    }
+#ifdef LOCAL_RELEASE
     cerr << "Time elapsed: " << (double)clock() / CLOCKS_PER_SEC * 1000 << " ms.\n";
 #endif // LOCAL 
     return 0;
