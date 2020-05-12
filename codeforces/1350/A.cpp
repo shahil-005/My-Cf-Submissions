@@ -42,8 +42,8 @@ using namespace std;
 #define popc(a)                 __builtin_popcount(a) // count set bits (for ints only diff for ll)
 #define GCD(A,B)                __gcd(A,B)
 //#define LCM(A,B)              boost::math::lcm(A,B)
-//#define COUNT(v,x)            count(all(v),x)
-//#define COUNT(v,x)            count(all(s),'x')
+//#define COUNT(v,x)             count(all(v),x)
+//#define COUNT(v,x)             count(all(s),'x')
 #define trace1(x)                cout<<#x<<": "<<x<<endl
 #define trace2(x, y)             cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
 #define trace3(x, y, z)          cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
@@ -81,14 +81,6 @@ int lcm(ll a, ll b)
         return i;
     }
 }
-//....................................................................................//
-int gcd(ll a,ll b) 
-{ 
-    if (b == 0) 
-        return a; 
-    return gcd(b, a % b);  
-      
-} 
 //....................................................................................//
 int bsearch(ll arr[],ll l,ll r,ll x)
 {
@@ -130,26 +122,69 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+int check(ll n) 
+{ 
+    // Create a boolean array "prime[0..n]" and initialize 
+    // all entries it as true. A value in prime[i] will 
+    // finally be false if i is Not a prime, else true. 
+    bool prime[n+1]; 
+    ll c=0;
+    memset(prime, true, sizeof(prime)); 
+  
+    for (ll p=2; p*p<=n; p++) 
+    { 
+        // If prime[p] is not changed, then it is a prime 
+        if (prime[p] == true) 
+        { 
+            // Update all multiples of p greater than or  
+            // equal to the square of it 
+            // numbers which are multiple of p and are 
+            // less than p^2 are already been marked.  
+            if(n%p == 0){
+                c=p;
+                break;
+            }
+            for (int i=p*p; i<=n; i += p) 
+                prime[i] = false; 
+        } 
+    }
+    return c;
 
-
+}
 void solve()
 {
-        ll n,k;
-        cin>>n>>k;
-        if(n%2==0){
-                cout<<n+k*2<<endl;
-        }
-        else{
-                fe(i,2,n){
-                        if(n%i==0){
-                                cout<<n+i+(k-1)*2<<endl;
+         ll n,k;
+         cin>>n>>k;
+         ll flag=0;
+         while(k>0){
+                if(isPrime(n)){
+                        if(n==2){
+                                cout<<n+k*2<<endl;
+                                flag=1;
                                 break;
+
+                        }
+                        else{
+                                n+=n;
                         }
                 }
-        }
-
-        
-        
+                else{
+                        ll x=check(n);
+                        //trace1(x);
+                        if(x==2){
+                            cout<<n+k*2<<endl;
+                            flag=1;
+                            break;
+                        }
+                        n=n+x;
+                }
+                //trace1(n);
+                k--;
+         }
+         if(flag==0){
+                cout<<n<<endl;
+         }
+         
 
 
 
@@ -192,8 +227,8 @@ int main ()
         {
                 solve();
         }
-#ifndef LOCAL_RELEASE
-    cerr << "Time elapsed: " << (double)clock() / CLOCKS_PER_SEC * 1000 << " ms.\n";
-#endif // LOCAL 
+//#ifndef LOCAL_RELEASE
+ //   cerr << "Time elapsed: " << (double)clock() / CLOCKS_PER_SEC * 1000 << " ms.\n";
+//#endif // LOCAL 
     return 0;
 }
