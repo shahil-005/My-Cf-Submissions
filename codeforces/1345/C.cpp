@@ -139,17 +139,14 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 { 
-        //Final Solution
-        //Explanation- https://codeforces.com/blog/entry/76819?#comment-616589
         ll n;
         cin>>n;
         ll a[n];
-        f(i,0,n){
-                cin>>a[i];
-        }
+        f(i,0,n){cin>>a[i];}
         set<ll> s;
         f(i,0,n){
-                ll x = (((i+a[i])%n)+n)%n;
+                ll x = (i+((a[i]%n)+n)%n)%n;
+                //cout<<i<<" "<<x<<endl;
                 s.insert(x);
         }
         if(s.size()==n){cout<<"YES"<<endl;}
