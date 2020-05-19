@@ -153,11 +153,20 @@ void solve()
                 if(t1==t2){
                         cout<<abs(f1-f2)<<endl;
                 }
-                else if(f1>=a && f1<=b){
-                    cout<<abs(t1-t2)+abs(f1-f2)<<endl;
-                }
                 else{
-                    cout<<abs(t1-t2)+min(abs(f1-a)+abs(a-f2),abs(f1-b)+abs(b-f2))<<endl;
+                        ll z=abs(t1-t2);
+                        ll x1=f1,x2=f1;
+                        ll ans1=z,ans2=z;
+                        if(f1<a || f1>b){
+                            ans1+=abs(a-f1);
+                            ans2+=abs(b-f1);
+                            x1=a;
+                            x2=b;
+
+                        }
+                        ans1+=abs(x1-f2);
+                        ans2+=abs(x2-f2);
+                        cout<<min(ans1,ans2)<<endl;
                 }
         }
 
