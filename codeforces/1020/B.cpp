@@ -148,17 +148,27 @@ void solve()
         ll n;
         cin>>n;
         ll a[n+1];
+        
         fe(i,1,n){
-                cin>>a[i];
+            cin>>a[i];
         }
         fe(i,1,n){
-                set<ll> st;
-                ll curr=i;
-                while(st.find(curr)==st.end()){
-                        st.insert(curr);
-                        curr=a[curr];
+            ll x=i;
+            ll flag=0;
+            map<ll,ll> m;
+            while(flag<1){
+                //cout<<i<<" "<<x<<endl;
+                if(m[x]==1){
+                    flag=1;
+                    break;
                 }
-                cout<<curr<<endl;
+                else{
+                    m[x]++;
+                    x=a[x];
+                }
+
+            }
+            cout<<x<<" ";
         }
 
 
