@@ -151,24 +151,21 @@ void solve()
                 cout<<"No"<<endl;
         }
         else{
-                ll x;
-                if(n%2==0){
-                        x=(n/2);
-                }
-                else{
-                        x=(n+1)/2;
-                }
-                cout<<"Yes"<<endl;
-                cout<<1<<" ";
-                cout<<x<<endl; 
-                cout<<n-1<<" ";
+                ll sum=(n*(n+1))/2;
                 fe(i,1,n){
-                        if(i==x){
-                                continue;       
+                        if(__gcd(i,sum-i) > 1){
+                                cout<<"Yes"<<endl;
+                                cout<<1<<" "<<i<<endl;
+                                cout<<n-1<<" ";
+                                fe(j,1,n){
+                                        if(j==i){
+                                                continue;
+                                        }
+                                        cout<<j<<" ";
+                                }
+                                break;
                         }
-                        cout<<i<<" ";
                 }
-                cout<<endl;
         }
         
         
