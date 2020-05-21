@@ -142,21 +142,22 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-ll a[N],b[N];
 void solve()
 {
         ll n;
         cin>>n;
+        ll a[n+1],b[n+1];
         f(i,0,n){cin>>a[i];}
         f(i,0,n){cin>>b[i];}
+        a[n]=0;
+        b[n]=0;
         sort(a,a+n,greater<ll>());
         sort(b,b+n,greater<ll>());
+        ll ans=0;
         ll i=0,j=0;
         ll x=0,y=0;
-        ll moves=0;
         bool f=0;
-        while(moves<2*n){
-                moves++;
+        while(i<n || j<n){
                 if(a[i]>=b[j] && f==0){
                         x+=a[i];
                         i++;
