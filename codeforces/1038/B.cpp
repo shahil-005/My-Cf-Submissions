@@ -151,11 +151,21 @@ void solve()
                 cout<<"No"<<endl;
         }
         else{
+                ll x;
+                if(n%2==0){
+                        x=(n/2);
+                }
+                else{
+                        x=(n+1)/2;
+                }
                 cout<<"Yes"<<endl;
                 cout<<1<<" ";
-                cout<<n<<endl; 
+                cout<<x<<endl; 
                 cout<<n-1<<" ";
-                f(i,1,n){
+                fe(i,1,n){
+                        if(i==x){
+                                continue;       
+                        }
                         cout<<i<<" ";
                 }
                 cout<<endl;
