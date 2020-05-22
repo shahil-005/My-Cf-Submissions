@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF80940416": {
+    "contest_id": 1347,
+    "language": "Kotlin",
+    "path": "codeforces/1347/A.kt",
+    "problem_index": "A",
+    "problem_name": "A+B (Trial Problem)",
+    "problem_url": "https://codeforces.com/contest/1347/problem/A",
+    "submission_id": "CF80940416",
+    "submission_url": "https://codeforces.com/contest/1347/submission/80940416",
+    "tags": [
+      "*special problem",
+      "*800"
+    ],
+    "timestamp": "May/22/2020 19:38"
+  },
   "CF81008080": {
     "contest_id": 1041,
     "language": "GNU C++17 (64)",
