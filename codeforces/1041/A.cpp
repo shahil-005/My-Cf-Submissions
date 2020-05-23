@@ -158,14 +158,14 @@ void solve()
 {
 	LL n;
 	cin>>n;
-	LL mn=1e9,mx=0;
+	LL a[n];
+	MLL m;
 	f(i,0,n){
-		LL x;
-		cin>>x;
-		mn=min(mn,x);
-		mx=max(mx,x);
+		cin>>a[i];
+		m[a[i]]++;
 	}
-	cout<<mx+1-mn-n;
+	sort(a,a+n);
+	cout<<(a[n-1] - a[0]+1)-m.size();
 
 
 
