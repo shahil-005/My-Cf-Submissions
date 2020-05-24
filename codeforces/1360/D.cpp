@@ -158,10 +158,7 @@ void solve()
 {
         LL n,k;
         cin>>n>>k;
-        if(n==536870912 && k==50){
-                cout<<16777216<<endl;
-        }
-        else if(n<=k){
+        if(n<=k){
                 cout<<1<<endl;
         }
         else{
