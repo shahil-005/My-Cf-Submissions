@@ -161,20 +161,32 @@ void solve()
 {
         LL n;
         cin>>n;
-        VL v(n);
-        f(i,0,n){cin>>v[i];}
-        sort(all(v));
+        LL a[n+1];
+        MLL m;
+        fe(i,1,n){
+                cin>>a[i];
+                m[a[i]]++;
+        }
+        vector<pair<LL,pair<LL,LL> > > v;
+        LL num=1;
+        auto(m){
+                num+=it.ss;
+                v.pb({it.ff,mp(num-1,it.ss)});
+        }
         LL ans=1;
-        rfe(i,n-1,0){
-                if(v[i]<=i+1){
-                        ans=i+2;
-                        break;
+        LL x=0;
+        LL sz=v.size();
+        //rfe(i,sz-1,0) 
+        for(LL i=sz-1;i>=0;i--){
+                //cout<<v[i].ff<<" "<<v[i].ss.ff<<" "<<v[i].ss.ss<<endl;
+                
+                if(v[i].ff<=v[i].ss.ff || v[i].ff < x){
+                        ans+=v[i].ss.ss;
+                        x=max(x,v[i].ss.ff);
                 }
         }
-
         cout<<ans<<endl;
-        
-        
+
         
         
 
