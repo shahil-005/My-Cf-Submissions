@@ -159,12 +159,23 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 {
-        //if(n%2==0 || m%2==0) : ans=(n*m)/2;
-        //else : (n-1)*m)/2 + (m+1)/2;
-        //combining both:
         LL n,m;
         cin>>n>>m;
-        cout<<(m*n+1)/2<<endl;
+        if(n%2==0){
+                cout<<(n*m)/2;
+        }   
+        else{
+                if(m%2==0){
+                        cout<<(n*m)/2;
+                }
+                else{
+                        LL ans=((n-1)*m)/2;
+                        ans+=m/2 +1;
+                        cout<<ans;
+                }
+        }
+        cout<<endl;
+        
         
 
 
