@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF81647580": {
+    "contest_id": 1358,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/1358/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Park Lighting",
+    "problem_url": "https://codeforces.com/contest/1358/problem/A",
+    "submission_id": "CF81647580",
+    "submission_url": "https://codeforces.com/contest/1358/submission/81647580",
+    "tags": [
+      "greedy",
+      "math",
+      "*800"
+    ],
+    "timestamp": "May/28/2020 00:05"
+  },
   "CF81649961": {
     "contest_id": 1358,
     "language": "PyPy 3",
