@@ -165,9 +165,10 @@ void solve()
         f(i,0,n){cin>>v[i];}
         sort(all(v));
         LL ans=1;
-        f(i,0,n){
+        rfe(i,n-1,0){
                 if(v[i]<=i+1){
                         ans=i+2;
+                        break;
                 }
         }
 
