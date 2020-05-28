@@ -164,23 +164,6 @@ void solve()
         LL n;
         cin>>n;
         cout<<1+n/2<<endl;
-        /*
-
-        6:-
-        2 2 2
-        2 2 1 1 
-        2 1 1 1 1 
-        1 1 1 1 1 1
-        (here 6 will not be counted as then weight is also 1)
-
-        7:-
-        2 2 2 1
-        2 2 1 1 1
-        2 1 1 1 1 1 
-        1 1 1 1 1 1 1
-        (here 6 will not be counted as then weight is also 1)
-
-        */
         
         
 
