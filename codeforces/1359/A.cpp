@@ -1,11 +1,3 @@
-
-// Problem : A. Berland Poker
-// Contest : Codeforces - Educational Codeforces Round 88 (Rated for Div. 2)
-// URL : https://codeforces.com/contest/1359/problem/A
-// Memory Limit : 256 MB
-// Time Limit : 2000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 #include <bits/stdc++.h>
 #include <climits>
 using namespace std;
@@ -26,6 +18,7 @@ using namespace std;
 #define op(n,a)                 f(i,0,n){cout<<a[i]<<" ";}
 #define i2p(n,k,a)              LL n,k;cin>>n>>k;LL a[n];rep{cin>>a[i];}
 #define mp                      make_pair
+#define in                      insert
 #define pb                      push_back
 #define ff                      first
 #define ss                      second
@@ -65,15 +58,11 @@ typedef pair<string,LL>         PSL;
 typedef pair<LL,string>         PLS;
 typedef pair<char,LL>           PCL;
 typedef pair<LL,char>           PLC;
-typedef pair<string,string>     PSS;
-typedef pair<char,char>         PCC;
 typedef vector<PLL>             VPLL;
 typedef vector<PSL>             VPSL;
 typedef vector<PLS>             VPLS;
 typedef vector<PCL>             VPCL;
 typedef vector<PLC>             VPLC;
-typedef vector<PSS>             VPSS;
-typedef vector<PCC>             VPCC;
 typedef map<LL,LL>              MLL;
 typedef map<string,LL>          MSL;
 typedef map<char,LL>            MCL;
@@ -153,14 +142,9 @@ bool prime(LL n)
 //....................................................................................//
 
 bool sortbysec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
+                   const pair<int,int> &b) 
 { 
-        return (a.second<b.second); 
-}
-bool sortbydec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
-{ 
-        return a.first>b.first;
+       return (a.second<b.second); 
 }
 
 //Constants:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -170,9 +154,13 @@ const long long INIT=(long long)(1e6+1);
 
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
+
+
 void solve()
 {
-	LL n,m,k;
+        LL n,m,k;
         cin>>n>>m>>k;
         LL x=n/k;
         if(m<=x){
@@ -187,6 +175,9 @@ void solve()
                 }
                 cout<<x-y<<endl;
         }
+        
+        
+        
         
 
 
@@ -220,10 +211,10 @@ int main ()
         cin.tie(0);
         cout.tie(0);
 
-//#ifndef ONLINE_JUDGE
-  //      freopen("input.txt","r",stdin);
-    //    freopen("output.txt","w",stdout);
-//#endif
+#ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+#endif
 
 
         TCs(t)
@@ -231,7 +222,7 @@ int main ()
                 solve();
         }
 
-//        shahil_005();
+        shahil_005();
         return 0;
 }
 /** notes to me from me ---------       // Not mine but helpful
@@ -249,17 +240,10 @@ int main ()
          *      - spending time to think and test your approach is more valuable than wasting
          *        time on submission and then debugging a wrong solution. you've proven myself
          *        from experience many times. dont be stupid anymore and actually remember this.
-         *      - //no need to use fancy coding styles and techniques. keep it simple
+         *      - no need to use fancy coding styles and techniques. keep it simple
          *      - don't blank out in the last 30 mins
          *      - no stress at all. stay calm. cool, we got this nigga
          *      - stop checking standings/dashboard. stop comparing
          *      - read all problem statements. sometimes the D's are easier to solve than the B's
          *      - write your ideas down. you've forgotten them a couple of times in the past
          */
-//$%U%$   Handle 
-//$%Y%$   Year   
-//$%M%$   Month  
-//$%D%$   Day    
-//$%h%$   Hour   
-//$%m%$   Minute 
-//$%s%$   Second 
