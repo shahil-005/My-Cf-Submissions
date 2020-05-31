@@ -1,11 +1,3 @@
-
-// Problem : B. Subsequence Hate
-// Contest : Codeforces - Codeforces Round #646 (Div. 2)
-// URL : https://codeforces.com/contest/1363/problem/B
-// Memory Limit : 256 MB
-// Time Limit : 1000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
 #include <bits/stdc++.h>
 #include <climits>
 using namespace std;
@@ -65,15 +57,11 @@ typedef pair<string,LL>         PSL;
 typedef pair<LL,string>         PLS;
 typedef pair<char,LL>           PCL;
 typedef pair<LL,char>           PLC;
-typedef pair<string,string>     PSS;
-typedef pair<char,char>         PCC;
 typedef vector<PLL>             VPLL;
 typedef vector<PSL>             VPSL;
 typedef vector<PLS>             VPLS;
 typedef vector<PCL>             VPCL;
 typedef vector<PLC>             VPLC;
-typedef vector<PSS>             VPSS;
-typedef vector<PCC>             VPCC;
 typedef map<LL,LL>              MLL;
 typedef map<string,LL>          MSL;
 typedef map<char,LL>            MCL;
@@ -153,14 +141,9 @@ bool prime(LL n)
 //....................................................................................//
 
 bool sortbysec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
+                   const pair<int,int> &b) 
 { 
-        return (a.second<b.second); 
-}
-bool sortbydec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
-{ 
-        return a.first>b.first;
+       return (a.second<b.second); 
 }
 
 //Constants:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -170,10 +153,13 @@ const long long INIT=(long long)(1e6+1);
 
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
+
 void solve()
 {
-        
-	S s;
+        //https://codeforces.com/blog/entry/78202
+        S s;
         cin>>s;
         LL n=s.size();
         LL suf0=0,suf1=0;
@@ -186,15 +172,21 @@ void solve()
         auto(s){
                 pref0+=(it=='0');
                 suf0 -=(it=='0');
- 
+
                 pref1+=(it=='1');
                 suf1 -=(it=='1');
- 
+
                 ans=min(ans,pref0+suf1);        //1111...000000
                 ans=min(ans,pref1+suf0);        //0000...111111
- 
+
         }
         cout<<ans<<endl;
+        
+        
+               
+        
+        
+
 
 
 
@@ -255,7 +247,7 @@ int main ()
          *      - spending time to think and test your approach is more valuable than wasting
          *        time on submission and then debugging a wrong solution. you've proven myself
          *        from experience many times. dont be stupid anymore and actually remember this.
-         *      - //no need to use fancy coding styles and techniques. keep it simple
+         *      - no need to use fancy coding styles and techniques. keep it simple
          *      - don't blank out in the last 30 mins
          *      - no stress at all. stay calm. cool, we got this nigga
          *      - stop checking standings/dashboard. stop comparing
