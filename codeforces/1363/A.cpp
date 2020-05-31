@@ -240,10 +240,10 @@ int main ()
         cin.tie(0);
         cout.tie(0);
 
-//#ifndef ONLINE_JUDGE
-//        freopen("input.txt","r",stdin);
-//        freopen("output.txt","w",stdout);
-//#endif
+#ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+#endif
 
 
         TCs(t)
@@ -251,7 +251,7 @@ int main ()
                 solve();
         }
 
-        //shahil_005();
+        shahil_005();
         return 0;
 }
 /** notes to me from me ---------       // Not mine but helpful
