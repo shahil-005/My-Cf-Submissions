@@ -165,15 +165,23 @@ void solve()
         LL even=0;
         f(i,0,n){
                 cin>>a[i];
-                if(a[i]%2!=0){
+                if(a[i]%2 !=0){
                         odd++;
                 }
                 else{
                         even++;
                 }
         }
-        
-        if(x==n){
+        if(n==1){
+                if(odd>0){cout<<"Yes";}
+                else{cout<<"No";}
+        }
+        //else if(n==2){
+        //        if(odd==2){cout<<"No";}
+        //        if(odd==1){cout<<"Yes";}
+        //        if(odd==0){cout<<"No";}
+        //}
+        else if(x==n){
                 if(odd%2==0){
                         cout<<"No";
                 }
@@ -204,6 +212,7 @@ void solve()
                 }
         }
         cout<<endl;
+        //trace2(odd,even);
         
                
         
