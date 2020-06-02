@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF82338618": {
+    "contest_id": 987,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/987/B.cpp",
+    "problem_index": "B",
+    "problem_name": "High School: Become Human",
+    "problem_url": "https://codeforces.com/contest/987/problem/B",
+    "submission_id": "CF82338618",
+    "submission_url": "https://codeforces.com/contest/987/submission/82338618",
+    "tags": [
+      "math",
+      "*1100"
+    ],
+    "timestamp": "Jun/03/2020 00:07"
+  },
   "CF82338640": {
     "contest_id": 987,
     "language": "PyPy 3",
