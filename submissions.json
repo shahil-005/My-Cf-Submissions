@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF82392451": {
+    "contest_id": 985,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/985/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Chess Placing",
+    "problem_url": "https://codeforces.com/contest/985/problem/A",
+    "submission_id": "CF82392451",
+    "submission_url": "https://codeforces.com/contest/985/submission/82392451",
+    "tags": [
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jun/03/2020 17:16"
+  },
   "CF82392917": {
     "contest_id": 985,
     "language": "GNU C++17 (64)",

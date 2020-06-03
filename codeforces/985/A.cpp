@@ -158,16 +158,29 @@ void solve()
 {
         LL n;
         cin>>n;
-        VL a(n/2);
+        VL v;
         f(i,0,n/2){
-                cin>>a[i];
+                LL x;
+                cin>>x;
+                v.pb(x);
         }
-        sort(all(a));
+        sort(all(v));
+        LL j=0;
         LL ans1=0;
+        fe(i,1,n){
+                if(i%2==1){
+                        ans1+= abs(v[j]-i);
+                        j++;
+                }
+                //trace2(i,ans1);
+        }
+        LL k=0;
         LL ans2=0;
-        f(i,0,n/2){
-                ans1+=abs(a[i]- (i*2+1));
-                ans2+=abs(a[i]- (i*2+2)); 
+        fe(i,1,n){
+                if(i%2==0){
+                        ans2+= abs(v[k]-i);
+                        k++;
+                }
         }
         cout<<min(ans1,ans2);
         
