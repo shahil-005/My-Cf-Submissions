@@ -175,21 +175,20 @@ void solve()
         LL ans=1;
         fe(i,1,n){
                 fe(j,1,n){
+                        if(a[i][j]==1){continue;}
                         LL flag=0;
-                        if(a[i][j]!=1){
-                                fe(x,1,n){
-                                        if(x==i){continue;}
-                                        fe(y,1,n){
-                                                if(y==j){continue;}
-                                                if(a[i][y]+a[x][j]==a[i][j]){
-                                                        flag=1;
-                                                        break;
-                                                }
+                        fe(x,1,n){
+                                if(x==i){continue;}
+                                fe(y,1,n){
+                                        if(y==j){continue;}
+                                        if(a[i][y]+a[x][j]==a[i][j]){
+                                                flag=1;
+                                                break;
                                         }
-                                        if(flag==1){break;}
                                 }
+                                if(flag==1){break;}
                         }
-                        if(flag==0 && a[i][j]!=1){
+                        if(flag==0){
                                 ans=0;
                                 //trace2(i,j);
                                 break;
