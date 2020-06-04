@@ -1,18 +1,3 @@
-
-// Problem : B. Johnny and His Hobbies
-// Contest : Codeforces - Codeforces Round #647 (Div. 2) - Thanks, Algo Muse!
-// URL : https://codeforces.com/contest/1362/problem/B
-// Memory Limit : 256 MB
-// Time Limit : 1000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
-//$%U%$   Handle 
-//$%Y%$   Year   
-//$%M%$   Month  
-//$%D%$   Day    
-//$%h%$   Hour   
-//$%m%$   Minute 
-//$%s%$   Second 
 #include <bits/stdc++.h>
 #include <climits>
 using namespace std;
@@ -179,7 +164,7 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 {
-	LL n;
+        LL n;
         cin>>n;
         LL a[n+1];
         fe(i,1,n){
@@ -206,7 +191,9 @@ void solve()
         if(flag==0){
                 cout<<-1<<endl;
         }
- 
+
+
+        
         
 
 
@@ -240,10 +227,10 @@ int main ()
         cin.tie(0);
         cout.tie(0);
 
-//#ifndef ONLINE_JUDGE
-//        freopen("input.txt","r",stdin);
-//        freopen("output.txt","w",stdout);
-//#endif
+#ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+#endif
 
 
         TCs(t)
@@ -251,7 +238,7 @@ int main ()
                 solve();
         }
 
-//        shahil_005();
+        shahil_005();
         return 0;
 }
 /** notes to me from me ---------       // Not mine but helpful
