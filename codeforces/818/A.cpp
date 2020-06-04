@@ -1,17 +1,3 @@
-// Problem : A. Diplomas and Certificates
-// Contest : Codeforces - Educational Codeforces Round 24
-// URL : https://codeforces.com/contest/818/problem/A
-// Memory Limit : 256 MB
-// Time Limit : 1000 ms
-// Powered by CP Editor (https://github.com/cpeditor/cpeditor)
-
-//$%U%$   Handle 
-//$%Y%$   Year   
-//$%M%$   Month  
-//$%D%$   Day    
-//$%h%$   Hour   
-//$%m%$   Minute 
-//$%s%$   Second 
 #include <bits/stdc++.h>
 #include <climits>
 using namespace std;
@@ -178,12 +164,12 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 {
-	LL n,k;
+        LL n,k;
         cin>>n>>k;
         LL d=(n/2)/(k+1);
         LL c=d*k;
         LL nw=(n-c-d);
-        cout<<d<<" "<<c<<" "<<nw;   
+        cout<<d<<" "<<c<<" "<<nw;        
 
 
 
@@ -216,10 +202,10 @@ int main ()
         cin.tie(0);
         cout.tie(0);
 
-//#ifndef ONLINE_JUDGE
-//        freopen("input.txt","r",stdin);
-//        freopen("output.txt","w",stdout);
-//#endif
+#ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+#endif
 
 
         TC(t)
@@ -227,7 +213,7 @@ int main ()
                 solve();
         }
 
-        //shahil_005();
+        shahil_005();
         return 0;
 }
 /** notes to me from me ---------       // Not mine but helpful
