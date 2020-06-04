@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF82578144": {
+    "contest_id": 818,
+    "language": "GNU C++17",
+    "path": "codeforces/818/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Diplomas and Certificates",
+    "problem_url": "https://codeforces.com/contest/818/problem/A",
+    "submission_id": "CF82578144",
+    "submission_url": "https://codeforces.com/contest/818/submission/82578144",
+    "tags": [
+      "implementation",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Jun/05/2020 02:26"
+  },
   "CF82581161": {
     "contest_id": 1362,
     "language": "GNU C++17",
