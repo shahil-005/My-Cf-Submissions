@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF82657275": {
+    "contest_id": 928,
+    "language": "GNU C++17",
+    "path": "codeforces/928/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Login Verification",
+    "problem_url": "https://codeforces.com/contest/928/problem/A",
+    "submission_id": "CF82657275",
+    "submission_url": "https://codeforces.com/contest/928/submission/82657275",
+    "tags": [
+      "*special problem",
+      "strings",
+      "*1200"
+    ],
+    "timestamp": "Jun/06/2020 00:33"
+  },
   "CF82743682": {
     "contest_id": 474,
     "language": "GNU C++17",
