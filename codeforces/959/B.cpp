@@ -172,8 +172,8 @@ const long long INIT=(long long)(1e6+1);
 
 void solve()
 {
-	LL n,k,q;
-	cin>>n>>k>>q;
+	LL n,k,p;
+	cin>>n>>k>>p;
 	VS s(n+1);
 	VL a(n+1);
 	fe(i,1,n){cin>>s[i];}
@@ -201,7 +201,7 @@ void solve()
         	//fe(i,1,n){trace2(i,a[i]);}
         	S str;
         	LL ans=0;
-        	while(q--){
+        	while(p--){
         		cin>>str;
         		ans+=m[str];	
         	}
