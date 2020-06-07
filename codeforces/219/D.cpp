@@ -60,7 +60,7 @@ void dfs2(int u , int p)
  
 int main()
 {
-    //ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     
     
     memset(cont,0,sizeof(cont));
