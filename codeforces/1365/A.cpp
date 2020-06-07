@@ -169,28 +169,49 @@ const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-LL a[51][51];
+
 void solve()
 {
 	LL n,m;
 	cin>>n>>m;
-	SL r,c;
-	fe(i,1,n){
-		fe(j,1,m){
+	LL a[n][m];
+	LL x[n],y[m];
+	f(i,0,n){x[i]=0;}
+	f(i,0,m){y[i]=0;}
+	f(i,0,n){
+		f(j,0,m){
 			cin>>a[i][j];
 			if(a[i][j]==1){
-				r.insert(i);
-				c.insert(j);
+				x[i]=1;
+				y[j]=1;
 			}
 		}
 	}
-	LL mn=min(n-r.size(),m-c.size());
-	if(mn%2){
-		cout<<"Ashish"<<endl;
+	LL f=0;
+	while(1){
+		LL flag=0;
+		f(i,0,n){
+			if(x[i]==0){
+				f(j,0,m){
+					if(y[j]==0){
+						x[i]=1;
+						y[j]=1;
+						if(f==0){f=1;}
+						else if(f==1){f=0;}
+						flag=1;
+						break;	
+					
+					}	
+				}
+			
+			}		
+		}
+		if(flag==0){break;}
 	}
-	else{
-		cout<<"Vivek"<<endl;
-	}
+	if(f==1){cout<<"Ashish";}
+	else{cout<<"Vivek";}
+	cout<<endl;
+	
         
 
 
@@ -240,12 +261,6 @@ int main ()
 //        shahil_005();
         return 0;
 }
-
-/** My notes: 
-         *Atleast read all A,B,C,D in every contest.
-         *A,B,C,D difficulty is always <=1800.
-         *
-
 /** notes to me from me ---------       // Not mine but helpful
          *
          * aim:
@@ -268,7 +283,6 @@ int main ()
          *      - read all problem statements. sometimes the D's are easier to solve than the B's
          *      - write your ideas down. you've forgotten them a couple of times in the past
          */
-
 //$%U%$   Handle 
 //$%Y%$   Year   
 //$%M%$   Month  
