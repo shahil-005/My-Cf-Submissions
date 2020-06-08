@@ -169,15 +169,14 @@ const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-LL a[501],b[501];
+LL a[501],b[501],c[501];
 void solve()
 {
 	LL n;
 	cin>>n;
-	LL f2=1;
 	fe(i,1,n){
 		cin>>a[i];
-		if(i>=2 && a[i]<a[i-1]){f2=0;}
+		c[i]=a[i];
 	}
 	LL f0=0,f1=0;
 	fe(i,1,n){
@@ -185,10 +184,21 @@ void solve()
 		if(b[i]==0){f0=1;}
 		if(b[i]==1){f1=1;}
 	}
-	
-        	if(f0 && f1){cout<<"Yes"<<endl;}
-        	else if(f2){cout<<"Yes"<<endl;}
-        	else{cout<<"No"<<endl;}
+	sort(c+1,c+1+n);
+	LL f3=0;
+        	fe(i,1,n){
+                	if(a[i]!=c[i]){
+	                        f3=1;
+	                        break;
+            	}       
+        	}
+        	if(f3==0){
+                	cout<<"Yes"<<endl;
+        	}
+        	else if((f0==1 && f1==0)||(f0==0 && f1==1)){
+                	cout<<"No"<<endl;
+        	}
+        	else{cout<<"Yes"<<endl;}
 	
 	
         
