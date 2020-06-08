@@ -174,8 +174,10 @@ void solve()
 {
 	LL n;
 	cin>>n;
+	LL f2=1;
 	fe(i,1,n){
 		cin>>a[i];
+		if(i>=2 && a[i]<a[i-1]){f2=0;}
 	}
 	LL f0=0,f1=0;
 	fe(i,1,n){
@@ -185,7 +187,7 @@ void solve()
 	}
 	
         	if(f0 && f1){cout<<"Yes"<<endl;}
-        	else if(is_sorted(a+1,a+1+n)){cout<<"Yes"<<endl;}
+        	else if(f2){cout<<"Yes"<<endl;}
         	else{cout<<"No"<<endl;}
 	
 	
