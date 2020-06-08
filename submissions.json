@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF83140699": {
+    "contest_id": 514,
+    "language": "GNU C++17",
+    "path": "codeforces/514/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Chewba\u0441ca and Number",
+    "problem_url": "https://codeforces.com/contest/514/problem/A",
+    "submission_id": "CF83140699",
+    "submission_url": "https://codeforces.com/contest/514/submission/83140699",
+    "tags": [
+      "greedy",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Jun/08/2020 19:15"
+  },
   "CF83164697": {
     "contest_id": 433,
     "language": "GNU C++17",
