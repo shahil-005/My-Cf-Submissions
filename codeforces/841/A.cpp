@@ -186,7 +186,6 @@ void solve()
 			break;
 		}
 	}
-	LL xxx=1;
 	if(flag==0){cout<<"YES";}
         
 
