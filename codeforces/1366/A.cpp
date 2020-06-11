@@ -14,26 +14,35 @@ using namespace std;
 #define f(i,s,n)                for(LL i = s ; i < n ; i++)
 #define fe(i,s,n)               for(LL i = s ; i <= n ; i++)
 #define rfe(i,s,n)              for(LL i = s ; i >= n ; i--)
-#define auto(m)                 for(auto &it:m)
-#define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
-#define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
-#define ip(n,a)                 LL n;cin>>n;LL a[n];rep(){cin>>a[i];}
-#define op(n,a)                 f(i,0,n){cout<<a[i]<<" ";}cout<<endl;
-#define i2p(n,k,a)              LL n,k;cin>>n>>k;LL a[n];rep{cin>>a[i];}
 #define TCs(x)                  LL x; cin>>x; while(x--)
 #define TC(x)                   LL x=1; while(x--)
+#define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
+#define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
+#define auto(m)                 for(auto &it:m)
+#define ip(n,a)                 LL n;cin>>n;LL a[n];rep{cin>>a[i];}
+#define ip2(n,a,b)              LL n;cin>>n;LL a[n];LL b[n];rep{cin>>a[i];} rep{cin>>b[i];
+#define op(n,a)                 f(i,0,n){cout<<a[i]<<" ";}
+#define i2p(n,k,a)              LL n,k;cin>>n>>k;LL a[n];rep{cin>>a[i];}
 #define mp                      make_pair
 #define pb                      push_back
 #define ff                      first
 #define ss                      second
 #define all(v)                  v.begin(), v.end()
+#define vsort(v)                sort(all(v))
+#define vrsort(v)               reverse(all(v))
 #define Max(x,y,z)              max(x,max(y,z))
 #define Min(x,y,z)              min(x,min(y,z))
-#define ps(x)                   std::cout << std::fixed; std::cout << std::setprecision(x);
+//#define ps(x,y)               fixed<<setprecision(y)<<x
+//#define ps(x)                 std::cout << std::fixed; std::cout << std::setprecision(x);
 #define clz(a)                  __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
 #define ctz(a)                  __builtin_ctz(a) // count trailing zeroes
+//#define ctz(a)                __builtin_ctzll(a)
 #define popc(a)                 __builtin_popcount(a) // count set bits (for ints only diff for ll)
 #define GCD(A,B)                __gcd(A,B)
+//#define LCM(A,B)              boost::math::lcm(A,B)
+//#define COUNT(v,x)             count(all(v),x)
+//#define COUNT(v,x)             count(all(s),'x')
+#define trace(x)                 cout<<x<<endl
 #define trace1(x)                cout<<#x<<": "<<x<<endl
 #define trace2(x, y)             cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
 #define trace3(x, y, z)          cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
@@ -88,19 +97,6 @@ int power(LL x,LL y)
 
     return (y%2 == 0)? p : (x * p);
 }
-int powm(LL x,LL y,LL p)
-{
-        LL res=1;
-        x=x%p;
-        if(x==0){return 0;}
-        while(y>0)
-        {
-            if(y&1){res=(res*x)%p;}
-            y=y>>1;
-            x=(x*x)%p;
-        }
-        return res;
-}
 //....................................................................................//
 int lcm(LL a,LL b)
 {
@@ -154,6 +150,7 @@ bool prime(LL n)
     return true; 
 }
 //....................................................................................//
+
 bool sortbysec(const pair<LL,LL> &a, 
                    const pair<LL,LL> &b) 
 { 
@@ -164,34 +161,103 @@ bool sortbydec(const pair<LL,LL> &a,
 { 
         return a.first>b.first;
 }
+
 //Constants:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
+
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 void solve()
 {
-	//https://codeforces.com/blog/entry/78735?#comment-640652
-	//https://codeforces.com/blog/entry/78735?#comment-640711
-	//https://codeforces.com/blog/entry/78735?#comment-640828
 	LL a,b;
 	cin>>a>>b;
-	cout<<Min(a,b,(a+b)/3)<<endl;
+	cout<<min(min(a,b),(a+b)/3)<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
 int main ()
 {
-	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+
 /*
 #ifndef ONLINE_JUDGE
-        	freopen("input.txt","r",stdin);
-        	freopen("output.txt","w",stdout);
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
 #endif
 */
-        	TCs(t)
-        	{
-        	        solve();
-        	}
-//        	shahil_005();
-        	return 0;
+
+
+        TCs(t)
+        {
+                solve();
+        }
+
+//        shahil_005();
+        return 0;
 }
+
+/** My notes: 
+         *Atleast read all A,B,C,D in every contest.
+         *A,B,C,D difficulty is always <=1800/1900.
+         *Think of a different approach after WAs/TLEs instead of trying to push 
+          that solution to AC.
+         *Move to the next question after 2 penalties.
+         */
+
+/** notes to me from me ---------       // Not mine but helpful
+         *
+         * aim:
+         *      - not to achieve high rating but to improve as a problem solver
+         *      - to focus more on solving problems than rating
+         *
+         * i must remember the following:
+         *      - check for overflow
+         *      - check for out of bounds read/write
+         *      - check for any other errors that will hinder you from AC on first submission
+         *      - check logic for special/boundary cases
+         *      - think simple, fast and efficient. no need to make things complicated
+         *      - spending time to think and test your approach is more valuable than wasting
+         *        time on submission and then debugging a wrong solution. you've proven myself
+         *        from experience many times. dont be stupid anymore and actually remember this.
+         *      - //no need to use fancy coding styles and techniques. keep it simple
+         *      - don't blank out in the last 30 mins
+         *      - no stress at all. stay calm. cool, we got this nigga
+         *      - stop checking standings/dashboard. stop comparing
+         *      - read all problem statements. sometimes the D's are easier to solve than the B's
+         *      - write your ideas down. you've forgotten them a couple of times in the past
+         */
+
+//$%U%$   Handle 
+//$%Y%$   Year   
+//$%M%$   Month  
+//$%D%$   Day    
+//$%h%$   Hour   
+//$%m%$   Minute 
+//$%s%$   Second 
