@@ -174,13 +174,24 @@ void solve()
 {
 	LL n;
 	cin>>n;
-	LL sum=0;
+	LL k=1;
 	LL i=1;
-	while(sum<=n){
-		sum+=(i*(i+1))/2;
-		i++;		
+	while(1){
+		n-=k;
+		if(n>0){
+			i++;
+			k+=i;
+		}	
+		else if(n==0){
+			cout<<i<<endl;
+			break;
+		}
+		else{
+			cout<<i-1<<endl;
+			break;
+		}
+		
 	}
-	cout<<i-2<<endl;
         
 
 
