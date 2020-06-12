@@ -825,6 +825,25 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF83567268": {
+    "contest_id": 732,
+    "language": "GNU C++17",
+    "path": "codeforces/732/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Sanatorium",
+    "problem_url": "https://codeforces.com/contest/732/problem/C",
+    "submission_id": "CF83567268",
+    "submission_url": "https://codeforces.com/contest/732/submission/83567268",
+    "tags": [
+      "binary search",
+      "constructive algorithms",
+      "greedy",
+      "implementation",
+      "math",
+      "*1200"
+    ],
+    "timestamp": "Jun/13/2020 04:31"
+  },
   "CF83568487": {
     "contest_id": 682,
     "language": "GNU C++17",
