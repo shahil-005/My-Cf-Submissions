@@ -177,9 +177,23 @@ void solve()
 	LL a[n+1];
 	fe(i,1,n){cin>>a[i];}
 	sort(a+1,a+1+n);
-	LL ans=1;
-	fe(i,1,n){if(a[i]>=ans){ans++;}}
-	cout<<ans<<endl;
+	LL x=1;
+	MLL m;
+	fe(i,1,n){
+		if(a[i]>=x){
+			m[x]++;
+			x++;
+		}	
+	}
+	LL flag=1;
+	auto(m){
+		if(it.ss==0){
+			cout<<it.ff;
+			flag=0;
+			break;
+		}
+	}
+	if(flag){cout<<x;}
 
 }
 int main ()
