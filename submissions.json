@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF83690794": {
+    "contest_id": 189,
+    "language": "GNU C++17",
+    "path": "codeforces/189/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Cut Ribbon",
+    "problem_url": "https://codeforces.com/contest/189/problem/A",
+    "submission_id": "CF83690794",
+    "submission_url": "https://codeforces.com/contest/189/submission/83690794",
+    "tags": [
+      "brute force",
+      "dp",
+      "*1300"
+    ],
+    "timestamp": "Jun/14/2020 00:01"
+  },
   "CF83793690": {
     "contest_id": 1364,
     "language": "GNU C++17",
