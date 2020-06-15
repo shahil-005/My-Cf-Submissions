@@ -169,14 +169,13 @@ const int N = 1e5 + 5;
 const long long MOD=(long long)(1e9+7);
 const long long INIT=(long long)(1e6+1);
 //Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+const long long MAX=(long long)(1e6);
 bool prime[INIT];
 void solve()
 {
 	LL n;
 	cin>>n;
 	memset(prime,true,sizeof(prime));
-	prime[0]=prime[1]=false;
 	for(LL i=2;i*i<INIT;i++){
 		if(prime[i]==true){
 			for(LL j=i*2;j<INIT;j+=i){
@@ -184,19 +183,18 @@ void solve()
 			}
 		}
 	}
-	
-	fe(i,1,n){
-		LL x;
-		cin>>x;
-		LD a=sqrt(x);
-		if(floor(a)==ceil(a)){
-			if(prime[(LL)a]){
-				cout<<"YES"<<endl;
-				continue;
-			}
-			
+	SL s;
+	fe(i,2,MAX){
+		if(prime[i]==true){
+			LL x=i*i;
+			s.insert(x);
 		}
-		cout<<"NO"<<endl;
+	}
+	while(n--){
+		LL a;
+		cin>>a;
+		if(s.find(a)!=s.end()){cout<<"YES"<<endl;}
+		else{cout<<"NO"<<endl;}
 	}
 	
 	
