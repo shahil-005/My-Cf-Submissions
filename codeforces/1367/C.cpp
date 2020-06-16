@@ -174,29 +174,36 @@ void solve()
 {
 	LL n,k;
 	cin>>n>>k;
-	S s,a="",b;
-	cin>>s;
-	a+='1';
-	fe(i,1,k){a+='0';}
-	b=a;
-	reverse(all(b));
-	s=a+s+b;
-	LL ans=0,x,y,f=0;
-	n=s.size();
-	f(i,0,n){
+	S a,b="";
+	cin>>a;
+	b+='1';
+	fe(i,1,k){b+='0';}
+	//reverse(all(b));
+	S s=b+a;
+	fe(i,1,k){s+='0';}
+	s+='1';
+	LL ans1=0;		
+	LL x=-1;
+	LL y=-1;
+	LL f=0;
+	LL sz=s.size();
+	//cout<<s<<endl;
+	f(i,0,sz){
 		if(s[i]=='1' && f==0){
 			x=i;
 			f=1;
 		}
 		else if(s[i]=='1'&& f==1){
 			y=i;
+			
 			if( ((y-x)/(k+1)) >=1 ){
-				ans+=(((y-x)/(k+1))-1);	
+				ans1+=(((y-x)/(k+1))-1);	
 			}
+			//trace4(f,x,y,ans1);
 			x=i;
 		}
 	}
-	cout<<ans<<endl;
+	cout<<ans1<<endl;
 	
         
 }
