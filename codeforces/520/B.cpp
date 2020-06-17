@@ -85,18 +85,21 @@ void solve()
 	if(n>=m){cout<<n-m;}
 	else{
 		LL ans=0;
+		if(m%2){
+			m++;
+			ans++;
+		}
 		while(1){
-			if(m%2){
-				m++;
-				ans++;
-			}
 			m=(m+1)/2;
 			ans++;
 			if(m<=n){
 				ans+=(n-m);
 				break;
 			}
-			
+			if(m%2){
+				m++;
+				ans++;
+			}
 		}
 		cout<<ans<<endl;	
 	}
