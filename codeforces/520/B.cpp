@@ -86,9 +86,12 @@ void solve()
 	else{
 		LL ans=0;
 		while(1){
-			if(m%2){ans+=2;}
-			else{ans++;}
+			if(m%2){
+				m++;
+				ans++;
+			}
 			m=(m+1)/2;
+			ans++;
 			if(m<=n){
 				ans+=(n-m);
 				break;
