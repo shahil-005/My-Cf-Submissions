@@ -80,7 +80,7 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//https://codeforces.com/blog/entry/16736?#comment-216113
+	https://codeforces.com/blog/entry/16736?#comment-216113
 	//https://codeforces.com/blog/entry/16736?#comment-644218
 	LL n,m;
 	cin>>n>>m;
