@@ -74,56 +74,25 @@ typedef set<string>             SS;
 typedef set<char>               SC;
 
 const long long N=(long long)(1e5+1);
-const long long MAX=(long long)(1e6+1);	
+const long long N2=(long long)(1e6+1);	
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 
-VL ans,graph[MAX];
-bool vis[MAX],vis_g[MAX];
-queue<LL> q;
-LL n,m,dis[MAX];
-void extend_g(LL x){
-	if(x!=m&&x>0&&!vis_g[x]){
-		vis_g[x]=true;
-		graph[x].pb(x-1);
-		graph[x].pb(2*x);
-		if(x<m){extend_g(2*x);}
-		extend_g(x-1);
-	}
-}
-void bfs(LL x){
-	vis[x]=true;
-	q.push(x);
-	while(!q.empty()){
-		LL front=q.front();
-		q.pop();
-		for(auto it:graph[front]){
-			if(!vis[it]){
-				vis[it]=true;
-				dis[it]=dis[front]+1;
-				q.push(it);
-			}
-		}
-	}	
-}
 void solve()
 {
-	//BFS solution
+	//https://codeforces.com/blog/entry/16736?#comment-216113
+	//https://codeforces.com/blog/entry/16736?#comment-644218
+	LL n,m;
 	cin>>n>>m;
-	if(n==m){cout<<0<<endl;}
-	else{
-		extend_g(n);
-		/*f(i,0,13){
-			//cout<<graph[i][0]<<" : ";
-			cout<<i<<" : ";
-			f(j,0,(LL)graph[i].size()){
-				cout<<graph[i][j]<<" ";
-			}
-			cout<<endl;
-		}*/
-		bfs(n);
-		cout<<dis[m]<<endl;		
-	}	
+	LL ans=0;
+	while(n<m){
+		if(m%2){ans+=2;}
+		else{ans++;}
+		m=(m+1)/2;
+		
+	}
+	ans+=(n-m);
+	cout<<ans<<endl;	
 }
 int main()
 {
