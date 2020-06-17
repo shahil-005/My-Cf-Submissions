@@ -80,19 +80,23 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	https://codeforces.com/blog/entry/16736?#comment-216113
-	//https://codeforces.com/blog/entry/16736?#comment-644218
 	LL n,m;
 	cin>>n>>m;
-	LL ans=0;
-	while(n<m){
-		if(m%2){ans+=2;}
-		else{ans++;}
-		m=(m+1)/2;
-		
+	if(n>=m){cout<<n-m;}
+	else{
+		LL ans=0;
+		while(1){
+			if(m%2){ans+=2;}
+			else{ans++;}
+			m=(m+1)/2;
+			if(m<=n){
+				ans+=(n-m);
+				break;
+			}
+			
+		}
+		cout<<ans<<endl;	
 	}
-	ans+=(n-m);
-	cout<<ans<<endl;	
 }
 int main()
 {
