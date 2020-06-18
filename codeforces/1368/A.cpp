@@ -83,7 +83,7 @@ void solve()
 	LL a,b,n;
 	cin>>a>>b>>n;
 	LL ans=0,f=0;
-	if(a>b){swap(a,b);}
+	LL x=a,y=b;
 	while(1){
 		if(f==0){
 			ans++;
@@ -97,9 +97,27 @@ void solve()
 		}
 		if(a>n || b>n){
 			break;
-		}         
-	}            
-            cout<<ans<<endl;
+		}       
+	}
+            f=0;
+            LL ans1=0;
+            while(1){
+		if(f==0){
+			ans1++;
+			y=x+y;
+			f=1;
+		}
+		else if(f==1){
+			ans1++;
+			x=x+y;
+			f=0;
+		}
+		if(x>n || y>n){
+			break;
+		}
+                        
+	}
+            cout<<min(ans1,ans)<<endl;
             
 }
 int main()
