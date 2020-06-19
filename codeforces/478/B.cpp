@@ -91,9 +91,18 @@ void solve()
 {
 	LL n,m;
 	cin>>n>>m;
-	LL min=((n/m)*(n/m-1)/2)*(m-n%m)+((n/m)*(n/m+1)/2)*(n%m);
-	LL max=((n-m+1)*(n-m))/2;
-	cout<<min<<" "<<max;
+	if(m==1){cout<<((n)*(n-1))/2<<" "<<((n)*(n-1))/2;}
+	else{
+		LL q=n/m;
+		LL r=n%m;
+		LL x=(((q)*(q-1))/2)*(m-r);
+		q++;
+		LL y=(((q)*(q-1))/2)*(r);
+		LL z=n-m+1;
+		z=((z)*(z-1))/2;
+		//trace3(x,y,z);
+		cout<<x+y<<" "<<z;
+	}
 }
 int main()
 {
