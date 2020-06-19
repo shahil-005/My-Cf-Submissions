@@ -92,20 +92,20 @@ void solve()
 	LL n;
 	cin>>n;
 	fe(i,1,n){cin>>a[i];}
-	if(is_sorted(a+1,a+1+n)){
-		cout<<"yes"<<endl;
-		cout<<1<<" "<<1;	
-	}	
-	else{
-		fe(i,1,n){b[i]=a[i];}
-		sort(b+1,b+1+n);
-		LL x=n,y=1;
-		fe(i,1,n){
-			if(a[i]!=b[i]){
-				x=min(x,i);
-				y=i;
-			}
+	fe(i,1,n){b[i]=a[i];}
+	sort(b+1,b+1+n);
+	LL x=n,y=1;
+	fe(i,1,n){
+		if(a[i]!=b[i]){
+			x=min(x,i);
+			y=i;
 		}
+	}
+	if(x>y){
+		cout<<"yes"<<endl;
+		cout<<1<<" "<<1;
+	}
+	else{
 		reverse(a+x,a+y+1);
 		if(is_sorted(a+1,a+1+n)){
 			cout<<"yes"<<endl;
