@@ -76,6 +76,7 @@ typedef set<char>               SC;
 const long long N=(long long)(1e5+1);
 const long long N2=(long long)(1e6+1);
 const long long MOD=(long long)(1e9+7);
+const long long INF=(long long)(2e18);
 int power(LL x,LL y)
 {
     if (y == 0)
@@ -90,19 +91,16 @@ void solve()
 	LL n;
 	cin>>n;
 	LL a[n+1];
-	LL mn=INT_MAX,mx=0;
+	MLL m;
 	fe(i,1,n){
 		cin>>a[i];
-		mn=min(mn,a[i]);
-		mx=max(mx,a[i]);
+		m[a[i]]++;
 	}
-	LL n1=0,n2=0;
-	fe(i,1,n){
-		n1+=(a[i]==mn);
-		n2+=(a[i]==mx);
-	}
-	if(mn==mx){cout<<0<<" "<<(n*(n-1))/2;}
-	else{cout<<mx-mn<<" "<<n1*n2;}
+	VPLL v;
+	auto(m){v.pb({it.ff,it.ss});}
+	LL x=v.size();
+	if(x==1){cout<<0<<" "<<((v[0].ss-1)*(v[0].ss))/2;}
+	else{cout<<v[x-1].ff-v[0].ff<<" "<<v[0].ss*v[x-1].ss;}
 	
 	
 }
