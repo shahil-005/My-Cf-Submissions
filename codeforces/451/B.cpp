@@ -86,34 +86,39 @@ const long long N=(long long)(1e5+1);
 const long long N2=(long long)(1e6+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-LL a[N],b[N];
+LL a[N];
 void solve()
 {
 	LL n;
 	cin>>n;
 	fe(i,1,n){cin>>a[i];}
-	fe(i,1,n){b[i]=a[i];}
-	sort(b+1,b+1+n);
-	LL x=n,y=1;
+	LL x=-1,y,f=0;
+	a[0]=0;
+	a[n+1]=INT_MAX;
 	fe(i,1,n){
-		if(a[i]!=b[i]){
-			x=min(x,i);
+		if(a[i]<a[i-1] || a[i]>a[i+1]){
+			if(!f){
+				x=i;
+				f=1;
+			}
 			y=i;
 		}
 	}
-	if(x>y){
+	LL p=x,q=y;
+	while(x<y){
+		LL temp=a[x];
+		a[x]=a[y];
+		a[y]=temp;
+		x++;
+		y--;
+	}
+	//trace2(p,q);
+	if(is_sorted(a+1,a+1+n)){
 		cout<<"yes"<<endl;
-		cout<<1<<" "<<1;
+		if(f==0){cout<<1<<" "<<1;}
+		else{cout<<p<<" "<<q;}	
 	}
-	else{
-		reverse(a+x,a+y+1);
-		if(is_sorted(a+1,a+1+n)){
-			cout<<"yes"<<endl;
-			cout<<x<<" "<<y;	
-		}
-		else{cout<<"no";}	
-	}
-	
+	else{cout<<"no";}
 }
 int main()
 {
