@@ -100,51 +100,44 @@ void solve()
 	LL m=2*n;
 	LL a[m+1];
 	LL b[m+1];
+	fe(i,1,m){cin>>a[i];}
 	fe(i,1,m){b[i]=0;}
-	LL o=0,e=0;
-	fe(i,1,m){
-		cin>>a[i];
-		if(a[i]%2){o++;}
-		else{e++;}
-	}
-	if(n==2){
-		cout<<1<<" "<<2<<endl;
-	}
-	else{
-		LL count=n-1;
-		fe(i,1,m){
-			if(a[i]%2!=0 && b[i]==0 && count>0){
-				fe(j,1,m){
-					//trace3(i,j,count);
-					if(a[j]%2!=0 && b[j]==0 && count>0 && i!=j){
-						cout<<i<<" "<<j<<endl;
-						b[i]=1;
-						b[j]=1;
-						count--;
-						break;
-					}
+            VPLL v;
+            fe(i,1,m){
+		if(a[i]%2==0 && b[i]==0){
+			fe(j,1,m){
+				if(a[j]%2==0 && b[j]==0 && i!=j){
+					LL x=min(i,j);
+					LL y=max(i,j);
+					v.pb({x,y});
+					b[i]=1;
+					b[j]=1;
+					break;
 				}
 			}
-			
-			
 		}
-		//cout<<endl;
-		fe(i,1,m){
-			if(a[i]%2==0 &&b[i]==0 && count>0){
-				fe(j,1,m){
-					//trace3(i,j,count);
-					if(a[j]%2==0 &&b[j]==0 && count>0 && i!=j){
-						cout<<i<<" "<<j<<endl;
-						b[i]=1;
-						b[j]=1;
-						count--;
-						break;
-					}
+	}
+	fe(i,1,m){
+		if(a[i]%2!=0 && b[i]==0){
+			fe(j,1,m){
+				//trace3(i,j,count);
+				if(a[j]%2!=0 && b[j]==0&& i!=j){
+					LL x=min(i,j);
+					LL y=max(i,j);
+					v.pb({x,y});
+					b[i]=1;
+					b[j]=1;
+					break;
 				}
 			}
-			//trace2(i,count);
 		}	
 	}
+	
+	fe(i,0,n-2){
+		cout<<v[i].ff<<" "<<v[i].ss<<endl;
+	}
+            
+	
 	
 	
 	
