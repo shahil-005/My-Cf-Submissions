@@ -95,34 +95,87 @@ void solve()
 	LL x=0;
 	rep(){
 		if(a[i]=='+'){x++;}
-		else{x--;}	
+		else{x--;}
+		
 	}
-	VL v1,v2;
-	v1.pb(0);
+	//cout<<x<<endl;
+	deque<LL> dq1,dq2;
+	dq1.pb(0);
 	f(i,0,n){
-		if(!(i%2)){
-			if(b[i]=='+'){auto(v1){v2.pb(it+1);}}
-			else if(b[i]=='-'){auto(v1){v2.pb(it-1);}}
-			else{auto(v1){v2.pb(it+1);v2.pb(it-1);}}
-			v1.clear();
+		if(i%2==0){
+			deque <LL> :: iterator it; 
+			if(b[i]=='+'){
+				for(it=dq1.begin();it!= dq1.end(); ++it){
+					LL y=*it;
+					dq2.pb(y+1);
+				}	
+			}
+			else if(b[i]=='-'){
+				for(it=dq1.begin();it!= dq1.end(); ++it){
+					LL y=*it;
+					dq2.pb(y-1);
+				}
+			}
+			else{
+				for(it=dq1.begin();it!= dq1.end(); ++it){
+					LL y=*it;
+					dq2.pb(y+1);
+					dq2.pb(y-1);
+				}
+			}
+			dq1.clear();
+			/*cout<<i<<" : ";
+			for(it=dq2.begin();it!= dq2.end(); ++it){
+				cout<<*it<<" ";
+			}
+			cout<<endl;*/
 		}
 		else{
-			if(b[i]=='+'){auto(v2){v1.pb(it+1);}}
-			else if(b[i]=='-'){auto(v2){v1.pb(it-1);}}
-			else{auto(v2){v1.pb(it+1);v1.pb(it-1);}}
-			v2.clear();	
+			deque <LL> :: iterator it; 
+			if(b[i]=='+'){
+				for(it=dq2.begin();it!= dq2.end(); ++it){
+					LL y=*it;
+					dq1.pb(y+1);
+				}	
+			}
+			else if(b[i]=='-'){
+				for(it=dq2.begin();it!= dq2.end(); ++it){
+					LL y=*it;
+					dq1.pb(y-1);
+				}
+			}
+			else{
+				for(it=dq2.begin();it!= dq2.end(); ++it){
+					LL y=*it;
+					dq1.pb(y+1);
+					dq1.pb(y-1);
+				}
+			}
+			dq2.clear();
+			/*cout<<i<<" : ";
+			for(it=dq1.begin();it!= dq1.end(); ++it){
+				cout<<*it<<" ";
+			}
+			cout<<endl;*/
 		}	
 	}
+	deque <LL> :: iterator it;
 	LD ans=0;
 	if(n%2){
-		auto(v2){if(x==it){ans++;}}
-		LD x2=v2.size();
+		for(it=dq2.begin();it!= dq2.end(); ++it){
+			LL y=*it;
+			if(x==y){ans++;}
+		}
+		LD x2=dq2.size();
 		ps(12);
 		cout<<ans/x2;
 	}
 	else{
-		auto(v1){if(x==it){ans++;}}
-		LL x1=v1.size();
+		for(it=dq1.begin();it!= dq1.end(); ++it){
+			LL y=*it;
+			if(x==y){ans++;}
+		}
+		LL x1=dq1.size();
 		ps(12);
 		cout<<ans/x1;
 	}
