@@ -93,20 +93,57 @@ void solve()
 	cin>>n;
 	S s;
 	cin>>s;
-	LL f=1;
-	f(i,1,n){
-		if(s[i]<s[i-1]){f=0;break;}	
+	LL a[n];
+	f(i,0,n){a[i]=0;}
+	MCL m;
+	f(i,0,n){
+		m[s[i]]++;
 	}
-	if(f){cout<<s<<endl;}
+	if(m.size()==1){cout<<s<<endl;}
 	else{
+		LL x=0,y=0;
 		f(i,0,n){
-			if(s[i]=='1'){break;}
-			cout<<'0';
+			if(s[i]=='0'&&x==0){
+				a[i]=1;
+			}
+			else if(s[i]=='1'){x=1;}
 		}
-		cout<<0;
 		rfe(i,n-1,0){
-			if(s[i]=='0'){break;}
-			cout<<'1';
+			if(s[i]=='1'&&y==0){
+				a[i]=2;
+			}
+			else if(s[i]=='0'){y=1;}
+		}
+		LL flag=0;
+		f(i,0,n){
+			if(s[i]=='1'){
+				flag=2;
+				fe(j,i,n-1){
+					if(s[j]=='0'){
+						flag=1;
+						break;
+					}
+				}
+			}
+			if(flag==1 || flag==2){break;}
+		}
+		if(flag==1){
+			f(i,0,n){
+				if(a[i]==1){cout<<s[i];}
+			}
+			cout<<0;
+			f(i,0,n){
+				if(a[i]==2){cout<<s[i];}
+			}
+		}
+		else if(flag==0||flag==2){
+			f(i,0,n){
+				if(a[i]==1){cout<<s[i];}
+			}
+			//cout<<0;
+			f(i,0,n){
+				if(a[i]==2){cout<<s[i];}
+			}
 		}
 		cout<<endl;
 	}
