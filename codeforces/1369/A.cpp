@@ -1,7 +1,7 @@
 
 // Problem : A. FashionabLee
 // Contest : Codeforces - Codeforces Round #652 (Div. 2)
-// URL : https://codeforces.com/contest/1369/problem/A
+// URL : https://codeforces.com/contest/1369/problem/0
 // Memory Limit : 256 MB
 // Time Limit : 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -89,11 +89,12 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//https://codeforces.com/blog/entry/79235?#comment-648708
-	//Editorial
 	LL n;
 	cin>>n;
-	cout<<(n%4?"NO\n":"YES\n");
+	if(n%4){cout<<"NO"<<endl;}
+	else{
+		cout<<"YES"<<endl;
+	}
 }
 int main()
 {
