@@ -93,16 +93,21 @@ void solve()
 	cin>>n;
 	S s;
 	cin>>s;
-	LL o=N,z=-1;
-	f(i,0,n){
-		if(s[i]=='0'){z=i;}
-		else{o=min(o,i);}
+	LL f=1;
+	f(i,1,n){
+		if(s[i]<s[i-1]){f=0;break;}	
 	}
-	if(z<o){cout<<s<<endl;}
+	if(f){cout<<s<<endl;}
 	else{
-		f(i,0,o){cout<<"0";}
-		cout<<"0";
-		f(i,z+1,n){cout<<"1";}
+		f(i,0,n){
+			if(s[i]=='1'){break;}
+			cout<<'0';
+		}
+		cout<<0;
+		rfe(i,n-1,0){
+			if(s[i]=='0'){break;}
+			cout<<'1';
+		}
 		cout<<endl;
 	}
 }
