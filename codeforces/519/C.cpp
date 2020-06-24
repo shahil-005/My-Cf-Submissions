@@ -89,12 +89,9 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//https://codeforces.com/contest/1366/submission/83575440
-	//Exactly same question was in ED Round 89 & also the same solution
 	LL a,b;
 	cin>>a>>b;
 	cout<<Min(a,b,(a+b)/3)<<endl;
-	//There is another solution mentioned in this question's editorial
 }
 int main()
 {
