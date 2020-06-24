@@ -96,23 +96,39 @@ void solve()
 	fe(i,1,k){cin>>b[i];}
 	sort(a+1,a+1+n);
 	sort(b+1,b+1+k);
-	LL x=n,y=0;
-	LL ans=0;
-	fe(i,1,k){
-		if(b[i]==1){ans+=2*a[x];x--;}
-		else{y=i;break;}
-	}
-	if(y){
-		LL z=1;
-		rfe(i,k,y){
-			ans+=a[z];
-			ans+=a[x];
-			x--;
-			z+=b[i]-1;
-		}
-	}
-	cout<<ans<<endl;
-        
+	if(n==k){
+                LL ans=0;
+                fe(i,1,n){
+                        ans+=a[i];
+                }
+                cout<<2*ans<<endl;
+        }
+        else if(k==1){
+                LL amin=INT_MAX,amax=0;
+                fe(i,1,n){
+                        amin=min(amin,a[i]);
+                        amax=max(amax,a[i]);
+                }
+                cout<<amin+amax<<endl;
+        }
+        else{
+        	LL x=n,y=0;
+        	LL ans=0;
+        	fe(i,1,k){
+        		if(b[i]==1){ans+=2*a[x];x--;}
+        		else{y=i;break;}
+        	}
+        	if(y){
+        		LL z=1;
+        		rfe(i,k,y){
+        			ans+=a[z];
+        			ans+=a[x];
+        			x--;
+        			z+=b[i]-1;
+        		}
+        	}
+        	cout<<ans<<endl;
+        }
         
 }
 int main()
