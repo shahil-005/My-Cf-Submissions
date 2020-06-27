@@ -95,16 +95,14 @@ void solve()
 	f(i,1,k){
 		fe(j,1,n){
 			for(LL l=j;l<=n;l+=j){
-				dp[i+1][l]+=dp[i][j];
-				dp[i+1][l]%=MOD;
-				
+				dp[i+1][l]=(dp[i+1][l]+dp[i][j])%MOD;
 			}
 		}
 	}
 	
 	LL ans=0;
-	fe(j,1,n){ans+=dp[k][j];ans%=MOD;}
-	cout<<ans%MOD<<endl;
+	fe(j,1,n){ans=(ans+dp[k][j])%MOD;}
+	cout<<ans<<endl;
 }
 int main()
 {
