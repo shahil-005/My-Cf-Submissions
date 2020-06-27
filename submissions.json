@@ -825,6 +825,23 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF85181983": {
+    "contest_id": 415,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/415/D.cpp",
+    "problem_index": "D",
+    "problem_name": "Mashmokh and ACM",
+    "problem_url": "https://codeforces.com/contest/415/problem/D",
+    "submission_id": "CF85181983",
+    "submission_url": "https://codeforces.com/contest/415/submission/85181983",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "number theory",
+      "*1400"
+    ],
+    "timestamp": "Jun/27/2020 11:53"
+  },
   "CF85305693": {
     "contest_id": 1374,
     "language": "GNU C++17 (64)",
