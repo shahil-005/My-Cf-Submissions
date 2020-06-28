@@ -91,17 +91,45 @@ void solve()
 {
 	LL n;
 	cin>>n;
-	LL d2=0,d3=0;
-	while(n>0){
-		if(n%2==0){d2++;n/=2;}
-		else{break;}
+	if(n==1){cout<<0<<endl;}
+	else{
+		VL v;
+		fe(i,0,11){
+			LL x=power(6,i);
+			v.pb(x);
+		}
+		LL m=n;
+		LL div3=0;
+		while(1){
+			if(m%3==0){
+				m=m/3;
+				div3++;
+			}
+			else{break;}
+		}
+		LL k=n;
+		LL div2=0;
+		while(1){
+			if(k%2==0){
+				k=k/2;
+				div2++;
+			}
+			else{break;}
+		}
+		//trace4(div2,div3,k,m);
+		if(div2>div3){cout<<-1<<endl;}
+		else if(m==1){
+			cout<<(div3-div2)+div3<<endl;
+		}
+		else if(m%2==0){
+			if(ceil(log2(m)) == floor(log2(m))){
+                                cout<<(div3-div2)+div3<<endl;
+                        }
+                        else{cout<<-1<<endl;}
+		}
+		else if(m%2==1){cout<<-1<<endl;}
+		
 	}
-	while(n>0){
-		if(n%3==0){d3++;n/=3;}
-		else{break;}
-	}
-	if(n==1 && d2<=d3){cout<<2*d3-d2<<endl;}
-	else{cout<<-1<<endl;}
 }
 int main()
 {
