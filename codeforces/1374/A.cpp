@@ -1,7 +1,7 @@
 
 // Problem : A. Required Remainder
 // Contest : Codeforces - Codeforces Round #653 (Div. 3)
-// URL : https://codeforces.com/contest/1374/problem/A
+// URL : https://codeforces.com/contest/1374/problem/0
 // Memory Limit : 256 MB
 // Time Limit : 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -91,10 +91,14 @@ void solve()
 {
 	LL x,y,n;
 	cin>>x>>y>>n;
-	LL z=n%x;
-	if(z==y){cout<<n<<endl;}
-	else if(z>y){cout<<n-z+y<<endl;}
-	else if(z<y){cout<<n-x+y-z<<endl;}
+	LL a=n%x;
+	if(n%x==y){cout<<n<<endl;}
+	else if(a<y){
+		cout<<max(0LL,(n-x)+(y-a))<<endl;
+	}
+	else if(a>y){
+		cout<<n-(a-y)<<endl;
+	}
 }
 int main()
 {
