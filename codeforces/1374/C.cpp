@@ -86,26 +86,29 @@ const long long N=(long long)(1e5+1);
 const long long N2=(long long)(1e6+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-
+LL a[51];
 void solve()
 {
 	LL n;
 	cin>>n;
 	S s;
 	cin>>s;
-	LL bal=0;
-	LL ans=0;
+	
 	f(i,0,n){
-		if(s[i]=='('){bal++;}
-		else{
-			bal--;
-			if(bal<0){
-				bal=0;
-				ans++;
-			}
-		}
+		if(s[i]=='('){a[i+1]=a[i]+1;}
+		else{a[i+1]=a[i]-1;}
 	}
-	cout<<ans<<endl;
+	//fe(i,1,n){trace2(i,ans);}
+        //cout<<endl;
+        LL x=0;
+        LL ans=0;
+        fe(i,1,n){
+                if(a[i]<x){
+                        ans++;
+                        x-=1;
+                }
+        }
+        cout<<ans<<endl;
 }
 int main()
 {
