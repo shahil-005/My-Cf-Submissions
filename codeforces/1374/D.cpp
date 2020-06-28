@@ -97,15 +97,69 @@ void solve()
 		cin>>a[i];
 		if(a[i]%k!=0){f=1;}
 	}
-	if(!f){cout<<0<<endl;}
-	else{
-		MLL m;
-		fe(i,1,n){if(a[i]%k){m[((a[i]/k)+1)*k-a[i]]++;}}
-		LL ans=0;
-		auto(m){ans=max(ans,it.ff+k*(it.ss-1));}
-		cout<<ans+1<<endl;
+	if(f==0){
+		cout<<0<<endl;
 	}
-	
+	else{
+	        sort(a+1,a+1+n);
+	        LL b[n+1];
+	        //fe(i,1,n){
+	        //        cout<<a[i]<<" ";
+	        //}
+	        //cout<<endl;
+	        fe(i,1,n){
+	                if(a[i]%k==0){b[i]=a[i];}
+	                else{
+	                        LL x=a[i]/k;
+	                        x++;
+	                        b[i]=x*k;
+	                }
+	        }
+	        //fe(i,1,n){
+	        //        cout<<b[i]<<" ";
+	        //}
+	        //cout<<endl;
+	        VL v;
+	        MLL m;
+	        fe(i,1,n){
+	                if(a[i]!=b[i]){
+	                	LL x=b[i]-a[i];
+	                	m[x]++;
+	                        v.pb(b[i]-a[i]);
+	                }
+	        }
+	        sort(all(v));
+	        //auto(v){cout<<it<<" ";}
+	        //cout<<endl;
+	        SL s;
+	        LL ans=0;
+	        auto(m){
+	                /*if(s.find(it)==s.end()){
+	                        s.insert(it);
+	                }
+	                else{
+	                        LL x=1;
+	                        while(1){
+	                                LL y=it+x*k;
+	                                if(s.find(y)==s.end()){
+	                                        s.insert(y);
+	                                        break;
+	                                }
+	                                else{x++;}
+	                        }
+	                }*/
+	                LL cur=it.ff+k*(it.ss-1);
+	                ans=max(cur,ans);
+	                
+	        }
+	        cout<<ans+1<<endl;
+	}
+        /*LL maxv=0;
+        auto(s){
+                maxv=max(it,maxv);
+        }
+        cout<<maxv+1<<endl;
+        }*/
 }
 int main()
 {
