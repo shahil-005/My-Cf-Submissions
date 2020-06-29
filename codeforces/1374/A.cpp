@@ -91,7 +91,9 @@ void solve()
 {
 	LL x,y,n;
 	cin>>x>>y>>n;
-	cout<<(n-y)/x*x+y<<endl;
+	LL ans=n-n%x+y;
+	if(ans>n){cout<<ans-x<<endl;}
+	else{cout<<ans<<endl;}
 }
 int main()
 {
