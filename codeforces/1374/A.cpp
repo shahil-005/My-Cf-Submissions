@@ -91,9 +91,10 @@ void solve()
 {
 	LL x,y,n;
 	cin>>x>>y>>n;
-	LL ans=n-n%x+y;
-	if(ans>n){cout<<ans-x<<endl;}
-	else{cout<<ans<<endl;}
+	LL z=n%x;
+	if(z==y){cout<<n<<endl;}
+	else if(z>y){cout<<n-z+y<<endl;}
+	else if(z<y){cout<<n-x+y-z<<endl;}
 }
 int main()
 {
