@@ -93,15 +93,24 @@ void solve()
 	cin>>n;
 	S s;
 	cin>>s;
-	LL y=n-11;
-	LL z=0;
-	fe(i,0,n-11){
+	LL x=0;
+	f(i,0,n){
 		if(s[i]=='8'){
-			z++;
+			x++;
 		}
 	}
-	if((y/2)<z){cout<<"YES";}
-	else{cout<<"NO";}
+	LL y=n-11;
+	if(y/2>=x){cout<<"NO";}
+	else{
+		LL z=0;
+		fe(i,0,n-11){
+			if(s[i]=='8'){
+				z++;
+			}
+		}
+		if((y/2)<z){cout<<"YES";}
+		else{cout<<"NO";}
+	}
 }
 int main()
 {
