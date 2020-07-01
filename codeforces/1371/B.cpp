@@ -88,13 +88,33 @@ const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 
 void solve()
-{	
-	//Editorial
+{
 	LL n,r;
 	cin>>n>>r;
-	if(r<n){cout<<(r*(r+1))/2<<endl;}	//for every w(<=r),it will have w shapes
-	if(r>=n){cout<<(n*(n-1))/2 + 1<<endl;}	//for every w(<n),it will have w shapes
-						//	and after that only 1 same shape for all w(>=n)	
+	//if(n==r){cout<<1<<endl;}
+	if(r==1){cout<<1<<endl;}
+	else{
+		LL ans;
+		LL x=(n*(n+1))/2;
+		LL y=(r*(r+1))/2;
+		LL a=(r*(r-1))/2;
+		LL b=(n*(n-1))/2;
+		//trace4(x,y,a,b);
+		if(n>r){
+			ans=(r*(r+1))/2;
+		}
+		else if(n<r){
+			//ans=((r*(r+1))/2)-((n*(r-1))/2);
+			
+			
+			ans=b+1;
+		}
+		else if(n==r){
+			ans=b+1;
+		}
+		
+		cout<<ans<<endl;
+	}
 }
 int main()
 {
