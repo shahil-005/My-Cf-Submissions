@@ -1,7 +1,7 @@
 
 // Problem : A. Magical Sticks
 // Contest : Codeforces - Codeforces Round #654 (Div. 2)
-// URL : https://codeforces.com/contest/1371/problem/A
+// URL : https://codeforces.com/contest/1371/problem/0
 // Memory Limit : 256 MB
 // Time Limit : 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -91,9 +91,8 @@ void solve()
 {
 	LL n;
 	cin>>n;
-	if(n%2){cout<<(n+1)/2<<endl;}	//All sticks will be used
-	else{cout<<n/2<<endl;}		//n-1 sticks will be used
-					//Basically,(n+1)/2
+	n++;
+	cout<<n/2<<endl;
 }
 int main()
 {
