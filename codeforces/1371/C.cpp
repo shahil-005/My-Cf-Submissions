@@ -89,11 +89,19 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//EDITORIAL
 	LL v,c,n1,n2;
 	cin>>v>>c>>n1>>n2;
-	if(v+c>=n1+n2 && min(v,c)>=n2){cout<<"Yes"<<endl;}
-	else{cout<<"No"<<endl;}
+	if(v+c<n1+n2){cout<<"No"<<endl;}
+	else{
+		if(min(v,c)>=n2){cout<<"Yes"<<endl;}
+		else{
+			cout<<"No"<<endl;
+			//LL a=min(v,c);
+			//LL b=max(v,c);
+			//if(b-a<=n1){cout<<"Yes"<<endl;}
+			//else{cout<<"No"<<endl;}
+		}
+	}
 }
 int main()
 {
