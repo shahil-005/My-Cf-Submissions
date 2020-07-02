@@ -91,18 +91,25 @@ void solve()
 {
 	LL a1,a2,k1,k2,n;
 	cin>>a1>>a2>>k1>>k2>>n;
-	if(k1>k2){swap(k1,k2);swap(a1,a2);}
 	LL x,y=0;
 	x=n-a1*(k1-1)-a2*(k2-1);
+	if(k1<k2){
+		LL t1=n/k1;
+		y+=min(a1,t1);
+		n-=min(a1,t1)*k1;
+		t1=n/k2;
+		y+=min(a2,t1);
+		n-=min(a2,t1)*k2;
+	}
+	else if(k1>=k2){
+		LL t1=n/k2;
+		y+=min(a2,t1);
+		n-=min(a2,t1)*k2;
+		t1=n/k1;
+		y+=min(a1,t1);
+		n-=min(a1,t1)*k1;
+	}
 	if(x<0){x=0;}
-	
-	LL t1=n/k1;
-	y+=min(a1,t1);
-	n-=min(a1,t1)*k1;
-	t1=n/k2;
-	y+=min(a2,t1);
-	n-=min(a2,t1)*k2;
-	
 	cout<<x<<" "<<y<<endl;
 }
 int main()
