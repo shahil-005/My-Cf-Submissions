@@ -89,15 +89,6 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//O(n) sol explanation : 
-		//https://codeforces.com/blog/entry/4173?#comment-155129
-		//https://codeforces.com/blog/entry/4173?#comment-612563
-	//Matrix exponentiation sol :
-		//https://codeforces.com/blog/entry/4173?#comment-399200
-		//https://codeforces.com/blog/entry/4173?#comment-85531
-	//Other Approaches :
-		//https://codeforces.com/blog/entry/4173?#comment-212195
-		//https://codeforces.com/blog/entry/4173?#comment-335228
 	LL n;
 	cin>>n;
 	LL abc_=0,d_=1;
@@ -108,7 +99,7 @@ void solve()
 		d_=d;
 		abc_=abc;
 	}
-	cout<<d_<<endl;
+	cout<<d_;
 
 }
 int main()
