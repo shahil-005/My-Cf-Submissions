@@ -825,6 +825,23 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF86001026": {
+    "contest_id": 1375,
+    "language": "GNU C++17",
+    "path": "codeforces/1375/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Element Extermination",
+    "problem_url": "https://codeforces.com/contest/1375/problem/C",
+    "submission_id": "CF86001026",
+    "submission_url": "https://codeforces.com/contest/1375/submission/86001026",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "greedy",
+      "*1400"
+    ],
+    "timestamp": "Jul/04/2020 23:36"
+  },
   "CF86068701": {
     "contest_id": 1249,
     "language": "GNU C++17",
