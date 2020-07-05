@@ -92,27 +92,13 @@ void solve()
 	LL n;
 	cin>>n;
 	LL a[n+1];
-	MLL m;
-	fe(i,1,n){cin>>a[i];m[a[i]]++;}
-	VPLL v;
-	auto(m){
-		LL x=it.ff;
-		LL y=it.ss;
-		v.pb({x,y});
+	fe(i,1,n){cin>>a[i];}
+	sort(a+1,a+1+n);
+	LL f=1;
+	fe(i,2,n){
+		if(a[i]-a[i-1]==1){f=2;}
 	}
-	LL n1=v.size();
-	LL ans=1;
-	f(i,1,n1){
-		if(v[i].ff-v[i-1].ff==1){
-			LL x=v[i].ss+v[i-1].ss;
-			ans=max(x,ans);
-		}
-		else{
-			ans=max(v[i].ss,ans);
-			ans=max(v[i-1].ss,ans);
-		}
-	}
-	cout<<ans<<endl;
+	cout<<f<<endl;
 }
 int main()
 {
