@@ -95,30 +95,37 @@ int gcd(LL a, LL b)
 int lcm(LL a,LL b){
 	return (a*b)/gcd(a,b);
 }
-bool prime(LL n) 
-{ 
-    if (n <= 1)  return false; 
-    if (n <= 3)  return true; 
-  
-    if (n%2 == 0 || n%3 == 0) return false; 
-  
-    for (int i=5; i*i<=n; i=i+6) 
-        if (n%i == 0 || n%(i+2) == 0) 
-           return false; 
-  
-    return true; 
-}
 void solve()
 {
-	//Editorial
 	LL n;
 	cin>>n;
-	LL x=1;
-	for(LL i=2;i<=sqrt(n);i++){
-		if(n%i==0){x=i;break;}
+	if(n%2==0){
+		cout<<n/2<<" "<<n/2<<endl;
 	}
-	if(x>1){cout<<n/x<<" "<<n-n/x<<endl;}
-	else{cout<<1<<" "<<n-1<<endl;}
+	else{
+		vector<pair<LL,pair<LL,LL> > > v;
+		for(LL i=1; i<=sqrt(n); i++){ 
+			if(n%i==0){
+					LL y=i;
+					LL z=n-i;
+					LL lc=lcm(y,z);
+					if(y>0&&z>0){
+						v.pb({lc,{y,z}});
+					}
+					
+					//de3(y,z,lc);
+					y=n/i;
+					z=n-y;
+					lc =lcm(y,z);
+					//de3(y,z,lc);
+					if(y>0&&z>0){
+						v.pb({lc,{y,z}});
+					}
+			}
+		}
+		sort(all(v));
+		cout<<v[0].ss.ff<<" "<<v[0].ss.ss<<endl;
+	}
 }
 int main()
 {
