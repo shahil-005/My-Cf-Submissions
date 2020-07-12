@@ -93,15 +93,16 @@ void solve()
 	cin>>n>>x;
 	LL a[n+1];
 	fe(i,1,n){cin>>a[i];}
-	sort(a+1,a+1+n);
-	reverse(a+1,a+1+n);
-	LL y=0,ans=0;
+	sort(a+1,a+1+n,greater<LL>());
+	LL y=0,z=MOD,ans=0;
 	fe(i,1,n){
+		z=min(z,a[i]);
 		y++;
-		if(y*a[i]>=x){
+		if(y*z>=x){
 			ans++;
+			z=MOD;
 			y=0;
-		}	
+		}		
 	}
 	cout<<ans<<endl;
 }
