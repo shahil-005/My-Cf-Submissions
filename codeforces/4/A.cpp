@@ -20,7 +20,6 @@ int main()
         {
             cout << "No";
         }
-        //fddssdf
 
     return 0;
 }
