@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF86748041": {
+    "contest_id": 869,
+    "language": "JavaScript",
+    "path": "codeforces/869/A.js",
+    "problem_index": "A",
+    "problem_name": "The Artful Expedient",
+    "problem_url": "https://codeforces.com/contest/869/problem/A",
+    "submission_id": "CF86748041",
+    "submission_url": "https://codeforces.com/contest/869/submission/86748041",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jul/13/2020 18:12"
+  },
   "CF86766540": {
     "contest_id": 1201,
     "language": "GNU C++17",
