@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF86837629": {
+    "contest_id": 1201,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/1201/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Zero Array",
+    "problem_url": "https://codeforces.com/contest/1201/problem/B",
+    "submission_id": "CF86837629",
+    "submission_url": "https://codeforces.com/contest/1201/submission/86837629",
+    "tags": [
+      "greedy",
+      "math",
+      "*1500"
+    ],
+    "timestamp": "Jul/14/2020 19:41"
+  },
   "CF86851509": {
     "contest_id": 1027,
     "language": "GNU C++17 (64)",
