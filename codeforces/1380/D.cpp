@@ -99,18 +99,21 @@ LL a[N],b[N];
 void solve()
 {
 	c5(n,m,x,k,y);
+        //d5(n,m,x,k,y);
 	fe(i,1,n){cin>>a[i];}
 	fe(i,1,m){cin>>b[i];}
 	if(n==m){
 		LL f=0;
-		fe(i,1,n){if(a[i]!=b[i]){f=1;break;}}
+		fe(i,1,n){
+			if(a[i]!=b[i]){f=1;break;}
+		}
 		if(f){cout<<-1<<endl;}
 		else{cout<<0<<endl;}
 	}
 	else{
 		LL ans=0;
 		VPLL v;
-		SL s1;
+		SL s1,s2;
 		fe(i,1,m){s1.insert(b[i]);}
 		LL x1=n,y1;
 		fe(i,1,n){
@@ -124,13 +127,13 @@ void solve()
 			}
 			if(i==n && s1.find(a[i])==s1.end()){v.pb({x1,i});}
 		}
+                
+		//auto(v){cout<<it.ff<<" "<<it.ss<<endl;}
 		LL n1=v.size();
+		VL v2(n1,0);
 		LL f=0;
 		f(i,0,n1){
-			LL a1=v[i].ff;
-			LL a2=v[i].ss;
-			LL t1=a2-a1+1;
-			LL t2=t1/k;
+			LL t1=v[i].ss-v[i].ff+1;
 			if(t1<k){
 				f=1;
 				LL maxe=0;
@@ -142,22 +145,67 @@ void solve()
 					ans+=t1*y;
 				}
 				if(f){break;}
+				v2[i]=1;
 			}
-			else{	
-				if(t1%k==0 && x<=k*y){ans+=t2*x;}
-				else if(x<=k*y){ans+=((t2*x)+(t1-t2*k)*y);}
-				else{
-					LL f1=1;
-					LL maxe=0;
-					fe(j,a1,a2){maxe=max(maxe,a[j]);}
-					if(maxe<a[a1-1] || maxe<a[a2+1]){f1=0;}
-					if(f1==0){ans+=t1*y;}
-					else{ans+=((t1-k)*y+x);}
+                        //d3(i,t1,ans);
+		}
+               
+                //d1(ans);
+		if(f){cout<<-1;}
+		else{
+			LL f=0;
+			f(i,0,n1){
+				if(v2[i]==0){
+					LL a1=v[i].ff;
+					LL a2=v[i].ss;
+					LL t1=a2-a1+1;
+					LL t2=t1/k;
+					if(t1%k==0 && x<=k*y){
+						ans+=t2*x;
+					}
+					else{
+						f=1;
+						LL maxe=0;
+						fe(j,a1,a2){
+							maxe=max(maxe,a[j]);
+						}
+						if(maxe<a[a1-1] || maxe<a[a2+1]){
+							f=0;
+						}
+						if(f==0){
+							if(t1%k==0){
+								ans+=t1*y;
+							}
+							else{
+								if(x<=k*y){
+									ans+=((t2*x)+(t1-t2*k)*y);
+								}
+								else{
+									ans+=t1*y;
+								}
+							}
+						}
+						else{
+							if(t1%k==0){
+								ans+=((t1-k)*y+x);
+							}
+							else{
+								if(x<=k*y){
+									ans+=((t2*x)+(t1-t2*k)*y);
+								}
+								else{
+									ans+=((t1-k)*y+x);
+								}
+							}
+						}
+					
+					}
 				}
 			}
+			cout<<ans;
+			
 		}
-		if(f){cout<<-1;}
-		else{cout<<ans<<endl;}
+		
 	}
 }
 int main()
