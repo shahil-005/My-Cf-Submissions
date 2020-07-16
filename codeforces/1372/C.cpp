@@ -98,15 +98,6 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	/*Editorial :
-	For Case 3 when answer is 2 : 
-	1)In 1st step,Divide the array in 2 halves a1 & a2,Put a2 elements in a1
-	  and a1 elements in a2 such that no elements remain remain at the same index.
-	  This can be done by 1st fixing the element of the other half to that very index where it 
-	  already was and after that cyclically push elements in each half.This ensures that no element remains
-	  at the same indices.	
-	2)In 2nd step,move each element to their respective indices.
-	*/
 	c1(n);
 	ce(a,n);
 	LL x=0;
