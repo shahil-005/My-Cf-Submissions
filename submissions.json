@@ -825,6 +825,23 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF87010357": {
+    "contest_id": 1216,
+    "language": "GNU C++17",
+    "path": "codeforces/1216/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Shooting",
+    "problem_url": "https://codeforces.com/contest/1216/problem/B",
+    "submission_id": "CF87010357",
+    "submission_url": "https://codeforces.com/contest/1216/submission/87010357",
+    "tags": [
+      "greedy",
+      "implementation",
+      "sortings",
+      "*900"
+    ],
+    "timestamp": "Jul/16/2020 22:27"
+  },
   "CF87011434": {
     "contest_id": 1216,
     "language": "GNU C++17",
