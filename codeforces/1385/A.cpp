@@ -1,7 +1,7 @@
 
 // Problem : A. Three Pairwise Maximums
 // Contest : Codeforces - Codeforces Round #656 (Div. 3)
-// URL : https://codeforces.com/contest/1385/problem/A
+// URL : https://codeforces.com/contest/1385/problem/0?locale=en
 // Memory Limit : 256 MB
 // Time Limit : 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -50,8 +50,6 @@ using namespace std;
 #define c6(a,b,c,d,e,f);        LL a,b,c,d,e,f;cin>>a>>b>>c>>d>>e>>f;
 #define c(a,n);                 LL a[n];f(i,0,n){cin>>a[i];}
 #define ce(a,n);                LL a[n+1];fe(i,1,n){cin>>a[i];}
-#define IMIN                    INT_MIN
-#define IMAX                    INT_MAX
 
 //Typedefs:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 typedef string                  S;
@@ -102,28 +100,44 @@ void solve()
 {
 	LL a[3];
 	MLL m;
-	f(i,0,3){cin>>a[i];m[a[i]]++;}
-	sort(a,a+3);
-	if(m.size()==3){
-		cout<<"NO"<<endl;
+	LL n=3;
+	f(i,0,3){
+		cin>>a[i];
+		m[a[i]]++;
 	}
-	else if(m.size()==1){
+	sort(a,a+n);
+	if(m.size()==1){
 		cout<<"YES"<<endl;
-		f(i,0,3){
+		f(i,0,n){
 			cout<<a[i]<<" ";
 		}
+		cout<<endl;
 	}
-	else if(a[1]!=a[2]){
+	else if(m.size()==2){
+		if(m[1]==2){
+			cout<<"NO"<<endl;
+		}
+		else if(m[1]==1){
+			cout<<"YES"<<endl;
+			cout<<1<<" "<<1<<" "<<a[2]<<endl;
+		}
+		else if(m[a[2]]==2){
+			cout<<"YES"<<endl;
+			cout<<1<<" ";
+			f(i,0,n-1){
+				cout<<a[i]<<" ";
+			}
+			cout<<endl;
+		}
+		else{
+			cout<<"NO"<<endl;
+		}
+	}
+	else if(m.size()==3){
 		cout<<"NO"<<endl;
 	}
-	else if(a[0]==1){
-		cout<<"YES"<<endl;
-		cout<<1<<" "<<1<<" "<<a[2]<<endl;
-	}
-	else{
-		cout<<"YES"<<endl;
-		cout<<1<<" "<<a[0]<<" "<<a[2]<<endl;
-	}
+	
+
 }
 int main()
 {
