@@ -8,11 +8,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize("-Ofast")
-#pragma GCC optimize("trapv")
-//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-//#pragma GCC optimize("-O2")
-//#pragma GCC target("AVX")
+
 #define endl                    '\n'
 #define rep()                   for(LL i = 0 ; i < n ; i++)
 #define f(i,s,n)                for(LL i = s ; i < n ; i++)
@@ -54,8 +50,6 @@ using namespace std;
 #define c6(a,b,c,d,e,f);        LL a,b,c,d,e,f;cin>>a>>b>>c>>d>>e>>f;
 #define c(a,n);                 LL a[n];f(i,0,n){cin>>a[i];}
 #define ce(a,n);                LL a[n+1];fe(i,1,n){cin>>a[i];}
-#define IMIN                    INT_MIN
-#define IMAX                    INT_MAX
 
 //Typedefs:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 typedef string                  S;
@@ -104,26 +98,40 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-        LL n;
-        cin>>n;
-        LL a[n+1];
-        fe(i,1,n){
-        	cin>>a[i];
-        }
-        LL f=2;
-        fe(i,1,n){
-        	f=3-f;
-        	if(a[i]>1){
-        		break;
-        	}
-        	
-        }
-        if(f==1){
-        	cout<<"First"<<endl;
-        }
-        else{
-        	cout<<"Second"<<endl;
-        }
+	LL n;
+	cin>>n;
+	ce(a,n);
+	LL f=0;
+	LL ans=0;
+	fe(i,1,n-1){
+		if(a[i]>1 && f==0){
+			if(i%2==0){
+				f=2;
+			}
+			else{
+				f=1;
+			}
+		}
+		if(f>0 && a[i]==1){
+			ans++;
+		}
+	}
+	//d2(f,ans);
+	if(f){
+		if(f==1){cout<<"First";}
+		else{cout<<"Second";}
+	}
+	else{
+		if(n%2==0){
+			cout<<"Second";
+		}
+		else{
+			cout<<"First";
+		}
+	}
+	cout<<endl;
+	
+	
 }
 int main()
 {
