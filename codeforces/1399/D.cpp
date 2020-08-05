@@ -178,18 +178,15 @@ void solve()
 			ans2[i]=x2;
 		}
 		else if(s2[i]!=s2[i-1] && i>0){
-			LL y;
 			if(s2[i]=='0'){
-				y=s11.top();
-				s00.push(y);
+				s00.push(x2);
 				s11.pop();
 			}
 			else if(s2[i]=='1'){
-				y=s00.top();
-				s11.push(y);
+				s11.push(x);
 				s00.pop();
 			}
-			ans2[i]=y;
+			ans2[i]=x2;
 		}
 		else{
 			if(s2[i]=='0'){
