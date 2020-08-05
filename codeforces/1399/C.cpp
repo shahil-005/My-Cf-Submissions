@@ -101,36 +101,56 @@ void solve()
 	LL n;
 	cin>>n;
 	LL a[n];
+	MLL m1,m2;
 	f(i,0,n){
 		cin>>a[i];
+		m1[a[i]]++;
 	}
-	SL s;
-	f(i,0,n){
-		f(j,i+1,n){
-			s.insert(a[i]+a[j]);
-		}
+	if(m1.size()==1){
+		cout<<n/2<<endl;
 	}
-	LL ans=0;
-	for(auto it:s){
-		MLL m;
-		LL cur=0;
-		f(i,0,n){m[a[i]]++;}
+	else{
 		f(i,0,n){
-			LL x=a[i];
-			LL y=it-a[i];
-			if(x!=y&&m[x]>0&&m[y]>0){
-				cur++;
-				m[x]--;
-				m[y]--;
-			}
-			else if(x==y&&m[x]>1){
-				cur++;
-				m[x]-=2;
+			f(j,i+1,n){
+				//if(i!=j){
+				LL s=a[i]+a[j];
+				m2[s]++;
+				//}
 			}
 		}
-		ans=max(ans,cur);
+		//LL maxs=0;
+		//LL temp=0;
+		//auto(m2){
+		//	d2(it.ff,it.ss);
+		//	if(it.ss>temp){
+		//		temp=it.ss;
+		//		maxs=it.ff;
+		//	}
+		//}
+		//d1(maxs);
+		LL mans=0;
+		auto(m2){
+			LL s=it.ff;
+			LL ans=0;
+			MLL m3;
+			f(i,0,n){
+				m3[a[i]]++;
+			}
+			f(i,0,n){
+				LL x=a[i];
+				LL y=s-x;
+				if((x!=y && m3[y]>0&&m3[x]>0)||(x==y && m3[x]>1)){
+					ans++;
+					//d4(i,x,y,ans);
+					//d2(m1[x],m1[y]);
+					m3[x]--;
+					m3[y]--;
+				}
+			}
+			mans=max(mans,ans);	
+		}
+		cout<<mans<<endl;
 	}
-	cout<<ans<<endl;
 }
 int main()
 {
