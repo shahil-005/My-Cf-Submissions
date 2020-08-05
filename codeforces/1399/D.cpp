@@ -102,6 +102,7 @@ void solve()
 	cin>>n;
 	S s;
 	cin>>s;
+	S s2=s;
 	stack<LL> s0,s1;
 	LL x=1;
 	LL ans[n];
@@ -158,11 +159,82 @@ void solve()
 			}
 		}
 	}
+	
+	
+//------------------------------------------------------------------------	
+	
+	reverse(all(s2));
+	stack<LL> s00,s11;
+	LL x2=1;
+	LL ans2[n];
+	f(i,0,n){
+		if(i==0){
+			if(s2[i]=='0'){
+				s00.push(x2);
+			}
+			if(s2[i]=='1'){
+				s11.push(x2);
+			}
+			ans2[i]=x2;
+		}
+		else if(s2[i]!=s2[i-1] && i>0){
+			LL y;
+			if(s2[i]=='0'){
+				y=s11.top();
+				s00.push(y);
+				s11.pop();
+			}
+			else if(s2[i]=='1'){
+				y=s00.top();
+				s11.push(y);
+				s00.pop();
+			}
+			ans2[i]=y;
+		}
+		else{
+			if(s2[i]=='0'){
+				if(s11.size()>0){
+					LL y=s11.top();
+					ans2[i]=y;
+					s11.pop();
+					s00.push(y);
+				}
+				else{
+					x2++;
+					s00.push(x2);
+					ans2[i]=x2;
+				}
+			}
+			else if(s2[i]=='1'){
+				if(s00.size()>0){
+					LL y=s00.top();
+					ans2[i]=y;
+					s00.pop();
+					s11.push(y);
+				}
+				else{
+					x2++;
+					s11.push(x2);
+					ans2[i]=x2;
+				}
+			}
+		}
+	}
+	if(x>=x2){
 		cout<<x<<endl;
 		f(i,0,n){
 			cout<<ans[i]<<" ";
 		}
 		cout<<endl;
+	}
+	else{
+		cout<<x2<<endl;
+		f(i,0,n){
+			cout<<ans2[i]<<" ";
+		}
+		cout<<endl;
+	}
+	
 }
 int main()
 {
