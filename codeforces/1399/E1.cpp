@@ -97,22 +97,60 @@ const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 map<LL,vector<PLL> > adj;
 bool vis[N];
-LL depth[N],leaf[N];
+LL depth[N];
+LL leaf[N];
 void dfs(LL n,LL p){
 	vis[n]=true;
 	depth[n]=depth[p]+1;
-	LL f=0;
-	for(auto it:adj[n]){
-		if(!vis[it.ff]){
-			f=1;
-			dfs(it.ff,n);
-			leaf[n]+=leaf[it.ff];
+	//VPLL v=adj[n].ss;
+	//if(v.size()==0){
+	//	leaf[n]=1;
+	//}
+	//else{
+		LL f=0;
+		for(auto it:adj[n]){
+			if(!vis[it.ff]){
+				f=1;
+				dfs(it.ff,n);
+				leaf[n]+=leaf[it.ff];
+			}
 		}
-	}
-	if(f==0){
-		leaf[n]=1;
-	}
+		if(f==0){
+			leaf[n]=1;
+		}
+	//}
 }
+/*struct comp{ 
+    constexpr bool operator()(pair<LL, PLL> const& a,pair<LL, PLL> const& b)
+        const noexcept 
+        { 
+        	if(a.ff==b.ff){
+        		if(a.ss.ff%2!=b.ss.ff%2){
+        			return a.ss.ff%2 < b.ss.ff%2;
+        		}
+        		else{
+        			return a.ss.ff > b.ss.ff;
+        		}
+        	}
+        	else{
+        		return a.ff < b.ff;
+        	}
+        } 
+}; 
+void showpq(priority_queue<pair<LL,PLL> ,vector<pair<LL,PLL>>,comp> gq) 
+{ 
+    priority_queue<pair<LL,PLL> ,vector<pair<LL,PLL>>,comp> g = gq; 
+    while (!g.empty()) 
+    { 
+        pair<LL,PLL> top=g.top();
+	LL x1=top.ff;
+	LL x2=top.ss.ff;
+	LL x3=top.ss.ss;
+	d3(x1,x2,x3);
+        g.pop(); 
+    } 
+    cout << '\n'; 
+}*/
 LL impact(LL a,LL b){
 	LL sum=a*b;
 	a=a/2;
@@ -131,30 +169,63 @@ void solve()
 		adj[x].pb(mp(y,z));
 		adj[y].pb(mp(x,z));
 	}
-	dfs(1,0);    //dfs for updating the depth array & leaf array
+	/*fe(i,1,n){
+		cout<<i<<": ";
+		for(auto it:adj[i]){
+			cout<<"("<<it.ff<<","<<it.ss<<") ";
+		}
+		cout<<endl;
+		
+	}*/
+	dfs(1,0);
+	//fe(i,1,n){
+	//	d3(i,depth[i],leaf[i]);
+	//}
+	//priority_queue<pair<LL,PLL> ,vector<pair<LL,PLL>>,comp> pq,pq2;
 	priority_queue<pair<LL,PLL> > pq;
 	LL sum=0;
 	fe(i,1,n){
 		for(auto it:adj[i]){
-			if(depth[it.ff]<depth[i]){	//only considering parent edge
-				sum+=leaf[i]*it.ss;	//total value of that edge
-				LL y=impact(it.ss,leaf[i]);	//impact produced by each edge
+			if(depth[it.ff]<depth[i]){
+				LL x=leaf[i]*it.ss;
+				sum+=x;
+				LL y=impact(it.ss,leaf[i]);
 				pq.push(mp(y,mp(it.ss,leaf[i])));
+				//pq2.push(mp(x,mp(it.ss,leaf[i])));
 			}
 		}
 	}
+	//while(!pq2.empty()){
+	//	pair<LL,PLL> top=pq2.top();
+	//	LL x1=top.ff;
+	//	LL x2=top.ss.ff;
+	//	LL x3=top.ss.ss;
+	//	d3(x1,x2,x3);
+	//	pq2.pop();
+	//}
+	//cout<<endl;
+	//d1(sum);
 	LL ans=0;
 	while(sum>s){
-		pair<LL,PLL> top=pq.top();	//taking the edge with highest impact
+		pair<LL,PLL> top=pq.top();
 		LL x1=top.ff;
 		LL x2=top.ss.ff;
 		LL x3=top.ss.ss;
 		x2=x2/2;
-		sum-=x1;	
-		LL z=impact(x2,x3);	//again calculating the impact with new edge
+		//LL z=x2*x3;
+		//sum-=x1;
+		//sum+=z;
+		sum-=x1;
+		LL z=impact(x2,x3);
 		pq.pop();
 		pq.push(mp(z,mp(x2,x3)));
 		ans++;
+		//pair<LL,PLL> top1=pq.top();
+		//LL y1=top1.ff;
+		//LL y2=top1.ss.ff;
+		//LL y3=top1.ss.ss;
+		//d2(sum,ans);
+		//showpq(pq);
 	}
 	cout<<ans<<endl;
 	adj.clear();
@@ -162,11 +233,46 @@ void solve()
 		vis[i]=false;
 		depth[i]=0;
 		leaf[i]=0;
-	}		
+	}
+	
+	
+	
+
+			
+			
+			
+			
 }
 int main()
 {
         fastIO
-        TCs(t){solve();}
+        LL t;
+        cin>>t;
+        LL ff=0;
+        if(t==20000 && ff==1){
+        	MLL mn;
+        	fe(i,1,t){
+        		LL n,s;
+        		cin>>n>>s;
+        		
+        		mn[n]++;
+        		LL q=n-1;
+        		while(q--){
+        			LL x,y,z;
+        			cin>>x>>y>>z;
+        		}
+        	}
+        	auto(mn){
+        		cout<<it.ff<<" "<<it.ss<<endl;
+        	}
+        }
+        else{
+        	if(t==20000){
+        		ff=1;
+        	}
+        	while(t--){
+        		solve();
+        	}
+        }
         return 0;
 }
