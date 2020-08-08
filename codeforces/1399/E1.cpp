@@ -246,33 +246,6 @@ void solve()
 int main()
 {
         fastIO
-        LL t;
-        cin>>t;
-        LL ff=0;
-        if(t==20000 && ff==1){
-        	MLL mn;
-        	fe(i,1,t){
-        		LL n,s;
-        		cin>>n>>s;
-        		
-        		mn[n]++;
-        		LL q=n-1;
-        		while(q--){
-        			LL x,y,z;
-        			cin>>x>>y>>z;
-        		}
-        	}
-        	auto(mn){
-        		cout<<it.ff<<" "<<it.ss<<endl;
-        	}
-        }
-        else{
-        	if(t==20000){
-        		ff=1;
-        	}
-        	while(t--){
-        		solve();
-        	}
-        }
+        TCs(t){solve();}
         return 0;
 }
