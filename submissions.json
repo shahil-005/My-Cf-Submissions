@@ -825,6 +825,24 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF90584935": {
+    "contest_id": 1401,
+    "language": "GNU C++17",
+    "path": "codeforces/1401/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Mere Array",
+    "problem_url": "https://codeforces.com/contest/1401/problem/C",
+    "submission_id": "CF90584935",
+    "submission_url": "https://codeforces.com/contest/1401/submission/90584935",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "number theory",
+      "sortings",
+      "*1300"
+    ],
+    "timestamp": "Aug/21/2020 21:01"
+  },
   "CF90787714": {
     "contest_id": 1385,
     "language": "GNU C++17",
