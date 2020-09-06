@@ -106,7 +106,14 @@ void solve()
 {
         LL n;
         cin>>n;
-        cout<<popc(n);
+        LL ans=0;
+        while(n>0){
+        	LL x=log2(n);
+        	LL y=pow(2,x);
+        	n-=y;
+        	ans++;
+        }
+        cout<<ans<<endl;
 }
 int main()
 {
