@@ -160,11 +160,45 @@ void solve()
        			cout<<endl;
        		}
        		else{
-       			cout<<k<<endl;
-       			fe(i,1,k){
-       				cout<<0<<" ";
+       			cout<<k+1<<endl;
+       			LL f2=0;
+       			fe(i,1,n){
+       				if(a[i]==0){
+       					LL f=0;
+       					fe(j,i+1,n){
+       						if(a[j]==0){
+       							f=j;
+       							break;
+       						}
+       					}
+       					LL count=0;
+       					fe(j,f+1,n){
+       						if(a[j]==1){
+       							count++;
+       						}
+       					}
+       					//d2(count,k-1);
+       					if(count>=k-1){
+       						f2=1;
+       					}
+       					break;
+       				}
        			}
-       			cout<<endl;
+       			
+       			if(f2==1){
+       				cout<<0<<" "<<0<<" ";
+       				fe(i,1,k-1){
+       					cout<<1<<" ";
+       				}
+       				cout<<endl;
+       			}
+       			else{
+       				cout<<1<<" "<<1<<" ";
+       				fe(i,1,k-1){
+       					cout<<0<<" ";
+       				}
+       				cout<<endl;
+       			}
        		}
        	}
         
