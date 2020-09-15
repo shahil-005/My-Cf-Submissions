@@ -101,39 +101,45 @@ const long long N=(long long)(1e5+1);
 const long long N2=(long long)(1e6+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-VL adj[N];
-bitset<N> a;	//use bitsets instead of bool
-LL n,m;
-LL ans=0;
-void dfs(LL s,LL p,LL cnt){
-	if(a[s]==1){
-		cnt++;
-	}
-	else{
-		cnt=0;
-	}
-	if(cnt>m){
-		return;
-	}
-	if(s!=1 && adj[s].size()==1){
-		ans++;
-		//d2(s,ans);
-		return;
-	}
-	for(auto it:adj[s]){
-		if(it!=p){
-			dfs(it,s,cnt);
+LL a[N];
+LL cur[N];
+map<LL,VL> adj;
+LL bfs(LL s,LL n,LL m){
+	LL ans=0;
+	queue<LL> q;
+	bool vis[n+1];
+	mem(vis,false);
+	q.push(s);
+	cur[s]=a[s];
+	while(!q.empty()){
+		LL x=q.front();
+		vis[x]=true;
+		q.pop();
+		if(adj[x].size()==1 && x!=s){
+			ans++;
+			//d2(x,ans);
+		}
+		for(auto it:adj[x]){
+			if(vis[it]==false){
+				if(a[it]==1){
+					cur[it]+=cur[x]+1;
+				}
+				if(cur[it]<=m){
+					q.push(it);
+				}
+				
+			}
+			
 		}
 	}
-	
+	return ans;
 }
 void solve()
 {
+        LL n,m;
         cin>>n>>m;
         fe(i,1,n){
-        	int x;
-        	cin>>x;
-        	a[i]=x;
+        	cin>>a[i];
         }
         fe(i,1,n-1){
         	LL x,y;
@@ -141,8 +147,15 @@ void solve()
         	adj[x].pb(y);
         	adj[y].pb(x);
         }
-        dfs(1,0,0);
-        cout<<ans;
+        /*fe(i,1,n){
+        	cout<<i<<" : ";
+        	for(auto it:adj[i]){
+        		cout<<it<<" ";
+        	}
+        	cout<<endl;
+        }*/
+        cout<<bfs(1,n,m);
+        
 }
 int main()
 {
