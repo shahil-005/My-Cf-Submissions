@@ -104,22 +104,23 @@ const long long INF=(long long)(2e18);
 
 void solve()
 {
-	//Sliding Window using another prefix sum array
+	//Sliding Window
         LL n,k;
         cin>>n>>k;
         LL a[n+1];
-        LL b[n+1];
-        mem(b,0);
         fe(i,1,n){
         	cin>>a[i];
-        	b[i]=b[i-1]+a[i];
         }
-        LL mins=b[k];
+        LL sum=0;
+        fe(i,1,k){
+        	sum+=a[i];
+        }
+        LL mins=sum;
         LL j=1;
         fe(i,k+1,n){
-        	LL temp=b[i]-b[i-k];
-        	if(temp<mins){
-        		mins=temp;
+        	sum+=a[i]-a[i-k];
+        	if(sum<mins){
+        		mins=sum;
         		j=i-k+1;
         	}
         }
