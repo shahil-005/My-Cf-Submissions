@@ -102,7 +102,6 @@ const long long N2=(long long)(1e6+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 char a[11][11];
-LL b[11][11];
 void solve()
 {
         LL n,m;
@@ -112,6 +111,7 @@ void solve()
 			cin>>a[i][j];
 		}
 	}
+	LL r=0,c=0;
 	fe(i,1,n){
 		LL f=0;
 		fe(j,1,m){
@@ -120,12 +120,7 @@ void solve()
 			}
 		}
 		if(f==1){
-			fe(j,1,m){
-				b[i][j]++;
-				if(a[i][j]=='S'){
-					b[i][j]=-1;
-				}
-			}
+			r++;
 		}
 	}
 	fe(i,1,m){
@@ -136,23 +131,11 @@ void solve()
 			}
 		}
 		if(f==1){
-			fe(j,1,n){
-				b[j][i]++;
-				if(a[j][i]=='S'){
-					b[j][i]=-1;
-				}
-			}
+			c++;
 		}
 	}
-	LL ans=0;
-	fe(i,1,n){
-		fe(j,1,m){
-			if(b[i][j]==0||b[i][j]==1){
-				ans++;
-			}
-		}
-	}
-	cout<<ans<<endl;
+	LL ans=n*m-r*c;
+	cout<<ans;
 }
 int main()
 {
