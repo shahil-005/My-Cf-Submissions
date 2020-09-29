@@ -171,15 +171,15 @@ bool isprimeMR(LL n)	//Miller-Robin O(logn) approach
         while(r<=((n-1)>>__builtin_ctzll(n-1)))
         {
             if(r&((n-1)>>__builtin_ctzll(n-1)))
-                t=((__int128)t*x)%n;
-            x=((__int128)x*x)%n;
+                t=(t*x)%n;
+            x=(x*x)%n;
             r<<=1;
         }
         if(t==1||t==n-1)
             flag=false;
         for(r=0;r<__builtin_ctzll(n-1);r++)
         {
-            t=((__int128)t*t)%n;
+            t=(t*t)%n;
             if(t==n-1)
                 flag=false;
         }
