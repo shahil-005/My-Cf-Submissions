@@ -158,7 +158,7 @@ bool isprime(LL n) 	//O(sqrt(n)) approach
     }
     return true; 
 }
-bool isprimeMR(LL n)	//Miller-Robin O(logn) approach
+bool primeMR(LL n)	//Miller-Robin O(logn) approach
 {
     if(n<2){return false;}
     for(LL x:{2,3,5,7,11,13,17,19,23,29,31,37})
@@ -203,15 +203,15 @@ void solve(LL tc)
         	for(LL j=2;j*j<=i;j++){
         		if(i%j==0){
         			if(i/j==j){
-        				if(isprimeMR(j)){
+        				if(isprime(j)){
         					cnt++;
         				}
         			}
         			else{
-        				if(isprimeMR(j)){
+        				if(isprime(j)){
         					cnt++;
         				}
-        				if(isprimeMR(i/j)){
+        				if(isprime(i/j)){
         					cnt++;
         				}
         			}
