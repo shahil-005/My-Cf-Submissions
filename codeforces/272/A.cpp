@@ -5,11 +5,11 @@ int main()
 {
         fastIO
         int n;
-	scanf("%d",&n);
+	cin>>n;
 	int a[n+1];
 	int sum=0;
 	for(int i=1;i<=n;i++){
-		scanf("%d",&a[i]);
+		cin>>a[i];
 		sum+=a[i];
 	}
 	int ans=0;
@@ -18,6 +18,6 @@ int main()
 			ans++;
 		}
 	}
-	printf("%d",ans);
+	cout<<ans;
         return 0;
 }
