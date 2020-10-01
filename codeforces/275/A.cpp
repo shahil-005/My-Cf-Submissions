@@ -218,31 +218,27 @@ LL dx[5]={0,1,-1,0,0};
 LL dy[5]={0,0,0,1,-1};
 void solve(LL tc)
 {
-	LL c[4][4];
+	LL b[4][4],c[4][4];
 	mem(c,0);
 	fe(i,1,3){
 		fe(j,1,3){
-			LL x;
-			cin>>x;
-			x%=2;
-			if(x){
-				fe(k,0,4){
-					if(i+dx[k]>=1 && i+dx[k]<=3 && j+dy[k]>=1 && j+dy[k]<=3){
-						c[i+dx[k]][j+dy[k]]++;
-					}
-					
+			cin>>b[i][j];
+			fe(k,0,4){
+				if(i+dx[k]>=1 && i+dx[k]<=3 && j+dy[k]>=1 && j+dy[k]<=3){
+					c[i+dx[k]][j+dy[k]]+=b[i][j];
 				}
+				
 			}
-			
 		}
 	}
 	fe(i,1,3){
 		fe(j,1,3){
-			if(c[i][j]&1){
-				cout<<0;
+			//cout<<c[i][j]<<" ";
+			if(c[i][j]%2==0){
+				cout<<1;
 			}
 			else{
-				cout<<1;
+				cout<<0;
 			}
 		}
 		cout<<endl;
