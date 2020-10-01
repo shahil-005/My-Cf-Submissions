@@ -214,12 +214,42 @@ const long long N=(long long)(1e5+1);
 const long long NN=(long long)(1e6);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-
+LL dp[NN];
+LL init(LL n){
+	dp[0]=0;
+	dp[1]=1;
+	LL i=2;
+	while(1){
+		dp[i]=dp[i-1]+dp[i-2];
+		if(dp[i]==n){
+			break;
+		}
+		i++;
+	}
+	return i;
+}
 void solve(LL tc)
 {
 	LL n;
 	cin>>n;
-	cout<<0<<" "<<0<<" "<<n;
+	if(n==1){
+		//cout<<"I'm too stupid to solve this problem";
+		cout<<0<<" "<<0<<" "<<1;
+	}
+	else if(n==0){
+		cout<<0<<" "<<0<<" "<<0;
+	}
+	else if(n==2){
+		cout<<1<<" "<<1<<" "<<0;
+	}
+	else{
+		LL i=init(n);
+		cout<<dp[i-1]<<" "<<dp[i-3]<<" "<<dp[i-4]<<endl;
+		/*fe(j,0,i){
+			d2(j,dp[j]);
+		}*/
+	}
+	
 }
 int main()
 {
