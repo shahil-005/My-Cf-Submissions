@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define fastIO                  ios_base::sync_with_stdio(false);cin.tie(NULL);
 int main()
 {
+        fastIO
         int n;
 	scanf("%d",&n);
 	int a[n+1];
