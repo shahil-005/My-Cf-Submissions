@@ -825,6 +825,21 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF94448750": {
+    "contest_id": 43,
+    "language": "GNU C++17",
+    "path": "codeforces/43/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Football",
+    "problem_url": "https://codeforces.com/contest/43/problem/A",
+    "submission_id": "CF94448750",
+    "submission_url": "https://codeforces.com/contest/43/submission/94448750",
+    "tags": [
+      "strings",
+      "*1000"
+    ],
+    "timestamp": "Oct/02/2020 08:04"
+  },
   "CF94449546": {
     "contest_id": 215,
     "language": "GNU C++17",
