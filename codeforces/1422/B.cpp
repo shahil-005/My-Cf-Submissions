@@ -241,10 +241,27 @@ LL fun(LL x1,LL x2,LL x3,LL x4){
 	c[3]=x3;
 	c[0]=x4;
 	sort(c,c+4);
-	LL dif=0;
+	LL dif1=0;
 	fe(i,0,3){
-		dif+=abs(c[1]-c[i]);
+		dif1+=abs(c[0]-c[i]);
 	}
+	LL dif2=0;
+	fe(i,0,3){
+		dif2+=abs(c[1]-c[i]);
+	}
+	LL dif3=0;
+	fe(i,0,3){
+		dif3+=abs(c[2]-c[i]);
+	}
+	LL dif4=0;
+	fe(i,0,3){
+		dif4+=abs(c[3]-c[i]);
+	}
+	LL dif=imax;
+	dif=min(dif,dif1);
+	dif=min(dif,dif2);
+	dif=min(dif,dif3);
+	dif=min(dif,dif4);
 	return dif;
 }
 void solve(LL tc)
