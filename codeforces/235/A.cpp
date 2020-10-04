@@ -1,3 +1,4 @@
+
 // Problem: A. LCM Challenge
 // Contest: Codeforces - Codeforces Round #146 (Div. 1)
 // URL: https://codeforces.com/problemset/problem/235/A
@@ -235,9 +236,6 @@ const long long INF=(long long)(2e18);
 
 void solve(LL tc)
 {
-	// https://codeforces.com/blog/entry/5592?#comment-108798
-	// https://codeforces.com/blog/entry/5592?#comment-505453
-	// https://codeforces.com/blog/entry/5592?#comment-590367
 	// https://ideone.com/95rvs9
 	// When n is odd:
 		// n,n-1,n-2 have no pair of elements such that their gcd>1
