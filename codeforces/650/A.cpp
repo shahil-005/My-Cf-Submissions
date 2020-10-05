@@ -247,20 +247,16 @@ void solve(LL tc)
 		LL x,y;
 		cin>>x>>y;
 		m[{x,y}]++;
+		if(m1[x]>0 || m2[y]>0){
+			ans+=(m1[x]+m2[y]);
+		}
 		m1[x]++;
 		m2[y]++;
-	}
-	for(auto it:m1){
-		LL t=it.ss;
-		ans+=((t-1)*(t))/2;
-	}
-	for(auto it:m2){
-		LL t=it.ss;
-		ans+=((t-1)*(t))/2;
 	}
 	for(auto it:m){
 		LL t=it.ss;
 		ans-=((t-1)*(t))/2;
+		//cout<<it.ff.ff<<" "<<it.ff.ss<<" : "<<it.ss<<endl;
 	}
 	cout<<ans;
 }
