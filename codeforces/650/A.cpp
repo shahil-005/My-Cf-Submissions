@@ -241,15 +241,26 @@ void solve(LL tc)
 	LL n;
 	cin>>n;
 	MLL m1,m2;
-	map<PLL,LL> m3;
+	map<PLL,LL> m;
 	LL ans=0;
 	fe(i,1,n){
 		LL x,y;
 		cin>>x>>y;
-		ans+= (m1[x]+m2[y]-m3[{x,y}]);
+		m[{x,y}]++;
 		m1[x]++;
 		m2[y]++;
-		m3[{x,y}]++;
+	}
+	for(auto it:m1){
+		LL t=it.ss;
+		ans+=((t-1)*(t))/2;
+	}
+	for(auto it:m2){
+		LL t=it.ss;
+		ans+=((t-1)*(t))/2;
+	}
+	for(auto it:m){
+		LL t=it.ss;
+		ans-=((t-1)*(t))/2;
 	}
 	cout<<ans;
 }
