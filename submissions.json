@@ -825,6 +825,24 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF94846456": {
+    "contest_id": 1335,
+    "language": "GNU C++17",
+    "path": "codeforces/1335/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Two Teams Composing",
+    "problem_url": "https://codeforces.com/contest/1335/problem/C",
+    "submission_id": "CF94846456",
+    "submission_url": "https://codeforces.com/contest/1335/submission/94846456",
+    "tags": [
+      "binary search",
+      "greedy",
+      "implementation",
+      "sortings",
+      "*1100"
+    ],
+    "timestamp": "Oct/06/2020 17:35"
+  },
   "CF94850178": {
     "contest_id": 1335,
     "language": "GNU C++17",
