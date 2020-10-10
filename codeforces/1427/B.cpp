@@ -263,24 +263,53 @@ void solve(LL tc)
 			f2=1;
 		}
 	}
-	if(k==0){	//No change possible
+	if(k==0){
 		cout<<sum<<endl;
 	}
-	else if(cnt<=k){	//Full string consists of W
+	else if(n==1){
+		if(cnt==1){
+			cout<<1<<endl;
+		}
+		if(cnt==0){
+			cout<<1<<endl;
+		}
+	}
+	else if(n==2){
+		if(cnt==0){
+			cout<<3<<endl;
+		}
+		if(cnt==1){
+			cout<<3<<endl;
+		}
+		if(cnt==2){
+			if(k==1){
+				cout<<1<<endl;
+			}
+			else if(k==2){
+				cout<<3<<endl;
+			}
+		}
+	}
+	else if(cnt<=k){
 		cout<<(n-1)*2 + 1 <<endl;
 	}
-	else if(f2==0){		//When no W present : Full string of LLLLLLLLLL's type
+	else if(f2==0){
 		cout<<2*(k-1)+1<<endl;
+		// if(k-1==cnt){
+			// cout<<2*(k-1)+1<<endl;
+		// }
+		// else{
+			// cout<<k*2<<endl;
+		// }
 	}
 	else{
-		VPLL v;
-		//--------------------------------------------------This Part for calculating length of all continuous LLLLL's
 		LL x=0;
-		LL f=0;
+		VL v;
+		LL f3=0;
 		fe(i,0,n-1){
-			if(f==1){
+			if(f3==1){
 				if(s[i]=='W'&&x>0){
-					v.pb({1,x});	//Subsegemts of L having W on both ends have v[i].ff=1 : (Type 1)
+					v.pb(x);
 					x=0;
 				}
 				else if(s[i]=='L'){
@@ -288,37 +317,66 @@ void solve(LL tc)
 				}
 			}
 			if(s[i]=='W'){
-				f=1;
+				f3=1;
 			}	
 		}
-		if(x>0){
-			v.pb({2,x});	//Suffix Segment (v[i].ff=2) : (Type 2)
-		}
-		x=0;
-		rfe(i,n-1,0){
-			if(s[i]=='W'){
-				x=0;
-			}
-			else if(s[i]=='L'){
-				x++;
-			}
-		}
-		if(x>0){
-			v.pb({2,x});	//Prefix Segment (v[i].ff=2) : (Type 2)
-		}
-		//------------------------------------------------------------
-		sort(all(v));	//So greedy approach,First all segments of Type 1 will be convert starting from the smallest length
-				//Then similarly the suffix and prefix will be processed
+		//cout<<"? : ";
+		// for(auto it:v){
+			// cout<<it<<" ";
+		// }
+		// cout<<endl;
+		sort(all(v));
 		LL ans=0;
 		LL temp2=0;
 		for(auto it:v){
-			if(k>=it.ss){
-				k-=it.ss;
-				ans+=(2*it.ss+(2-it.ff));	//Type 2 will contribute 1 less than Type 2
+			//d2(it,k);
+			if(k>=it){
+				k-=it;
+				ans+=(2*it + 1);
 			}
 			else{
-				ans+=(k*2);	//Regardless of type,if not filled completely ,they will contribute the same
+				ans+=(k*2);
+				//ans+=(2*(k-1)+1);
+				//temp2=it;
 				k=0;	
+			}
+			//d1(ans);
+		}
+		//d3(k,x,ans);
+		if(k>0 && x>0){
+			if(x>k){
+				ans+=(2*k);
+				k=0;
+			}
+			if(x==k){
+				ans+=(2*x);
+				k=0;
+			}
+			if(x<k){
+				ans+=(2*x);
+				k-=x;
+			}
+		}
+		if(s[0]=='L' &&k>0){
+			
+			LL temp=0;
+			for(auto it:s){
+				if(it=='L'){
+					temp++;	
+				}
+				else{
+					break;
+				}
+			}
+			//d3(temp,k,ans);
+			if(temp>k){
+				ans+=(2*k);
+			}
+			if(temp==k){
+				ans+=(2*(temp-1)+2);
+			}
+			if(temp<k){
+				ans+=(2*(temp-1)+2);
 			}
 		}
 		cout<<sum+ans<<endl;
