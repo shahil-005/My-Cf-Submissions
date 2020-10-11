@@ -307,14 +307,14 @@ void solve(LL tc)
 			v.pb({2,x});	//Prefix Segment (v[i].ff=2) : (Type 2)
 		}
 		//------------------------------------------------------------
-		sort(all(v));	//So greedy approach,First all segments of Type 1 will be converted starting from the smallest length
+		sort(all(v));	//So greedy approach,First all segments of Type 1 will be convert starting from the smallest length
 				//Then similarly the suffix and prefix will be processed
 		LL ans=0;
 		LL temp2=0;
 		for(auto it:v){
 			if(k>=it.ss){
 				k-=it.ss;
-				ans+=(2*it.ss+(2-it.ff));	//Type 2 will contribute 1 less than Type 1
+				ans+=(2*it.ss+(2-it.ff));	//Type 2 will contribute 1 less than Type 2
 			}
 			else{
 				ans+=(k*2);	//Regardless of type,if not filled completely ,they will contribute the same
