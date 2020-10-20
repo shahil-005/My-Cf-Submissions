@@ -237,7 +237,6 @@ const long long INF=(long long)(2e18);
 
 void solve(LL tc)
 {
-	//EDITORIAL
 	LL n;
 	cin>>n;
 	LL ans=imax;
