@@ -825,6 +825,22 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF96761207": {
+    "contest_id": 1337,
+    "language": "GNU C++17",
+    "path": "codeforces/1337/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Ichihime and Triangle",
+    "problem_url": "https://codeforces.com/contest/1337/problem/A",
+    "submission_id": "CF96761207",
+    "submission_url": "https://codeforces.com/contest/1337/submission/96761207",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Oct/26/2020 14:35"
+  },
   "CF96762840": {
     "contest_id": 1337,
     "language": "GNU C++17",
