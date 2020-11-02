@@ -190,32 +190,27 @@ const long long INF=(long long)(2e18);
 
 void solve(LL tc)
 {
-	//Prefix sum
+	//Sliding window
 	LL n,k;
 	cin>>n>>k;
 	LL a[n+1];
-	a[0]=0;
 	fe(i,1,n){
-		LL x;
-		cin>>x;
-		a[i]=x+a[i-1];
+		cin>>a[i];
 	}
-	LL l=1;
-	LL r=1;
-	LL cur=0;
+	LL sum=0;
+	LL cnt=0;
 	LL ans=0;
-	while(l<=n && r<=n){
-		if(a[r]-a[l-1] <=k){
-			cur=r-l+1;
-			r++;
+	fe(i,1,n){
+		if(sum+a[i]<=k){
+			sum+=a[i];
+			cnt++;
 		}
-		else{
-			l++;
-			ans=max(ans,cur);
-			cur=0;
+		else if(sum!=0){
+			sum=sum-a[i-cnt]+a[i];
 		}
+		ans=max(ans,cnt);
 	}
-	cout<<max(ans,cur)<<endl;
+	cout<<ans<<endl;
 }
 int main()
 {
