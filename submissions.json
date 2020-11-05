@@ -825,6 +825,20 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF97709224": {
+    "contest_id": 1432,
+    "language": "Kotlin",
+    "path": "codeforces/1432/A.kt",
+    "problem_index": "A",
+    "problem_name": "A+B (Trial Problem)",
+    "problem_url": "https://codeforces.com/contest/1432/problem/A",
+    "submission_id": "CF97709224",
+    "submission_url": "https://codeforces.com/contest/1432/submission/97709224",
+    "tags": [
+      "*special problem"
+    ],
+    "timestamp": "Nov/05/2020 19:09"
+  },
   "CF97709785": {
     "contest_id": 1432,
     "language": "Kotlin",
