@@ -825,6 +825,23 @@
     ],
     "timestamp": "Dec/21/2020 00:33"
   },
+  "CF99492003": {
+    "contest_id": 1454,
+    "language": "GNU C++17",
+    "path": "codeforces/1454/D.cpp",
+    "problem_index": "D",
+    "problem_name": "Number into Sequence",
+    "problem_url": "https://codeforces.com/contest/1454/problem/D",
+    "submission_id": "CF99492003",
+    "submission_url": "https://codeforces.com/contest/1454/submission/99492003",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "number theory",
+      "*1300"
+    ],
+    "timestamp": "Nov/24/2020 22:18"
+  },
   "CF99706258": {
     "contest_id": 1352,
     "language": "GNU C++17",
