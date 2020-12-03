@@ -128,7 +128,7 @@ void solve(LL tc)
 		if(a==v[i].ff && b==v[i].ss){
 			cout<<i<<endl;
 			f=1;
-			
+			break;
 		}
 	}
 	if(f==0){
