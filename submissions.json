@@ -1,4 +1,19 @@
 {
+  "CF100860556": {
+    "contest_id": 641,
+    "language": "GNU C++17",
+    "path": "codeforces/641/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Little Artem and Grasshopper",
+    "problem_url": "https://codeforces.com/contest/641/problem/A",
+    "submission_id": "CF100860556",
+    "submission_url": "https://codeforces.com/contest/641/submission/100860556",
+    "tags": [
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Dec/11/2020 00:33"
+  },
   "CF100863303": {
     "contest_id": 1266,
     "language": "GNU C++17",
