@@ -209,6 +209,18 @@ void solve(LL tc)
 		}
 		
 	}
+	if(f==0){
+		cout<<n<<" "<<m<<endl;
+		fe(i,1,n){
+			cout<<a[i]<<" ";
+		}
+		cout<<endl;
+		fe(i,1,m){
+			cout<<b[i]<<" ";
+		}
+		cout<<endl;
+		return;
+	}
 	m1[1]++;
 	m2[1]++;
 	LL ans1[N],ans2[N];
@@ -266,6 +278,10 @@ void solve(LL tc)
 		}
 	}
 	cout<<N-1<<" "<<N-1<<endl;
+	// sort(ans1+1,ans1+N);
+	// reverse(ans1+1,ans1+N);
+	// sort(ans1+1,ans2+N);
+	// reverse(ans2+1,ans2+N);
 	fe(i,1,N-1){
 		cout<<abs(ans1[i])<<" ";
 	}
