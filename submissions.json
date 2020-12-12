@@ -1,4 +1,19 @@
 {
+  "CF101018328": {
+    "contest_id": 1243,
+    "language": "GNU C++17",
+    "path": "codeforces/1243/C.cpp",
+    "problem_index": "C",
+    "problem_name": "Tile Painting",
+    "problem_url": "https://codeforces.com/contest/1243/problem/C",
+    "submission_id": "CF101018328",
+    "submission_url": "https://codeforces.com/contest/1243/submission/101018328",
+    "tags": [
+      "number theory",
+      "*1500"
+    ],
+    "timestamp": "Dec/12/2020 17:51"
+  },
   "CF101125408": {
     "contest_id": 1136,
     "language": "GNU C++17",
