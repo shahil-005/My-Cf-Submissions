@@ -1,4 +1,19 @@
 {
+  "CF101125408": {
+    "contest_id": 1136,
+    "language": "GNU C++17",
+    "path": "codeforces/1136/A.cpp",
+    "problem_index": "A",
+    "problem_name": "Nastya Is Reading a Book",
+    "problem_url": "https://codeforces.com/contest/1136/problem/A",
+    "submission_id": "CF101125408",
+    "submission_url": "https://codeforces.com/contest/1136/submission/101125408",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Dec/14/2020 00:06"
+  },
   "CF101125765": {
     "contest_id": 31,
     "language": "GNU C++17",
