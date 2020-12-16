@@ -1,4 +1,20 @@
 {
+  "CF101454302": {
+    "contest_id": 746,
+    "language": "GNU C++17",
+    "path": "codeforces/746/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Decoding",
+    "problem_url": "https://codeforces.com/contest/746/problem/B",
+    "submission_id": "CF101454302",
+    "submission_url": "https://codeforces.com/contest/746/submission/101454302",
+    "tags": [
+      "implementation",
+      "strings",
+      "*900"
+    ],
+    "timestamp": "Dec/16/2020 23:46"
+  },
   "CF101454536": {
     "contest_id": 765,
     "language": "GNU C++17",
