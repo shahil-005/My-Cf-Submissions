@@ -4,33 +4,37 @@
 using namespace std;
 #define LL long long
 bool fun(LL n){
+	set<LL> s;
 	LL m=n;
 	while(n>0){
 		LL x=n%10;
 		if(x!=0){
-			if(m%x != 0){
-				return false;
-			}
+			s.insert(x);
 		}
 		
 		n=n/10;
+	}
+	for(auto it:s){
+		if(m%it != 0){
+			return false;
+		}
 	}
 	return true;
 }
 int main()
 {
         ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-        // LL cnt=1;
+        LL cnt=1;
         int t;
         cin>>t;
         while(t--){
         	LL n;
 		cin>>n;
-		// LL cnt=0;
+		LL cnt=0;
 		while(1){
-			// cnt++;
+			cnt++;
 			if(fun(n)){
-				cout<<n<<'\n';
+				cout<<n<<endl;
 				break;
 			}
 			n++;
