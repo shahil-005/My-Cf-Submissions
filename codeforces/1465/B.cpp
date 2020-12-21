@@ -1,40 +1,51 @@
-//g++ -Wall
-//g++ -static -DONLINE_JUDGE -Wl,--stack=268435456 -O2 -std=c++17
 #include <bits/stdc++.h>
+
 using namespace std;
-#define LL long long
-bool fun(LL n){
-	LL m=n;
-	while(n>0){
-		LL x=n%10;
-		if(x!=0){
-			if(m%x != 0){
-				return false;
-			}
-		}
-		
-		n=n/10;
-	}
+
+typedef long long ll;
+typedef long double ld;
+
+#define what_is(x) cout << #x << " is " << x << "\n"
+//#define check(a) cout << "check: " << a << "\n";
+#define put(a) cout << a << "\n"; return;
+
+inline void io_setup(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+}
+
+bool check(ll n){
+	vector<ll> vec;
+	string s = to_string(n);
+	for(char c:s)
+		if(c!='0')vec.push_back(c-'0');
+	for(ll x:vec)
+		if(n%x!=0)return false;
 	return true;
 }
-int main()
-{
-        ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-        // LL cnt=1;
-        int t;
-        cin>>t;
-        while(t--){
-        	LL n;
-		cin>>n;
-		// LL cnt=0;
-		while(1){
-			// cnt++;
-			if(fun(n)){
-				cout<<n<<'\n';
-				break;
-			}
-			n++;
+
+void solve(int T){
+	ll n;
+	cin >> n;
+	for(int i=0;i<3000;i++){
+		if(check(n+i)){
+			put(n+i)
 		}
-        }
-        return 0;
+	}
 }
+
+int main(){
+  io_setup();
+  int t;
+  cin >> t;
+  while(t--)solve(t+1);
+}
+
+/*
+  `-.    .-'
+     :  :
+  --:--:--
+   :  :
+.-'    `-.  ~LaKsHiTh_
+*/

@@ -839,6 +839,20 @@
     ],
     "timestamp": "Dec/21/2020 06:04"
   },
+  "CF101923133": {
+    "contest_id": 1465,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/1465/B.cpp",
+    "problem_index": "B",
+    "problem_name": "Fair Numbers",
+    "problem_url": "https://codeforces.com/contest/1465/problem/B",
+    "submission_id": "CF101923133",
+    "submission_url": "https://codeforces.com/contest/1465/submission/101923133",
+    "tags": [
+      "number theory"
+    ],
+    "timestamp": "Dec/21/2020 06:14"
+  },
   "CF67764379": {
     "contest_id": 4,
     "language": "GNU C++14",
