@@ -131,7 +131,7 @@ void solve(LL tc)
 	
 	pw[0]=1;
 	fe(i,1,n){
-		pw[i]=271*pw[i-1];
+		pw[i]=29*pw[i-1];
 	}
 	
 	fe(i,1,m){
@@ -143,6 +143,18 @@ void solve(LL tc)
 		ha[x]+=pw[y];
 		ha[y]+=pw[x];
 	}
+	LL cnt=0;
+	fe(i,1,n){		
+		if(!vis[i]){
+			dfs(i);
+			cnt++;
+		}
+	}
+	if(cnt>1){	//If graph is disconnected
+		cout<<-1<<endl;
+		return;
+	}
+	
 	// fe(i,1,n){
 		// d2(i,ha[i]);
 	// }
@@ -150,10 +162,6 @@ void solve(LL tc)
 	
 	LL idx=1;
 	fe(i,1,n){
-		if(ha[i]==0){	//if some node has no edges i.e. disconnected
-			cout<<-1<<endl;
-			return;
-		}
 		if(ma[ha[i]]==0){
 			ma[ha[i]]=idx++;
 		}
