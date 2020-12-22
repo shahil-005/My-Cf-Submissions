@@ -9,8 +9,8 @@
 //g++ -static -DONLINE_JUDGE -Wl,--stack=268435456 -O2 -std=c++17
 #include <bits/stdc++.h>
 using namespace std;
-// #pragma GCC optimize("-Ofast")
-// #pragma GCC optimize("trapv")
+#pragma GCC optimize("-Ofast")
+#pragma GCC optimize("trapv")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 //#pragma GCC optimize("-O2")
 //#pragma GCC target("AVX")
@@ -103,79 +103,78 @@ bool sortbydec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ff>b.ff)
 void dex(int a){ if(a==1){cout<<"YES";} if(a==2){cout<<"NO";} if(a==3){cout<<"Yes";} if(a==4){cout<<"No";}}
 void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
 //Use LLONG_MAX & LLONG_MIN
-const long long N=(long long)(300005);
+const long long N=(long long)(3e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-LL pw[N];
-LL ha[N];
-MLL ma;
-LL n,m;
-bool vis[N];
-VL adj[N];
-void dfs(LL s){
-	vis[s]=true;
-	each(it,adj[s]){
-		if(!vis[it]){
-			dfs(it);
-		}
-	}
-}
+vector< SL > v(N); 
+VL gr(N,-1);	//for storing assigned groups of each node
+vector< vector<LL> > grs(4);
 void solve(LL tc)
 {
-	//Hashing based approach
-	//https://codeforces.com/blog/entry/70162?#comment-546532
-	//https://codeforces.com/contest/1228/submission/61496628
-	
-	
+	//Editorial approach
+	LL n,m;
 	cin>>n>>m;
-	
-	pw[0]=1;
-	fe(i,1,n){
-		pw[i]=29*pw[i-1];
-	}
-	
 	fe(i,1,m){
 		LL x,y;
 		cin>>x>>y;
-		adj[x].pb(y);
-		adj[y].pb(x);
-		
-		ha[x]+=pw[y];
-		ha[y]+=pw[x];
+		v[x].insert(y);
+		v[y].insert(x);
 	}
-	LL cnt=0;
-	fe(i,1,n){		
-		if(!vis[i]){
-			dfs(i);
-			cnt++;
+	
+	fe(g,1,3){	//Assigning groups from 1 to 3
+		LL f;
+		for(f=1;f<=n;f++){		//Finding the first node of that gth set
+			if(gr[f]==-1){
+				break;
+			}
+		}
+		if(f==n+1){cout<<-1<<endl;return;}	//Either all are in the same group or some set will remain empty
+		
+		gr[f]=g;
+		for(LL s=1;s<=n;s++){
+			if(f!=s && gr[s]==-1 && v[f].find(s)==v[f].end()){	//if the node is unvisited and not connected to f,add the node to the set with f 
+				gr[s]=g;
+			}
 		}
 	}
-	if(cnt>1){	//If graph is disconnected
+	// fe(i,1,n){
+		// cout<<i<<" "<<gr[i]<<endl;
+	// }
+	for(LL now=1;now<=n;now++){
+		if(gr[now]==-1){	//If the edge can't be assigned to any set
+			cout<<-1<<endl;
+			return;
+		}
+		else{
+			grs[gr[now]].pb(now);	//Sets storing each nodes assigned to them
+		}	
+	}
+	
+	
+	LL fe=0;	//It will store the total number of edges
+	for(LL g1=1;g1<=3;g1++){	//If m≠|v1|⋅|v2|+|v2|⋅|v3|+|v3|⋅|v1|, then answer is impossible, So Edge counting
+		for(LL g2=g1+1;g2<=3;g2++){
+			for(auto v1:grs[g1]){
+				for(auto v2:grs[g2]){
+					if(v[v1].find(v2)==v[v1].end()){	//if there is edge bw same set edges 
+						cout<<-1<<endl;
+						return;
+					}
+					else{
+						fe++;	
+					}
+				}
+			}
+		}
+	}
+	
+	if(fe!=m){	 // Edge validation
 		cout<<-1<<endl;
 		return;
 	}
-	
-	// fe(i,1,n){
-		// d2(i,ha[i]);
-	// }
-	
-	
-	LL idx=1;
-	fe(i,1,n){
-		if(ma[ha[i]]==0){
-			ma[ha[i]]=idx++;
-		}
+	fe(now,1,n){
+		cout<<gr[now]<<" ";
 	}
-	// cout<<sz(ma)<<endl;
-	if(sz(ma)==3){
-		fe(i,1,n){
-			cout<<ma[ha[i]]<<" ";
-		}
-	}
-	else{
-		cout<<-1<<endl;
-	}
-	
 }
 int main()
 {
