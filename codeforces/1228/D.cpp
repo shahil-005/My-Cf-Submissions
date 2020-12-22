@@ -108,7 +108,7 @@ const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 vector< SL > v(N); 
 VL gr(N,-1);	//for storing assigned groups of each node
-vector< vector<LL> > grs(4);
+VL grs[4];
 void solve(LL tc)
 {
 	//Editorial approach
@@ -137,19 +137,10 @@ void solve(LL tc)
 			}
 		}
 	}
-	// fe(i,1,n){
-		// cout<<i<<" "<<gr[i]<<endl;
-	// }
-	for(LL now=1;now<=n;now++){
-		if(gr[now]==-1){	//If the edge can't be assigned to any set
-			cout<<-1<<endl;
-			return;
-		}
-		else{
-			grs[gr[now]].pb(now);	//Sets storing each nodes assigned to them
-		}	
-	}
 	
+	for(LL now=1;now<=n;now++){	
+		grs[gr[now]].pb(now);	//Sets storing each nodes assigned to them
+	}
 	
 	LL fe=0;	//It will store the total number of edges
 	for(LL g1=1;g1<=3;g1++){	//If m≠|v1|⋅|v2|+|v2|⋅|v3|+|v3|⋅|v1|, then answer is impossible, So Edge counting
