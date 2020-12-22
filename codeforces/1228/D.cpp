@@ -110,6 +110,16 @@ LL pw[N];
 LL ha[N];
 MLL ma;
 LL n,m;
+bool vis[N];
+VL adj[N];
+void dfs(LL s){
+	vis[s]=true;
+	each(it,adj[s]){
+		if(!vis[it]){
+			dfs(it);
+		}
+	}
+}
 void solve(LL tc)
 {
 	//Hashing based approach
@@ -121,12 +131,15 @@ void solve(LL tc)
 	
 	pw[0]=1;
 	fe(i,1,n){
-		pw[i]=29*pw[i-1];
+		pw[i]=271*pw[i-1];
 	}
 	
 	fe(i,1,m){
 		LL x,y;
 		cin>>x>>y;
+		adj[x].pb(y);
+		adj[y].pb(x);
+		
 		ha[x]+=pw[y];
 		ha[y]+=pw[x];
 	}

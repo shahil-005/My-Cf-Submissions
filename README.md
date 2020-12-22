@@ -12,10 +12,11 @@ A repository to keep track of problem solving practise, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-886 | [A - Domino piling](https://codeforces.com/contest/50/problem/A) | [GNU C++17](./codeforces/50/A.cpp) | `greedy` `math` `*800` | Dec/23/2020 15:28 | 
-885 | [A - Equation](https://codeforces.com/contest/1269/problem/A) | [GNU C++17 (64)](./codeforces/1269/A.cpp) | `brute force` `math` `*800` | Dec/22/2020 22:39 | 
-884 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:22 | 
-883 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:17 | 
+887 | [A - Domino piling](https://codeforces.com/contest/50/problem/A) | [GNU C++17](./codeforces/50/A.cpp) | `greedy` `math` `*800` | Dec/23/2020 15:28 | 
+886 | [A - Equation](https://codeforces.com/contest/1269/problem/A) | [GNU C++17 (64)](./codeforces/1269/A.cpp) | `brute force` `math` `*800` | Dec/22/2020 22:39 | 
+885 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:22 | 
+884 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:17 | 
+883 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:11 | 
 882 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 05:08 | 
 881 | [B - Fair Numbers](https://codeforces.com/contest/1465/problem/B) | [GNU C++17 (64)](./codeforces/1465/B.cpp) | `number theory` | Dec/21/2020 06:14 | 
 880 | [B - Fair Numbers](https://codeforces.com/contest/1465/problem/B) | [GNU C++17 (64)](./codeforces/1465/B.cpp) | `number theory` | Dec/21/2020 06:13 | 
