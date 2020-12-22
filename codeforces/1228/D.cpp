@@ -111,7 +111,7 @@ VL gr(N,-1);	//for storing assigned groups of each node
 VL grs[4];
 void solve(LL tc)
 {
-	//Editorial approach
+	//Editorial
 	LL n,m;
 	cin>>n>>m;
 	fe(i,1,m){
@@ -138,8 +138,14 @@ void solve(LL tc)
 		}
 	}
 	
-	for(LL now=1;now<=n;now++){	
-		grs[gr[now]].pb(now);	//Sets storing each nodes assigned to them
+	for(LL now=1;now<=n;now++){	//
+		// if(gr[now]==-1){	
+			// cout<<-1<<endl;
+			// return;
+		// }
+		// else{
+			grs[gr[now]].pb(now);	//Sets storing each nodes assigned to them
+		// }
 	}
 	
 	LL fe=0;	//It will store the total number of edges
