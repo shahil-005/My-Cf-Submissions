@@ -120,7 +120,7 @@ void solve(LL tc)
 		if(x==1){
 			if(s1.find(y)!=s1.end()){
 				fe(j,y-1,y+1){
-					if(s2.find(j)!=s2.end()){
+					if(st.find({y,j})!=st.end()){
 						st.erase({y,j});
 					}
 				}
@@ -138,7 +138,7 @@ void solve(LL tc)
 		else{
 			if(s2.find(y)!=s2.end()){
 				fe(j,y-1,y+1){
-					if(s1.find(j)!=s1.end()){
+					if(st.find({j,y})!=st.end()){
 						st.erase({j,y});
 					}
 				}
