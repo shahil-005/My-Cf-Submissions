@@ -107,62 +107,24 @@ void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-bool isprime(LL n) 	//O(sqrt(n)) approach
-{ 
-    if(n <= 1){return false;} 
-    if(n <= 3){return true; }
-    if(n%2 == 0 || n%3 == 0){return false;} 
-    for (int i=5; i*i<=n; i=i+6){
-        if(n%i == 0 || n%(i+2) == 0){
-        	return false;
-        }  
-    }
-    return true; 
-}
-bool isprimeMR(LL n)	//Miller-Robin O(logn) approach
-{
-    if(n<2){return false;}
-    for(LL x:{2,3,5,7,11,13,17,19,23,29,31,37})
-    {
-        if(n==x)
-            return true;
-        bool flag=true;
-        LL r=1;
-        LL t=1;
-        while(r<=((n-1)>>__builtin_ctzll(n-1)))
-        {
-            if(r&((n-1)>>__builtin_ctzll(n-1)))
-                t=(t*x)%n;
-            x=(x*x)%n;
-            r<<=1;
-        }
-        if(t==1||t==n-1)
-            flag=false;
-        for(r=0;r<__builtin_ctzll(n-1);r++)
-        {
-            t=(t*t)%n;
-            if(t==n-1)
-                flag=false;
-        }
-        if(flag)
-            return false;
-    }
-    return true;
-} 
+
 void solve(LL tc)
 {
 	LL n;
 	cin>>n;
-	LL x=4;
-	LL y=n+4;
-	while(y){
-		if(!isprime(y) && !isprime(x)){
-			cout<<y<<" "<<x<<endl;
-			break;
-		}
-		y++;
-		x++;
-	}
+	cout<<9*n<<" "<<8*n<<endl;
+	
+	//Simply print a*n & b*n such that a&b are consecutive and both are composite
+	//(a,b) examples :
+	// 8 9
+	// 9 10
+	// 14 15
+	// 15 16
+	// 20 21
+	// 21 22
+	// 24 25
+	// 25 26
+	// 26 27...etc
 }
 int main()
 {
