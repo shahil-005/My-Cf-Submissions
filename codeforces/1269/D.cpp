@@ -109,45 +109,26 @@ const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 void solve(LL tc)
 {
-	//Similar to Mutilated chessboard problem
-	//https://codeforces.com/blog/entry/72286?#comment-566124
-	//https://puzzling.stackexchange.com/questions/255/placing-2x1-dominoes-on-a-chessboard-with-two-corners-removed
-	//https://codeforces.com/blog/entry/72286?#comment-566131 (aryanc comment)
-	//https://codeforces.com/blog/entry/72286?#comment-566144
-	// https://codeforces.com/blog/entry/72358?#comment-566274
-	//https://codeforces.com/blog/entry/72358?#comment-566278
-	
-	//https://codeforces.com/blog/entry/72358?#comment-627406
-	//https://codeforces.com/blog/entry/72358?#comment-566298
-	//https://codeforces.com/blog/entry/72358?#comment-566305
-	//https://codeforces.com/blog/entry/72358?#comment-566353
-	//https://codeforces.com/blog/entry/72358?#comment-566369
-	//https://codeforces.com/blog/entry/72358?#comment-566675
-	//https://codeforces.com/blog/entry/72358?#comment-567000
-	//https://codeforces.com/blog/entry/72358?#comment-572984
-	
 	LL n;
 	cin>>n;
+	LL a[n+1];
+	MLL m;
 	LL black=0;
 	LL sum=0;
 	fe(i,1,n){
-		LL x;
-		cin>>x;
-		sum+=x;
+		cin>>a[i];
+		m[a[i]]++;
+		sum+=a[i];
 		if(i&1){
-			black+=(x+1)/2;
+			black+=(a[i]+1)/2;
 		}
 		else{
-			black+=(x)/2;
+			black+=(a[i])/2;
 		}
 	}
 	LL white=sum-black;
 	cout<<min(white,black);
-	//Answer would be min of the number of black and white cells
-	//as every domino will cover a white as well as a black cell 
-	//So the total number of dominos that will be possible will be always <=min(black,white)
 	
-	//Pending : why is it certain that ans=min(white,black) and not ans<=min(white,black)
 	
 }
 int main()

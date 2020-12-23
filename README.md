@@ -12,15 +12,16 @@ A repository to keep track of problem solving practise, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-900 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 13:04 | 
-899 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 13:00 | 
-898 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 02:07 | 
-897 | [C - NEKO's Maze Game](https://codeforces.com/contest/1293/problem/C) | [GNU C++17](./codeforces/1293/C.cpp) | `constructive algorithms` `implementation` `*1400` | Dec/23/2020 23:45 | 
-896 | [C - NEKO's Maze Game](https://codeforces.com/contest/1293/problem/C) | [GNU C++17](./codeforces/1293/C.cpp) | `constructive algorithms` `implementation` `*1400` | Dec/23/2020 19:38 | 
-895 | [B - JOE is on TV!](https://codeforces.com/contest/1293/problem/B) | [GNU C++17](./codeforces/1293/B.cpp) | `combinatorics` `greedy` `math` `*1000` | Dec/23/2020 18:51 | 
-894 | [A - ConneR and the A.R.C. Markland-N](https://codeforces.com/contest/1293/problem/A) | [GNU C++17](./codeforces/1293/A.cpp) | `binary search` `brute force` `implementation` `*1100` | Dec/23/2020 18:43 | 
-893 | [A - Equation](https://codeforces.com/contest/1269/problem/A) | [GNU C++17 (64)](./codeforces/1269/A.cpp) | `brute force` `math` `*800` | Dec/23/2020 18:25 | 
-892 | [D - Domino for Young](https://codeforces.com/contest/1269/problem/D) | [GNU C++17 (64)](./codeforces/1269/D.cpp) | `combinatorics` `constructive algorithms` `math` `*2000` | Dec/23/2020 18:04 | 
+901 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 13:04 | 
+900 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 13:00 | 
+899 | [D - Aroma's Search](https://codeforces.com/contest/1293/problem/D) | [GNU C++17](./codeforces/1293/D.cpp) | `brute force` `constructive algorithms` `implementation` `*1700` | Dec/24/2020 02:07 | 
+898 | [C - NEKO's Maze Game](https://codeforces.com/contest/1293/problem/C) | [GNU C++17](./codeforces/1293/C.cpp) | `constructive algorithms` `implementation` `*1400` | Dec/23/2020 23:45 | 
+897 | [C - NEKO's Maze Game](https://codeforces.com/contest/1293/problem/C) | [GNU C++17](./codeforces/1293/C.cpp) | `constructive algorithms` `implementation` `*1400` | Dec/23/2020 19:38 | 
+896 | [B - JOE is on TV!](https://codeforces.com/contest/1293/problem/B) | [GNU C++17](./codeforces/1293/B.cpp) | `combinatorics` `greedy` `math` `*1000` | Dec/23/2020 18:51 | 
+895 | [A - ConneR and the A.R.C. Markland-N](https://codeforces.com/contest/1293/problem/A) | [GNU C++17](./codeforces/1293/A.cpp) | `binary search` `brute force` `implementation` `*1100` | Dec/23/2020 18:43 | 
+894 | [A - Equation](https://codeforces.com/contest/1269/problem/A) | [GNU C++17 (64)](./codeforces/1269/A.cpp) | `brute force` `math` `*800` | Dec/23/2020 18:25 | 
+893 | [D - Domino for Young](https://codeforces.com/contest/1269/problem/D) | [GNU C++17 (64)](./codeforces/1269/D.cpp) | `combinatorics` `constructive algorithms` `math` `*2000` | Dec/23/2020 18:04 | 
+892 | [D - Domino for Young](https://codeforces.com/contest/1269/problem/D) | [GNU C++17](./codeforces/1269/D.cpp) | `combinatorics` `constructive algorithms` `math` `*2000` | Dec/23/2020 16:32 | 
 891 | [A - Domino piling](https://codeforces.com/contest/50/problem/A) | [GNU C++17](./codeforces/50/A.cpp) | `greedy` `math` `*800` | Dec/23/2020 15:28 | 
 890 | [A - Equation](https://codeforces.com/contest/1269/problem/A) | [GNU C++17 (64)](./codeforces/1269/A.cpp) | `brute force` `math` `*800` | Dec/22/2020 22:39 | 
 889 | [D - Complete Tripartite](https://codeforces.com/contest/1228/problem/D) | [GNU C++17 (64)](./codeforces/1228/D.cpp) | `brute force` `constructive algorithms` `graphs` `hashing` `implementation` `*1900` | Dec/22/2020 10:22 | 
