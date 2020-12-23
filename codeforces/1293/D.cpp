@@ -1,3 +1,4 @@
+
 // Problem: D. Aroma's Search
 // Contest: Codeforces - Codeforces Round #614 (Div. 2)
 // URL: https://codeforces.com/contest/1293/problem/D
@@ -105,7 +106,7 @@ void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
 //Use LLONG_MAX & LLONG_MIN
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
-const long long INF=(long long)(1e17);
+const long long INF=(long long)(1e18);
 ULL abs1(LL n){
 	if(n<0){
 		n=-1*n;
