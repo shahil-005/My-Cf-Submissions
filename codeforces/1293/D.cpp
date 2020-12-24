@@ -105,7 +105,7 @@ void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
 //Use LLONG_MAX & LLONG_MIN
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
-const long long INF=(long long)(1e18);
+const long long INF=(long long)(1e17);
 ULL abs1(LL n){
 	if(n<0){
 		n=-1*n;
@@ -146,7 +146,7 @@ void solve(LL tc)
 	LL x=xs;
 	LL y=ys;
 	fe(ind,0,n-1){
-		LL ans=0;
+		LL ans=0,ans1=0;
 		xs=x;
 		ys=y;
 		t=t1;
@@ -174,7 +174,35 @@ void solve(LL tc)
 				break;
 			}
 		}
-		fans=max(fans,ans);
+		xs=x;
+		ys=y;
+		t=t1;
+		fe(i,ind,n-1){
+			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
+			if(dif<=t){
+				t-=dif;
+				xs=v[i].ff;
+				ys=v[i].ss;
+				ans1++;
+			}
+			else{
+				break;
+			}
+		}
+		rfe(i,ind-1,0){
+			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
+			if(dif<=t){
+				t-=dif;
+				xs=v[i].ff;
+				ys=v[i].ss;
+				ans1++;
+			}
+			else{
+				break;
+			}
+		}
+		// d3(ind,ans,ans1);
+		fans=max({ans,ans1,fans});
 	}
 	
 	cout<<fans<<endl;
