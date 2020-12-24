@@ -1,3 +1,4 @@
+
 // Problem: C. The Number Of Good Substrings
 // Contest: Codeforces - Educational Codeforces Round 72 (Rated for Div. 2)
 // URL: https://codeforces.com/contest/1217/problem/C
@@ -155,10 +156,6 @@ void solve(LL tc)
 		}
 	}
 	cout<<ans<<endl;
-	//Find all indices i such that s[i]=='1'
-	//Iterate from i to i+17 as 17 will be the max limit for f()
-	//Find all such possible substring starting at each i
-	//For those substrings whose size is not enough(as compared to value),try to use the preceeding 0s to make the answer possible for those i
 }
 int main()
 {
