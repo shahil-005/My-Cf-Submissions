@@ -1,4 +1,3 @@
-
 // Problem: D. Aroma's Search
 // Contest: Codeforces - Codeforces Round #614 (Div. 2)
 // URL: https://codeforces.com/contest/1293/problem/D
@@ -107,7 +106,7 @@ void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(1e18);
-ULL abs1(LL n){
+LL abs1(LL n){
 	if(n<0){
 		n=-1*n;
 	}
@@ -115,25 +114,18 @@ ULL abs1(LL n){
 }
 void solve(LL tc)
 {
-	ULL x0,y0,ax,ay,bx,by;
+	LL x0,y0,ax,ay,bx,by;
 	cin>>x0>>y0>>ax>>ay>>bx>>by;
-	ULL xs,ys,t;
+	LL xs,ys,t;
 	cin>>xs>>ys>>t;
 	
-	vector< pair<ULL,ULL> > v;
+	vector< pair<LL,LL> > v;
 	v.pb({x0,y0});
-	LL i=1;
-	while(1){
-		ULL x=ax*v[i-1].ff+bx;
-		ULL y=ay*v[i-1].ss+by;
-		// d2(x,y);
-		if(max(x,y)<=INF && x>v[i-1].ff && y>v[i-1].ss){
-			v.pb({x,y});
-			i++;
-		}
-		else{
-			break;
-		}
+	LL limit=( 1LL << 63 -1);
+	while(((limit-bx)/ax >=(v.back()).ff) && ((limit-by)/ay >=(v.back()).ss) ){
+		LL lx=(v.back()).ff;
+		LL ly=(v.back()).ss;
+		v.pb({ax*lx+bx,ay*ly+by});
 	}
 	LL n=sz(v);
 	// i=0;
@@ -147,12 +139,12 @@ void solve(LL tc)
 	LL x=xs;
 	LL y=ys;
 	fe(ind,0,n-1){
-		LL ans=0,ans1=0;
+		LL ans=0;
 		xs=x;
 		ys=y;
 		t=t1;
 		rfe(i,ind,0){
-			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
+			LL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
 			if(dif<=t){
 				t-=dif;
 				xs=v[i].ff;
@@ -164,7 +156,7 @@ void solve(LL tc)
 			}
 		}
 		fe(i,ind+1,n-1){
-			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
+			LL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
 			if(dif<=t){
 				t-=dif;
 				xs=v[i].ff;
@@ -175,35 +167,7 @@ void solve(LL tc)
 				break;
 			}
 		}
-		xs=x;
-		ys=y;
-		t=t1;
-		fe(i,ind,n-1){
-			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
-			if(dif<=t){
-				t-=dif;
-				xs=v[i].ff;
-				ys=v[i].ss;
-				ans1++;
-			}
-			else{
-				break;
-			}
-		}
-		rfe(i,ind-1,0){
-			ULL dif=abs1(xs-v[i].ff)+abs1(ys-v[i].ss);
-			if(dif<=t){
-				t-=dif;
-				xs=v[i].ff;
-				ys=v[i].ss;
-				ans1++;
-			}
-			else{
-				break;
-			}
-		}
-		// d3(ind,ans,ans1);
-		fans=max({ans,ans1,fans});
+		fans=max(fans,ans);
 	}
 	
 	cout<<fans<<endl;
