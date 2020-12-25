@@ -120,8 +120,7 @@ struct node
 };
 LL n,m;
 LL a[N];
-// node tree[4*N];
-vector<node> tree;
+node tree[4*N];
 node merge(node x,node y){
 	node res;
 	fe(j,0,10){
@@ -198,7 +197,7 @@ void solve(LL tc)
 // https://codeforces.com/blog/entry/69554?#comment-540820
 // https://codeforces.com/blog/entry/69554?#comment-540842
 // https://codeforces.com/blog/entry/69554?#comment-540954
-	tree.resize(4*N);
+	
 	cin>>n>>m;
 	fe(i,1,n){
 		cin>>a[i];
