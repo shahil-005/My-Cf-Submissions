@@ -107,15 +107,16 @@ bool overflow(long double a, long double b){return a * b > 1e18 + 10;}
 const long long N=(long long)(5e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
-set<PLL> s;	//for query 3
-bool b[N];LL cur=1;	//for query 2
 LL a[N];
 void solve(LL tc)
 {
 	LL q;
 	cin>>q;
-	LL cnt=0;
+	set<PLL> s;
 	
+	SL s2;
+	SL s3;
+	LL cnt=0;
 	fe(i,1,q){
 		LL x;
 		cin>>x;
@@ -125,14 +126,26 @@ void solve(LL tc)
 			cnt++;
 			a[cnt]=m;
 			s.insert({-1*m,cnt});
+			s2.insert(cnt);
 		}
 		if(x==2){
-			while(b[cur]){
-				cur++;
-			}
-			s.erase({-1*a[cur],cur});
-			b[cur]=true;
-			cout<<cur<<" ";
+			auto it=(s2.begin());
+			LL ind=*it;
+			s2.erase(it);
+			s.erase({-1*a[ind],ind});
+			cout<<ind<<" ";
+			// for(auto it=s2.begin();it!=s2.end();){
+				// LL ind=(*it);
+				// if(s3.find(ind)==s3.end()){
+					// s3.insert(ind);
+					// s2.erase(ind);
+					// cout<<ind<<" ";
+					// break;
+				// }
+				// else{
+					// ++it;
+				// }
+			// }
 		}
 		if(x==3){
 			auto it=s.begin();
@@ -140,8 +153,22 @@ void solve(LL tc)
 			LL ind=p.ss;
 			LL val=abs(p.ff);
 			s.erase(it);
-			b[ind]=true;
+			s2.erase(ind);
 			cout<<ind<<" ";
+			// for(auto it=s.begin();it!=s.end();){
+				// PLL p=*it;
+				// LL val=abs(p.ff);
+				// LL ind=p.ss;
+				// if(s3.find(ind)==s3.end()){
+					// s3.insert(ind);
+					// s.erase({-1*val,ind});
+					// cout<<ind<<" ";
+					// break;
+				// }
+				// else{
+					// ++it;
+				// }
+			// }
 		}
 	}
 }
