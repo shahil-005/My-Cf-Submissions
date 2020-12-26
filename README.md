@@ -12,22 +12,23 @@ A repository to keep track of problem solving practise, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
-927 | [D - The Union of k-Segments](https://codeforces.com/contest/612/problem/D) | [GNU C++17 (64)](./codeforces/612/D.cpp) | `greedy` `sortings` `*1800` | Dec/31/2020 20:10 | 
-926 | [C - Replace To Make Regular Bracket Sequence](https://codeforces.com/contest/612/problem/C) | [GNU C++17](./codeforces/612/C.cpp) | `data structures` `expression parsing` `math` `*1400` | Dec/31/2020 18:17 | 
-925 | [B - Grandfather Dovlet’s calculator](https://codeforces.com/contest/620/problem/B) | [GNU C++17](./codeforces/620/B.cpp) | `implementation` `*1000` | Dec/31/2020 13:06 | 
-924 | [A - Professor GukiZ's Robot](https://codeforces.com/contest/620/problem/A) | [GNU C++17](./codeforces/620/A.cpp) | `implementation` `math` `*800` | Dec/31/2020 13:02 | 
-923 | [D - 13th Labour of Heracles](https://codeforces.com/contest/1466/problem/D) | [GNU C++17 (64)](./codeforces/1466/D.cpp) | `greedy` `sortings` `trees` | Dec/30/2020 21:49 | 
-922 | [B - Last minute enhancements](https://codeforces.com/contest/1466/problem/B) | [GNU C++17](./codeforces/1466/B.cpp) | `dp` `greedy` | Dec/30/2020 20:15 | 
-921 | [A - Bovine Dilemma](https://codeforces.com/contest/1466/problem/A) | [GNU C++17](./codeforces/1466/A.cpp) | `brute force` `math` | Dec/30/2020 20:11 | 
-920 | [D - The Union of k-Segments](https://codeforces.com/contest/612/problem/D) | [GNU C++17](./codeforces/612/D.cpp) | `greedy` `sortings` `*1800` | Dec/29/2020 12:03 | 
-919 | [B - HDD is Outdated Technology](https://codeforces.com/contest/612/problem/B) | [GNU C++17](./codeforces/612/B.cpp) | `implementation` `math` `*1200` | Dec/29/2020 11:30 | 
-918 | [A - The Text Splitting](https://codeforces.com/contest/612/problem/A) | [GNU C++17](./codeforces/612/A.cpp) | `brute force` `implementation` `strings` `*1300` | Dec/29/2020 11:22 | 
-917 | [D - Number Of Permutations](https://codeforces.com/contest/1207/problem/D) | [GNU C++17 (64)](./codeforces/1207/D.cpp) | `combinatorics` `*1800` | Dec/27/2020 17:16 | 
-916 | [B - Square Filling](https://codeforces.com/contest/1207/problem/B) | [GNU C++17](./codeforces/1207/B.cpp) | `constructive algorithms` `greedy` `implementation` `*1200` | Dec/27/2020 12:34 | 
-915 | [A - There Are Two Types Of Burgers](https://codeforces.com/contest/1207/problem/A) | [GNU C++17](./codeforces/1207/A.cpp) | `brute force` `greedy` `implementation` `math` `*800` | Dec/27/2020 09:02 | 
-914 | [D - Beingawesomeism](https://codeforces.com/contest/1281/problem/D) | [GNU C++17](./codeforces/1281/D.cpp) | `constructive algorithms` `greedy` `implementation` `math` `*1800` | Dec/26/2020 19:06 | 
-913 | [E - Jeremy Bearimy](https://codeforces.com/contest/1281/problem/E) | [GNU C++17 (64)](./codeforces/1281/E.cpp) | `dfs and similar` `graphs` `greedy` `implementation` `trees` `*2000` | Dec/26/2020 18:02 | 
-912 | [E - Jeremy Bearimy](https://codeforces.com/contest/1281/problem/E) | [GNU C++17](./codeforces/1281/E.cpp) | `dfs and similar` `graphs` `greedy` `implementation` `trees` `*2000` | Dec/26/2020 18:01 | 
+928 | [D - The Union of k-Segments](https://codeforces.com/contest/612/problem/D) | [GNU C++17 (64)](./codeforces/612/D.cpp) | `greedy` `sortings` `*1800` | Dec/31/2020 20:10 | 
+927 | [C - Replace To Make Regular Bracket Sequence](https://codeforces.com/contest/612/problem/C) | [GNU C++17](./codeforces/612/C.cpp) | `data structures` `expression parsing` `math` `*1400` | Dec/31/2020 18:17 | 
+926 | [B - Grandfather Dovlet’s calculator](https://codeforces.com/contest/620/problem/B) | [GNU C++17](./codeforces/620/B.cpp) | `implementation` `*1000` | Dec/31/2020 13:06 | 
+925 | [A - Professor GukiZ's Robot](https://codeforces.com/contest/620/problem/A) | [GNU C++17](./codeforces/620/A.cpp) | `implementation` `math` `*800` | Dec/31/2020 13:02 | 
+924 | [D - 13th Labour of Heracles](https://codeforces.com/contest/1466/problem/D) | [GNU C++17 (64)](./codeforces/1466/D.cpp) | `greedy` `sortings` `trees` | Dec/30/2020 21:49 | 
+923 | [B - Last minute enhancements](https://codeforces.com/contest/1466/problem/B) | [GNU C++17](./codeforces/1466/B.cpp) | `dp` `greedy` | Dec/30/2020 20:15 | 
+922 | [A - Bovine Dilemma](https://codeforces.com/contest/1466/problem/A) | [GNU C++17](./codeforces/1466/A.cpp) | `brute force` `math` | Dec/30/2020 20:11 | 
+921 | [D - The Union of k-Segments](https://codeforces.com/contest/612/problem/D) | [GNU C++17](./codeforces/612/D.cpp) | `greedy` `sortings` `*1800` | Dec/29/2020 12:03 | 
+920 | [B - HDD is Outdated Technology](https://codeforces.com/contest/612/problem/B) | [GNU C++17](./codeforces/612/B.cpp) | `implementation` `math` `*1200` | Dec/29/2020 11:30 | 
+919 | [A - The Text Splitting](https://codeforces.com/contest/612/problem/A) | [GNU C++17](./codeforces/612/A.cpp) | `brute force` `implementation` `strings` `*1300` | Dec/29/2020 11:22 | 
+918 | [D - Number Of Permutations](https://codeforces.com/contest/1207/problem/D) | [GNU C++17 (64)](./codeforces/1207/D.cpp) | `combinatorics` `*1800` | Dec/27/2020 17:16 | 
+917 | [B - Square Filling](https://codeforces.com/contest/1207/problem/B) | [GNU C++17](./codeforces/1207/B.cpp) | `constructive algorithms` `greedy` `implementation` `*1200` | Dec/27/2020 12:34 | 
+916 | [A - There Are Two Types Of Burgers](https://codeforces.com/contest/1207/problem/A) | [GNU C++17](./codeforces/1207/A.cpp) | `brute force` `greedy` `implementation` `math` `*800` | Dec/27/2020 09:02 | 
+915 | [D - Beingawesomeism](https://codeforces.com/contest/1281/problem/D) | [GNU C++17](./codeforces/1281/D.cpp) | `constructive algorithms` `greedy` `implementation` `math` `*1800` | Dec/26/2020 19:06 | 
+914 | [E - Jeremy Bearimy](https://codeforces.com/contest/1281/problem/E) | [GNU C++17 (64)](./codeforces/1281/E.cpp) | `dfs and similar` `graphs` `greedy` `implementation` `trees` `*2000` | Dec/26/2020 18:02 | 
+913 | [E - Jeremy Bearimy](https://codeforces.com/contest/1281/problem/E) | [GNU C++17](./codeforces/1281/E.cpp) | `dfs and similar` `graphs` `greedy` `implementation` `trees` `*2000` | Dec/26/2020 18:01 | 
+912 | [E - Jeremy Bearimy](https://codeforces.com/contest/1281/problem/E) | [GNU C++17](./codeforces/1281/E.cpp) | `dfs and similar` `graphs` `greedy` `implementation` `trees` `*2000` | Dec/26/2020 18:00 | 
 911 | [C - The Number Of Good Substrings](https://codeforces.com/contest/1217/problem/C) | [GNU C++17 (64)](./codeforces/1217/C.cpp) | `binary search` `bitmasks` `brute force` `*1700` | Dec/25/2020 07:19 | 
 910 | [E - Sum Queries?](https://codeforces.com/contest/1217/problem/E) | [GNU C++17 (64)](./codeforces/1217/E.cpp) | `data structures` `greedy` `implementation` `math` `*2300` | Dec/25/2020 07:11 | 
 909 | [E - Sum Queries?](https://codeforces.com/contest/1217/problem/E) | [GNU C++17 (64)](./codeforces/1217/E.cpp) | `data structures` `greedy` `implementation` `math` `*2300` | Dec/25/2020 07:07 | 

@@ -160,8 +160,8 @@ void solve(LL tc)
 		adj[y].pb({x,z});
 	}
 	dfs(1);
-	// printf("%lld %lld\n",ans,ans2);
-	cout<<ans<<" "<<ans2<<endl;
+	printf("%lld %lld\n",ans,ans2);
+	
 	//In the min case ,an edge will only contribute if the component size is odd
 	//In the case ,there will be 1 cross border travelling
 	//Else when comp size is even ,there is no need for cross-transversal
