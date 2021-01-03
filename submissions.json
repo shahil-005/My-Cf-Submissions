@@ -3825,6 +3825,22 @@
     ],
     "timestamp": "Dec/31/2020 20:10"
   },
+  "CF103082007": {
+    "contest_id": 1283,
+    "language": "GNU C++17",
+    "path": "codeforces/1283/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Minutes Before the New Year",
+    "problem_url": "https://codeforces.com/contest/1283/problem/A",
+    "submission_id": "CF103082007",
+    "submission_url": "https://codeforces.com/contest/1283/submission/103082007",
+    "tags": [
+      "math",
+      "*800"
+    ],
+    "timestamp": "Jan/03/2021 14:36"
+  },
   "CF103083105": {
     "contest_id": 1283,
     "language": "GNU C++17",
