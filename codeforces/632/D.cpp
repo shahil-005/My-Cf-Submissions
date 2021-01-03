@@ -116,6 +116,7 @@ void solve(LL tc)
 	int n,m;
 	cin>>n>>m;
 	LL a[n+1];
+	unordered_map<LL,LL> mp;
 	for(int i=1;i<=n;i++){
 		cin>>a[i];
 		if(a[i]<=m){
