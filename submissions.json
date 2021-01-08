@@ -3825,6 +3825,23 @@
     ],
     "timestamp": "Dec/31/2020 20:10"
   },
+  "CF103697154": {
+    "contest_id": 598,
+    "language": "GNU C++17",
+    "path": "codeforces/598/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Queries on a String",
+    "problem_url": "https://codeforces.com/contest/598/problem/B",
+    "submission_id": "CF103697154",
+    "submission_url": "https://codeforces.com/contest/598/submission/103697154",
+    "tags": [
+      "implementation",
+      "strings",
+      "*1300"
+    ],
+    "timestamp": "Jan/08/2021 14:07"
+  },
   "CF103697253": {
     "contest_id": 598,
     "language": "GNU C++17",

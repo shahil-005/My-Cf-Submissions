@@ -130,12 +130,11 @@ void solve(LL tc)
 	while(q--){
 		int l,r,k;
 		cin>>l>>r>>k;
-		k=k%(r-l+1);
-		S x=s.substr(0,l-1);
+		int x=(r-l+1);
+		k=k%x;
 		S y=s.substr(l-1,(r-l+1));
-		S z=s.substr(r);
 		rightrotate(y,k);
-		s=x+y+z;
+		s=s.substr(0,l-1)+y+s.substr(r);
 		// cout<<s<<endl;
 	}
 	cout<<s<<endl;
