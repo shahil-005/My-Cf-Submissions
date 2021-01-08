@@ -123,9 +123,6 @@ void rightrotate(string &s, int d)
 }
 void solve(LL tc)
 {
-	//Cyclice Rotation : 
-		//https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
-		//https://www.geeksforgeeks.org/left-rotation-right-rotation-string-2/
 	S s;
 	cin>>s;
 	int q;
@@ -142,8 +139,6 @@ void solve(LL tc)
 		// cout<<s<<endl;
 	}
 	cout<<s<<endl;
-	
-	//Similar : https://www.codechef.com/problems/SHIFTPAL
 }
 int main()
 {
