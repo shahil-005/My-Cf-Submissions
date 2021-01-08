@@ -1,56 +1,53 @@
 
-// Problem : A. Tricky Sum
-// Contest : Codeforces - Educational Codeforces Round 1
-// URL : https://codeforces.com/contest/598/problem/A
-// Memory Limit : 256 MB
-// Time Limit : 1000 ms
+// Problem: A. Tricky Sum
+// Contest: Codeforces - Educational Codeforces Round 1
+// URL: https://codeforces.com/contest/598/problem/A
+// Memory Limit: 256 MB
+// Time Limit: 1000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
 
+//g++ -Wall
+//g++ -static -DONLINE_JUDGE -Wl,--stack=268435456 -O2 -std=c++17
 #include <bits/stdc++.h>
 using namespace std;
-
+#pragma GCC optimize("-Ofast")
+#pragma GCC optimize("trapv")
+//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+//#pragma GCC optimize("-O2")
+//#pragma GCC target("AVX")
+// #define fastIO                  ios_base::sync_with_stdio(false);cin.tie(NULL);
 #define endl                    '\n'
 #define rep()                   for(LL i = 0 ; i < n ; i++)
 #define f(i,s,n)                for(LL i = s ; i < n ; i++)
 #define fe(i,s,n)               for(LL i = s ; i <= n ; i++)
 #define rfe(i,s,n)              for(LL i = s ; i >= n ; i--)
-#define TCs(x)                  LL x; cin>>x; while(x--)
-#define TC(x)                   LL x=1; while(x--)
+#define each(it,x)		for(auto &it:x)
 #define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
 #define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
-#define auto(m)                 for(auto &it:m)
-#define ip(n,a)                 LL n;cin>>n;LL a[n];rep{cin>>a[i];}
-#define ip2(n,a,b)              LL n;cin>>n;LL a[n];LL b[n];rep{cin>>a[i];} rep{cin>>b[i];
-#define op(n,a)                 f(i,0,n){cout<<a[i]<<" ";}
-#define i2p(n,k,a)              LL n,k;cin>>n>>k;LL a[n];rep{cin>>a[i];}
+#define TCs(x)                  LL x; cin>>x; while(x--)
+#define TC(x)                   LL x=1; while(x--)
+#define google(x)		cout<<"Case #"<<x<<": ";
 #define mp                      make_pair
 #define pb                      push_back
+#define pf                      push_front
 #define ff                      first
 #define ss                      second
 #define all(v)                  v.begin(), v.end()
-#define vsort(v)                sort(all(v))
-#define vrsort(v)               reverse(all(v))
-#define Max(x,y,z)              max(x,max(y,z))
-#define Min(x,y,z)              min(x,min(y,z))
-//#define ps(x,y)               fixed<<setprecision(y)<<x
-//#define ps(x)                 std::cout << std::fixed; std::cout << std::setprecision(x);
+#define mem(a,x)                memset(a,x,sizeof(a))
+#define imin                    INT_MIN
+#define imax                    INT_MAX
+#define sz(x)       		(LL)x.size()
+#define ps(x)                   std::cout << std::fixed; std::cout << std::setprecision(x);
 #define clz(a)                  __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
 #define ctz(a)                  __builtin_ctz(a) // count trailing zeroes
-//#define ctz(a)                __builtin_ctzll(a)
 #define popc(a)                 __builtin_popcount(a) // count set bits (for ints only diff for ll)
-#define GCD(A,B)                __gcd(A,B)
-//#define LCM(A,B)              boost::math::lcm(A,B)
-//#define COUNT(v,x)             count(all(v),x)
-//#define COUNT(v,x)             count(all(s),'x')
-#define trace(x)                 cout<<x<<endl
-#define trace1(x)                cout<<#x<<": "<<x<<endl
-#define trace2(x, y)             cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
-#define trace3(x, y, z)          cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
-#define trace4(a, b, c, d)       cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<endl
-#define trace5(a, b, c, d, e)    cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<endl
-#define trace6(a, b, c, d, e, f) cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<" | "<<#f<<": "<<f<<endl
+#define d1(x)                   cout<<#x<<": "<<x<<endl
+#define d2(x, y)                cout<<#x<<": "<<x<<" | "<<#y<<": "<<y<<endl
+#define d3(x, y, z)             cout<<#x<<":" <<x<<" | "<<#y<<": "<<y<<" | "<<#z<<": "<<z<<endl
+#define d4(a, b, c, d)          cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<endl
+#define d5(a, b, c, d, e)       cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<endl
+#define d6(a, b, c, d, e, f)    cout<<#a<<": "<<a<<" | "<<#b<<": "<<b<<" | "<<#c<<": "<<c<<" | "<<#d<<": "<<d<<" | "<<#e<< ": "<<e<<" | "<<#f<<": "<<f<<endl
 
-//Typedefs:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 typedef string                  S;
 typedef long long               LL;
 typedef long double             LD;
@@ -75,202 +72,86 @@ typedef vector<PSS>             VPSS;
 typedef vector<PCC>             VPCC;
 typedef map<LL,LL>              MLL;
 typedef map<string,LL>          MSL;
+typedef map<LL,string>          MLS;
 typedef map<char,LL>            MCL;
+typedef map<LL,char>            MLC;
+typedef map<char,char>          MCC;
+typedef map<string,string>      MSS;
 typedef set<LL>                 SL;
 typedef set<string>             SS;
 typedef set<char>               SC;
+typedef priority_queue<LL>	PQLL;
+typedef priority_queue<LL,VL,greater<LL>>	mPQLL;
 
-//Functions:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-clock_t time_p=clock();
-void shahil_005()
-{
-    time_p=clock()-time_p;
-    cerr<<"Time Taken : "<<(float)(time_p)/CLOCKS_PER_SEC<<"\n";
-}
-//------------------------------------------------------------------------------------//
-int power(LL x,LL y)
-{
-    if (y == 0)
-    return 1;
-    LL p = power(x, y/2);
-    p = (p * p);
+//Time
+#define debug(...) fprintf(stderr, __VA_ARGS__), fflush(stderr)
 
-    return (y%2 == 0)? p : (x * p);
-}
-//....................................................................................//
-int lcm(LL a,LL b)
-{
-    LL lar = max(a, b);
-    LL small = min(a, b);
-    for (LL i = lar; ; i += lar) {
-    if (i % small == 0)
-        return i;
-    }
-}
-//....................................................................................//
-int gcd(LL a,LL b) 
-{ 
-    if (b == 0) 
-        return a; 
-    return gcd(b, a % b);  
-      
-} 
-//....................................................................................//
-int bsearch(LL arr[],LL l,LL r,LL x)
-{
-    while (l <= r)
-    {
-    LL m = l + (r - l) / 2;
-    if (arr[m] == x){
-        return m;
-    }
-    if (arr[m] < x){
-        l = m + 1;
-    }
-    else
-        r = m - 1;
-    }
-    return -1;
-}
-//....................................................................................//
-bool prime(LL n) 
-{ 
-    // Corner cases 
-    if (n <= 1)  return false; 
-    if (n <= 3)  return true; 
-  
-    // This is checked so that we can skip  
-    // middle five numbers in below loop 
-    if (n%2 == 0 || n%3 == 0) return false; 
-  
-    for (int i=5; i*i<=n; i=i+6) 
-        if (n%i == 0 || n%(i+2) == 0) 
-           return false; 
-  
-    return true; 
-}
-//....................................................................................//
+#define time__(d) \
+    for ( \
+        auto blockTime = make_pair(chrono::high_resolution_clock::now(), true); \
+        blockTime.second; \
+        debug("%s: %lld ms\n", d, chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - blockTime.first).count()), blockTime.second = false \
+    )           
+// #define time__(d) for(long blockTime = 0; (blockTime == 0 ? (blockTime=clock()) != 0 : false); debug("%s time : %.4fs", d, (double)(clock() - blockTime) / CLOCKS_PER_SEC))
 
-bool sortbysec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
-{ 
-        return (a.second<b.second); 
-}
-bool sortbydec(const pair<LL,LL> &a, 
-                   const pair<LL,LL> &b) 
-{ 
-        return a.first>b.first;
-}
-
-//Constants:----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-const int N = 1e5 + 5;
+//Functions
+LL power(LL x,LL y){if(y == 0){return 1;} LL p = power(x, y/2); p = (p * p); return (y%2 == 0)? p : (x * p);}  
+LL powm(LL x,LL y,LL m){LL ans=1,r=1;x%=m;while(r>0&&r<=y){if(r&y){ans*=x;ans%=m;} r<<=1;x*=x;x%=m;}return ans;}   
+LL gcd(LL a,LL b) { if (b == 0){return a;} return gcd(b, a % b);}  
+LL lcm(LL a,LL b){LL lar = max(a, b);LL small = min(a, b);for (LL i = lar; ; i += lar) { if (i % small == 0){ return i;} } }
+bool sortbysec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ss<b.ss); }
+bool sortbydec(const pair<LL,LL> &a, const pair<LL,LL> &b) {  return (a.ff>b.ff); }
+void dex(int a){ if(a==1){cout<<"YES";} if(a==2){cout<<"NO";} if(a==3){cout<<"Yes";} if(a==4){cout<<"No";}}
+void line(LL x){fe(i,1,x){cout<<"-";}cout<<endl;}
+bool overflow(long double a, long double b){return a * b > 1e18 + 10;}
+LL mul(LL a, LL b,LL mod){  return ((a * 1LL * b)+mod)%mod;}
+LL sum(LL a, LL b,LL mod){  return (a + b) % mod;}
+const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
-const long long INIT=(long long)(1e6+1);
+const long long INF=(long long)(2e18);
 
-//Solve:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-void solve()
-{   
+void solve(LL tc)
+{
 	LL n;
 	cin>>n;
-	VL v;
-	fe(i,0,29){
-		LL x=pow(2,i);
-		v.pb(x);
+	if(n==1){
+		cout<<-1<<endl;
+		return;
 	}
+	LL sum= (n*(n+1))/2;
 	
-	LL sum=(n*(n+1))/2;
-	f(i,0,30){
-		if(v[i]<=n){
-			sum-=2*v[i];
+	LL x=log2(n);
+	x=pow(2LL,x);
+	
+	while(1){
+		sum-=(2*x);
+		x/=2;
+		if(x==1){
+			sum-=2;
+			break;
 		}
 	}
 	cout<<sum<<endl;
-	  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-int main ()
+int main()
 {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-
-/*
-#ifndef ONLINE_JUDGE
-        freopen("input.txt","r",stdin);
-        freopen("output.txt","w",stdout);
-#endif
-*/
-
-
-        TCs(t)
-        {
-                solve();
+// #ifndef ONLINE_JUDGE
+        // freopen("input.txt","r",stdin);
+        // freopen("output.txt","w",stdout);
+// #endif
+        ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+        LL cnt=1;
+        TCs(t){
+        	// google(cnt);
+                time__("solve"){
+	                solve(cnt);
+	        }
+                cnt++;
         }
-
-//        shahil_005();
         return 0;
 }
 
-/** My notes: 
-         *Atleast read all A,B,C,D in every contest.
-         *A,B,C,D difficulty is always <=1800/1900.
-         *Think of a different approach after WAs/TLEs instead of trying to push 
-          that solution to AC.
-         *Move to the next question after 2 penalties.
-         */
-
-/** notes to me from me ---------       // Not mine but helpful
-         *
-         * aim:
-         *      - not to achieve high rating but to improve as a problem solver
-         *      - to focus more on solving problems than rating
-         *
-         * i must remember the following:
-         *      - check for overflow
-         *      - check for out of bounds read/write
-         *      - check for any other errors that will hinder you from AC on first submission
-         *      - check logic for special/boundary cases
-         *      - think simple, fast and efficient. no need to make things complicated
-         *      - spending time to think and test your approach is more valuable than wasting
-         *        time on submission and then debugging a wrong solution. you've proven myself
-         *        from experience many times. dont be stupid anymore and actually remember this.
-         *      - //no need to use fancy coding styles and techniques. keep it simple
-         *      - don't blank out in the last 30 mins
-         *      - no stress at all. stay calm. cool, we got this nigga
-         *      - stop checking standings/dashboard. stop comparing
-         *      - read all problem statements. sometimes the D's are easier to solve than the B's
-         *      - write your ideas down. you've forgotten them a couple of times in the past
-         */
-
-//$%U%$   Handle 
-//$%Y%$   Year   
-//$%M%$   Month  
-//$%D%$   Day    
-//$%h%$   Hour   
-//$%m%$   Minute 
-//$%s%$   Second 
+//Use LLONG_MAX & LLONG_MIN 
+//LL limit : (2^63-1) ,log10(2^63-1) = 18.96
+//ULL limit : (2^64) ,log10(2^64) = 19.26
+//Alternate way for overflow check: http://bit.ly/3pnCeOs
