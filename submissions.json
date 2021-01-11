@@ -3825,6 +3825,23 @@
     ],
     "timestamp": "Dec/31/2020 20:10"
   },
+  "CF104032369": {
+    "contest_id": 652,
+    "language": "GNU C++17",
+    "path": "codeforces/652/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Gabriel and Caterpillar",
+    "problem_url": "https://codeforces.com/contest/652/problem/A",
+    "submission_id": "CF104032369",
+    "submission_url": "https://codeforces.com/contest/652/submission/104032369",
+    "tags": [
+      "implementation",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "Jan/11/2021 17:42"
+  },
   "CF104032890": {
     "contest_id": 652,
     "language": "GNU C++17",
