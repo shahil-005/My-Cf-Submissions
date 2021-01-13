@@ -110,31 +110,60 @@ const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long INF=(long long)(2e18);
 VPLL v;
-void fun(LL n){
-	if(n==2){
-		return;
+void fun(LL x,LL y){
+	LL k=x;
+	LL k2=y;
+	while(x>1){
+		x=(x+y-1)/y;
+		// cout<<k<<" "<<k2<<endl;
+		v.pb({k,k2});
 	}
-	LL x=sqrt(n);
-	while(x<(n+x-1)/x){
-		x++;
-	}
-	// d2(n,x);
-	fe(i,x+1,n-1){
-		v.pb({i,n});
-	}
-	v.pb({n,x});
-	v.pb({n,x});
-	fun(x);
 }
 void solve(LL tc)
 {
-	v.clear();
 	LL n;
 	cin>>n;
-	fun(n);
-	cout<<sz(v)<<endl;
-	each(it,v){
-		cout<<it.ff<<" "<<it.ss<<endl;
+	if(n==3){
+		cout<<2<<endl;
+		cout<<3<<" "<<2<<endl;
+		cout<<3<<" "<<2<<endl;
+	}
+	else if(n==4){
+		cout<<4<<endl;
+		cout<<3<<" "<<2<<endl;
+		cout<<3<<" "<<2<<endl;
+		cout<<4<<" "<<2<<endl;
+		cout<<4<<" "<<2<<endl;
+	}
+	else if(n<=8){
+		v.clear();
+		v.pb({3,n});
+		fe(i,5,n-1){
+			// cout<<i<<" "<<n<<endl;
+			v.pb({i,n});
+		}
+		fun(n,4);
+		fun(4,2);
+		
+		cout<<sz(v)<<endl;
+		each(it,v){
+			cout<<it.ff<<" "<<it.ss<<endl;
+		}
+	}
+	else{
+		v.clear();
+		fe(i,3,n-1){
+			if(i==8){continue;}
+			v.pb({i,n});
+		}
+		fun(n,8);
+		fun(8,2);
+		
+		cout<<sz(v)<<endl;
+		each(it,v){
+			cout<<it.ff<<" "<<it.ss<<endl;
+		}
+		
 	}
 }
 int main()
