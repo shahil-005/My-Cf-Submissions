@@ -124,9 +124,6 @@ void solve(LL tc)
 		cout<<p[i]<<" ";
 	}
 	cout<<endl;
-	
-	// https://youtu.be/jlMIIK92zog?t=7646 : Explanation
-	// https://codeforces.com/blog/entry/86743?#comment-748096
 }
 int main()
 {
