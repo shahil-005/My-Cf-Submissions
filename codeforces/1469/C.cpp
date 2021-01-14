@@ -119,29 +119,38 @@ void solve(LL tc)
 		cin>>a[i];
 	}
 	VPLL v(n+1);
-	fe(i,1,n){
-		if(i==1 || i==n){
-			v[i]={a[i],a[i]};
-		}
-		else{
-			v[i]={a[i],a[i]+k-1};
-		}
-	}
+	v[1]={a[1],a[1]};
 	LL f=0;
 	fe(i,2,n){
-		LL l=v[i].ff;
-		LL r=v[i].ss;
-		
-		LL x=v[i-1].ff-k+1;
-		LL y=v[i-1].ss+k-1;
-		// d4(l,r,x,y); 
-		if(l>y || r<x){
-			f=1;
-			break;
+		if(i<n){
+			LL l=a[i];
+			LL r=a[i]+k-1;
+			
+			LL x=v[i-1].ff-k+1;
+			LL y=v[i-1].ss+k-1;
+			// d4(l,r,x,y); 
+			if(l>y || r<x){
+				f=1;
+				break;
+			}
+			
+			v[i].ff=max(l,x);
+			v[i].ss=min(r,y);
 		}
-		
-		v[i].ff=max(l,x);
-		v[i].ss=min(r,y);
+		else{
+			LL l=a[i];
+			LL r=a[i];
+			
+			LL x=v[i-1].ff-k+1;
+			LL y=v[i-1].ss+k-1;
+			// d4(l,r,x,y);
+			if(l>y || r<x){
+				f=1;
+				break;
+			}
+			v[i].ff=max(l,x);
+			v[i].ss=min(r,y);
+		}
 		// cout<<i<<" "<<v[i].ff<<" "<<v[i].ss<<endl;
 		
 	}
