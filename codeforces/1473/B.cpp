@@ -114,22 +114,64 @@ void solve(LL tc)
 {
 	S a,b;
 	cin>>a>>b;
-	LL n=sz(a);
-	LL m=sz(b);
-	
-	LL k=(n*m)/__gcd(n,m);
-	S s1,s2;
-	f(i,0,k/n){
-		s1+=a;
+	set<char> s;
+	each(it,a){
+		s.insert(it);
 	}
-	f(i,0,k/m){
-		s2+=b;
+	each(it,b){
+		s.insert(it);
 	}
-	if(s1==s2){
-		cout<<s1<<endl;
+	if(sz(s)>1){
+		LL n1=sz(a);
+		LL n2=sz(b);
+		if(n1>n2){
+			swap(n1,n2);
+			swap(a,b);
+		}
+		S x="";
+		LL f2=0;
+		fe(i,0,n1-1){
+			x+=a[i];
+			LL f=0;
+			
+			for(int j=0;j<n1;j+=(i+1)){
+				if(a.substr(j,(i+1))!=x){
+					f=1;
+					break;
+				}
+			}
+			for(int j=0;j<n2;j+=(i+1)){
+				if(b.substr(j,(i+1))!=x){
+					f=1;
+					break;
+				}
+			}
+			// d3(i,f,x);
+			if(f==0){
+				f2=1;
+				LL n=lcm(n1,n2);
+				LL y=n/(i+1);
+				fe(j,1,y){
+					cout<<x;
+				}
+				cout<<endl;
+				break;
+			}
+		}
+		if(f2==0){
+			cout<<-1<<endl;
+		}
 	}
 	else{
-		cout<<-1<<endl;
+		LL n1=sz(a);
+		LL n2=sz(b);
+		LL n=lcm(n1,n2);
+		
+		LL x=n/n1;
+		fe(i,1,x){
+			cout<<a;
+		}
+		cout<<endl;
 	}
 }
 int main()
