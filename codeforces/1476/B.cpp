@@ -1,3 +1,13 @@
+// Author: shahil_005
+// Time: 2021-01-29 20:27:28
+// Problem: B. Inflation
+// Contest: Codeforces - Educational Codeforces Round 103 (Rated for Div. 2)
+// URL: https://codeforces.com/contest/1476/problem/B
+// Memory Limit: 256 MB
+// Time Limit: 2000 ms
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
 //g++ -Wall
 //g++ -static -DONLINE_JUDGE -Wl,--stack=268435456 -O2 -std=c++17
 #include <bits/stdc++.h>
@@ -13,12 +23,12 @@ using namespace std;
 #define f(i,s,n)                for(LL i = s ; i < n ; i++)
 #define fe(i,s,n)               for(LL i = s ; i <= n ; i++)
 #define rfe(i,s,n)              for(LL i = s ; i >= n ; i--)
-#define each(it,x)      for(auto &it:x)
+#define each(it,x)		for(auto &it:x)
 #define f2(it,v)                for(it = v.begin(); it != v.end(); ++it)
 #define fori(it, x)             for (__typeof((x).begin()) it = (x).begin(); it != (x).end(); it++)
 #define TCs(x)                  LL x; cin>>x; while(x--)
 #define TC(x)                   LL x=1; while(x--)
-#define google(x)       cout<<"Case #"<<x<<": ";
+#define google(x)		cout<<"Case #"<<x<<": ";
 #define mp                      make_pair
 #define pb                      push_back
 #define pf                      push_front
@@ -28,7 +38,7 @@ using namespace std;
 #define mem(a,x)                memset(a,x,sizeof(a))
 #define imin                    INT_MIN
 #define imax                    INT_MAX
-#define sz(x)               (LL)x.size()
+#define sz(x)       		(LL)x.size()
 #define ps(x)                   std::cout << std::fixed; std::cout << std::setprecision(x);
 #define clz(a)                  __builtin_clz(a) // count leading zeroes (geeksforgeeks.org/builtin-functions-gcc-compiler/)
 #define ctz(a)                  __builtin_ctz(a) // count trailing zeroes
@@ -72,8 +82,8 @@ typedef map<string,string>      MSS;
 typedef set<LL>                 SL;
 typedef set<string>             SS;
 typedef set<char>               SC;
-typedef priority_queue<LL>  PQLL;
-typedef priority_queue<LL,VL,greater<LL>>   mPQLL;
+typedef priority_queue<LL>	PQLL;
+typedef priority_queue<LL,VL,greater<LL>>	mPQLL;
 
 //Time
 #define debug(...) fprintf(stderr, __VA_ARGS__), fflush(stderr)
@@ -101,47 +111,152 @@ LL sum(LL a, LL b,LL mod){  return (a + b) % mod;}
 const long long N = (long long)(1e5 + 1);
 const long long MOD = (long long)(1e9 + 7);
 const long long INF = (long long)(2e18);
-template<typename T, typename U> static inline void amax(T &x, U y){ if(x<y) x=y; }
-void solve(LL tc){  
-    LL n,k;
-    cin>>n>>k;
-    
-    VL a(n);
-    fe(i,0,n-1){
-        cin>>a[i];
-    }
-    LL sum=a[0];
-    LL cur=0;
-    fe(i,1,n-1){
-        if(a[i]*100>sum*k){
-            LL y=(a[i]*100+k-1)/k;
-            cur=max(cur,y-sum);
-            // amax(cur,y-sum);
-            // cout<<i<<" "<<cur<<endl;
-        }
-        sum+=a[i];
-    }
-    cout<<cur<<endl;
-    // if(tc==5 && cur==12138){
-        // cout<<n<<" "<<k<<endl;
-        // fe(i,0,n-1){
-            // cout<<a[i]<<" ";
-        // }
-        // cout<<endl;
-    // }
-    
+bool check(LD y){
+	std::string s = std::to_string(y);
+	each(it,s){
+		if(it=='.'){
+			return true;
+		}
+	}
+	return false;
+}
+void solve(LL tc)
+{
+	
+	LL n;cin>>n;
+	LD k;cin>>k;
+	
+	LD a[n];
+	LD b[n];
+	LD sum=0;
+	fe(i,0,n-1){
+		cin>>a[i];
+		b[i]=sum;
+		sum+=a[i];
+	}
+	// if(tc==40||tc==42||tc==47||tc==56||tc==84){
+		// n=(LL)n;
+		// k=(LL)k;
+		// cout<<n<<" "<<k<<endl;
+		// fe(i,0,n-1){
+			// a[i]=(LL)a[i];
+			// cout<<a[i]<<" ";
+		// }
+		// cout<<endl;
+	// }
+	std::cout << std::fixed; std::cout << std::setprecision(10);
+	// fe(i,0,n-1){
+		// LD x;
+		// cin>>x;
+		// a[i]+=x;
+	// }
+	// fe(i,1,n-1){
+		// LD x=(a[i]*100)/sum;
+		// cout<<i<<" "<<x<<endl;
+		// sum+=a[i];
+	// }
+	
+	// fe(i,0,n-1){
+		// cout<<b[i]<<" ";
+	// }
+	// cout<<endl;
+	LD cur=0;
+	rfe(i,n-1,1){
+		LD x=(a[i]*100)/b[i];
+		// d2(i,x);
+		if(x>k){
+			LD y=(a[i]*100)/k;
+			// cout<<i<<" "<<x<<" : "<<y<<endl;
+			// cout<<a[i]<<": "<<y<<endl;
+			// if(check(y)){
+			// if((trunc(y) != y)){
+				// y=(LL)y;
+				// y++;
+			// }
+			// cout<<i<<" "<<x<<" : "<<y<<endl;
+			LD dif=(y-b[i]);
+			if(dif>cur){
+				cur=dif;
+			}
+		}
+		// line(20);
+	}
+	LL ans=cur;
+	// if((trunc(cur) != cur)){
+		// ans++;
+	// }
+	// cout<<ans<<endl;
+// 	
+	// line(30);
+	ans=max(0LL,ans-1);
+	a[0]+=ans;
+	LD s=a[0];
+	LL f=0;
+	for(int i=1;i<=n-1;i++){
+		LD x=(a[i]*100)/s;
+		if(x>k){
+			f=1;
+			break;
+		}
+		s+=a[i];
+	}
+	if(f==0){
+		cout<<ans<<endl;
+		return;
+	}
+	a[0]-=ans;
+	ans++;
+	a[0]+=ans;
+	s=a[0];
+	f=0;
+	for(int i=1;i<=n-1;i++){
+		LD x=(a[i]*100)/s;
+		if(x>k){
+			f=1;
+			break;
+		}
+		s+=a[i];
+	}
+	if(f==0){
+		cout<<ans<<endl;
+		return;
+	}
+	a[0]-=ans;
+	ans++;
+	a[0]+=ans;
+	s=a[0];
+	f=0;
+	for(int i=1;i<=n-1;i++){
+		LD x=(a[i]*100)/s;
+		if(x>k){
+			f=1;
+			break;
+		}
+		s+=a[i];
+	}
+	if(f==0){
+		cout<<ans<<endl;
+		return;
+	}
 }
 int main() {
-    
-// #ifndef ONLINE_JUDGE
-    // freopen("input.txt","r",stdin);
-    // freopen("output.txt","w",stdout);
-// #endif
+	
+#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
+#endif
   ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
   LL cnt = 1;
   TCs(t) {
     // google(cnt);
-    time__("solve") { solve(cnt); }
+    time__("solve"){
+    	// bool b=
+    	solve(cnt);
+    	// bool b=solve(cnt);
+    	// if(!b){
+    		// cout<<cnt<<endl;
+    	// }
+    }
     cnt++;
   }
   return 0;
