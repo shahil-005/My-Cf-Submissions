@@ -4646,6 +4646,23 @@
     ],
     "timestamp": "Jan/15/2021 01:24"
   },
+  "CF106163850": {
+    "contest_id": 691,
+    "language": "GNU C++17",
+    "path": "codeforces/691/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "s-palindrome",
+    "problem_url": "https://codeforces.com/contest/691/problem/B",
+    "submission_id": "CF106163850",
+    "submission_url": "https://codeforces.com/contest/691/submission/106163850",
+    "tags": [
+      "implementation",
+      "strings",
+      "*1600"
+    ],
+    "timestamp": "Feb/01/2021 12:45"
+  },
   "CF106166777": {
     "contest_id": 691,
     "language": "GNU C++17",
