@@ -4646,6 +4646,22 @@
     ],
     "timestamp": "Jan/15/2021 01:24"
   },
+  "CF106162607": {
+    "contest_id": 691,
+    "language": "GNU C++17",
+    "path": "codeforces/691/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Fashion in Berland",
+    "problem_url": "https://codeforces.com/contest/691/problem/A",
+    "submission_id": "CF106162607",
+    "submission_url": "https://codeforces.com/contest/691/submission/106162607",
+    "tags": [
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Feb/01/2021 12:27"
+  },
   "CF106163850": {
     "contest_id": 691,
     "language": "GNU C++17",
