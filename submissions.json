@@ -4646,6 +4646,23 @@
     ],
     "timestamp": "Jan/15/2021 01:24"
   },
+  "CF106252268": {
+    "contest_id": 678,
+    "language": "GNU C++17",
+    "path": "codeforces/678/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Johny Likes Numbers",
+    "problem_url": "https://codeforces.com/contest/678/problem/A",
+    "submission_id": "CF106252268",
+    "submission_url": "https://codeforces.com/contest/678/submission/106252268",
+    "tags": [
+      "implementation",
+      "math",
+      "*800"
+    ],
+    "timestamp": "Feb/02/2021 12:08"
+  },
   "CF106254412": {
     "contest_id": 678,
     "language": "GNU C++17",
