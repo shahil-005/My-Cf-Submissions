@@ -1,5 +1,5 @@
 // Author: shahil_005
-// Time: 2021-02-04 06:15:52
+// Time: 2021-02-03 13:10:19
 // Problem: C. Cellular Network
 // Contest: Codeforces - Educational Codeforces Round 15
 // URL: https://codeforces.com/contest/702/problem/C
@@ -121,22 +121,23 @@ void solve(LL tc)
 	fe(i,1,n){
 		cin>>a[i];
 	}
-	SL s;
 	LL b[m+1];
+	SL s1,s2;
 	fe(i,1,m){
 		cin>>b[i];
-		s.insert(b[i]);
+		s1.insert(b[i]);
+		s2.insert((b[i])*(-1));
 	}
 	LL ans=0;
 	fe(i,1,n){
-		auto x=s.lower_bound(a[i]);
+		auto x=s1.lower_bound(a[i]);
+		auto y=s2.lower_bound((a[i])*(-1));
 		LL op1=INT_MAX,op2=INT_MAX;
-		if(x!=s.end()){
+		if(x!=s1.end()){
 			op1=abs(a[i]-(*x));
 		}
-		if(x!=s.begin()){
-			x--;
-			op2=abs(a[i]-(*x));
+		if(y!=s2.end()){
+			op2=abs(-1*a[i] - (*y));
 		}
 		LL cur=min(op1,op2);
 		// d4(i,op1,op2,cur);
