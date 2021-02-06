@@ -2015,6 +2015,22 @@
     ],
     "timestamp": "Jan/11/2021 04:04"
   },
+  "AC19952923": {
+    "contest_id": "abc191",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc191/B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "Remove It",
+    "problem_url": "https://atcoder.jp/contests/abc191/tasks/abc191_b",
+    "submission_id": "AC19952923",
+    "submission_url": "https://atcoder.jp/contests/abc191/submissions/19952923",
+    "tags": [
+      "AtCoder",
+      "*200"
+    ],
+    "timestamp": "Feb/06/2021 17:31"
+  },
   "AC19957435": {
     "contest_id": "abc191",
     "language": "C++ (GCC 9.2.1)",
