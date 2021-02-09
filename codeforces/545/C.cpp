@@ -115,31 +115,67 @@ const long long INF = (long long)(2e18);
 
 void solve(LL tc)
 {
-	//Greedy
 	LL n;
 	cin>>n;
-	if(n<=2){
-		cout<<n;
-		return;
-	}
 	VPLL v(n+1);
+	SL s;
 	fe(i,1,n){
 		cin>>v[i].ff>>v[i].ss;
+		s.insert(v[i].ff);
 	}
+	
 	sort(v.begin()+1,v.end());
 	
-	LL ans=2;
-	fe(i,2,n-1){
-		if(v[i].ff-v[i].ss > v[i-1].ff){
-			ans++;
+	LL a[n+1][3];
+	LL cnt[n+1][3];
+	fe(i,1,n){
+		if(i==1){
+			a[i][0]=v[i].ff;
+			cnt[i][0]=1;
+			
+			if(v[i+1].ff>v[i].ff+v[i].ss){
+				a[i][1]=v[i].ff+v[i].ss;
+				cnt[i][1]=1;
+			}
+			else{
+				a[i][1]=v[i].ff;
+				cnt[i][1]=0;
+			}
+			
+			a[i][2]=v[i].ff;
+			cnt[i][2]=0;
 		}
-		else if(v[i].ff+v[i].ss < v[i+1].ff){
-			ans++;
-			v[i].ff+=v[i].ss;
+		else{
+			a[i][0]=v[i].ff;
+			cnt[i][0]=max({cnt[i-1][0],cnt[i-1][1],cnt[i-1][2]});
+			if(v[i].ff-v[i].ss > a[i-1][0]){
+				a[i][0]=v[i].ff;
+				cnt[i][0]=1+max(cnt[i-1][0],cnt[i-1][2]);
+			}
+			if(v[i].ff-v[i].ss > a[i-1][1]){
+				a[i][0]=v[i].ff;
+				cnt[i][0]=max(cnt[i][0],cnt[i-1][1]+1);
+			}
+			
+			if(i!=n){
+				if(v[i+1].ff>v[i].ff+v[i].ss){
+					a[i][1]=v[i].ff+v[i].ss;
+					cnt[i][1]=1+max({cnt[i-1][0],cnt[i-1][1],cnt[i-1][2]});
+				}
+				else{
+					a[i][1]=v[i].ff;
+					cnt[i][1]=max({cnt[i-1][0],cnt[i-1][1],cnt[i-1][2]});
+				}
+			}
+			else{
+				cnt[i][1]=1+max({cnt[i-1][0],cnt[i-1][1],cnt[i-1][2]});
+			}
+			
+			a[i][2]=v[i].ff;
+			cnt[i][2]=max({cnt[i-1][0],cnt[i-1][1],cnt[i-1][2]});
+			
 		}
-		// d2(i,ans);
-	}
-	cout<<ans;
+	}	cout<<max({cnt[n][0],cnt[n][1],cnt[n][2]});
 }
 int main(){
 // #ifndef ONLINE_JUDGE
