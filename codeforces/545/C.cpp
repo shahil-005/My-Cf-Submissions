@@ -112,46 +112,34 @@ LL sum(LL a, LL b,LL mod){  return (a + b) % mod;}
 const long long N = (long long)(1e5 + 1);
 const long long MOD = (long long)(1e9 + 7);
 const long long INF = (long long)(2e18);
-LL n;
-LL x[N],h[N];
-LL dp[N][3];
-
-// dp[i][j] - max number of trees we can cut in first i trees 
-// j = 0 - we don't cut tree i
-// j = 1 - we cut tree i and it falls left
-// j = 2 - we cut tree i and it falls right
 
 void solve(LL tc)
 {
-	//DP sol
-	//https://codeforces.com/blog/entry/17982?#comment-428410
-	//https://www.quora.com/Whats-the-dynamic-programming-solution-to-Codeforces-Woodcutters-Problem-545C-Codeforces-problem-and-why-it-qualifies-for-a-dp-problem
-	//https://pastebin.com/FpuFQgd8
-	
+	//Greedy
+	LL n;
 	cin>>n;
-	fe(i,1,n)cin>>x[i]>>h[i];
-	
-	x[0]=INT_MIN;
-	x[n+1]=INT_MAX;
-	
-	fe(i,1,n){
-		//If ith tree stays
-		dp[i][0] = max({dp[i-1][0],dp[i-1][1],dp[i-1][2]});	
-		
-		//If ith tree falls left
-		if(x[i]-h[i] > x[i-1]+h[i-1]){
-			dp[i][1] = 1+ max({dp[i-1][0],dp[i-1][1],dp[i-1][2]});
-		}
-		else if(x[i]-h[i] > x[i-1]){
-			dp[i][1] = 1+ max(dp[i-1][0],dp[i-1][1]);
-		}
-		
-		//If ith tree falls right
-		if(x[i]+h[i] < x[i+1]){
-			dp[i][2] = 1+max({dp[i-1][0],dp[i-1][1],dp[i-1][2]});
-		}
+	if(n<=2){
+		cout<<n;
+		return;
 	}
-	cout<<max({dp[n][0],dp[n][1],dp[n][2]});
+	VPLL v(n+1);
+	fe(i,1,n){
+		cin>>v[i].ff>>v[i].ss;
+	}
+	sort(v.begin()+1,v.end());
+	
+	LL ans=2;
+	fe(i,2,n-1){
+		if(v[i].ff-v[i].ss > v[i-1].ff){
+			ans++;
+		}
+		else if(v[i].ff+v[i].ss < v[i+1].ff){
+			ans++;
+			v[i].ff+=v[i].ss;
+		}
+		// d2(i,ans);
+	}
+	cout<<ans;
 }
 int main(){
 // #ifndef ONLINE_JUDGE
