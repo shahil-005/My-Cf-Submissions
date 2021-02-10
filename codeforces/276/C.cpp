@@ -115,29 +115,40 @@ const long long INF = (long long)(2e18);
 
 void solve(LL tc)
 {
-	//Important Prefix Sum trick for segment query related problems
 	LL n,q;
 	cin>>n>>q;
 	LL a[n+1];
 	fe(i,1,n){
 		cin>>a[i];
 	}
-	LL freq[n+1];
-	mem(freq,0);
+	VL v[n+2];
 	fe(i,1,q){
-		LL l,r;
-		cin>>l>>r;
-		freq[l]++;
-		freq[r+1]--;
+		LL x,y;
+		cin>>x>>y;
+		v[x].pb(-i);
+		v[y+1].pb(i);
 	}
+	LL b[n+1];
+	mem(b,0);
+	
+	SL s;
 	fe(i,1,n){
-		freq[i]+=freq[i-1];
+		each(it,v[i]){
+			if(it<0){
+				s.insert(abs(it));
+			}
+			else{
+				s.erase(it);
+			}
+		}
+		b[i]+=sz(s);
 	}
 	sort(a+1,a+1+n);
-	sort(freq+1,freq+1+n);
+	sort(b+1,b+1+n);
 	LL ans=0;
 	fe(i,1,n){
-		ans+=(a[i]*freq[i]);
+		// d3(i,a[i],b[i]);
+		ans+=(a[i]*b[i]);
 	}
 	cout<<ans;
 }
