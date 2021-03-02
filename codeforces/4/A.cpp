@@ -6,7 +6,10 @@ int main()
 {
     int n;
     cin >> n;
-
+    int x=10;
+while(x--){
+        
+}
     if(n<3)
         {
             cout << "No";
@@ -20,6 +23,7 @@ int main()
         {
             cout << "No";
         }
+        //fddssdf
 
     return 0;
 }
