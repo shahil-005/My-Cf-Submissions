@@ -4646,6 +4646,24 @@
     ],
     "timestamp": "Jan/15/2021 01:24"
   },
+  "CF109520797": {
+    "contest_id": 701,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces/701/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "They Are Everywhere",
+    "problem_url": "https://codeforces.com/contest/701/problem/C",
+    "submission_id": "CF109520797",
+    "submission_url": "https://codeforces.com/contest/701/submission/109520797",
+    "tags": [
+      "binary search",
+      "strings",
+      "two pointers",
+      "*1500"
+    ],
+    "timestamp": "Mar/10/2021 04:02"
+  },
   "CF109520809": {
     "contest_id": 414,
     "language": "GNU C++17 (64)",
