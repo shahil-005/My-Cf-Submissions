@@ -13,6 +13,7 @@ A repository to keep track of problem solving practice, containing solutions fro
 
 | # | Title | Solution | Tags | Submitted |
 |---| ----- | -------- | ---- | --------- |
+862 | [C - Doubled](https://atcoder.jp/contests/abc196/tasks/abc196_c) | [C++ (GCC 9.2.1)](./atcoder/abc196/C.cpp) | `AtCoder` `*300` | Mar/20/2021 18:59 | 
 861 | [A - Mashmokh and Numbers](https://codeforces.com/contest/414/problem/A) | [GNU C++17 (64)](./codeforces/414/A.cpp) | `constructive algorithms` `number theory` `*1500` | Mar/10/2021 04:03 | 
 860 | [C - They Are Everywhere](https://codeforces.com/contest/701/problem/C) | [GNU C++17 (64)](./codeforces/701/C.cpp) | `binary search` `strings` `two pointers` `*1500` | Mar/10/2021 04:02 | 
 859 | [B - Burning Midnight Oil](https://codeforces.com/contest/165/problem/B) | [GNU C++17](./codeforces/165/B.cpp) | `binary search` `implementation` `*1500` | Mar/10/2021 04:01 | 

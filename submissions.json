@@ -2015,6 +2015,22 @@
     ],
     "timestamp": "Jan/11/2021 04:04"
   },
+  "AC21101739": {
+    "contest_id": "abc196",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder/abc196/C.cpp",
+    "platform": "AtCoder",
+    "problem_index": "C",
+    "problem_name": "Doubled",
+    "problem_url": "https://atcoder.jp/contests/abc196/tasks/abc196_c",
+    "submission_id": "AC21101739",
+    "submission_url": "https://atcoder.jp/contests/abc196/submissions/21101739",
+    "tags": [
+      "AtCoder",
+      "*300"
+    ],
+    "timestamp": "Mar/20/2021 18:59"
+  },
   "CF100016797": {
     "contest_id": 1455,
     "language": "GNU C++17",
