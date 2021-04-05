@@ -6774,6 +6774,23 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF112075678": {
+    "contest_id": 687,
+    "language": "GNU C++17",
+    "path": "codeforces/687/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "NP-Hard Problem",
+    "problem_url": "https://codeforces.com/contest/687/problem/A",
+    "submission_id": "CF112075678",
+    "submission_url": "https://codeforces.com/contest/687/submission/112075678",
+    "tags": [
+      "dfs and similar",
+      "graphs",
+      "*1500"
+    ],
+    "timestamp": "Apr/05/2021 18:02"
+  },
   "CF112076963": {
     "contest_id": 687,
     "language": "GNU C++17",

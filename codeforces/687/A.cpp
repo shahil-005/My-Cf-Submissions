@@ -114,24 +114,31 @@ const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
 vector<ll> adj[N];
 ll n,m;
-ll vis[N];
-vector<ll> v0,v1;
-void dfs(ll nd,ll c){
-	// debug(nd,c);
-	vis[nd]=c;
-	if(c){
-		v1.pb(nd);
-	}
-	else{
-		v0.pb(nd);
-	}
-	for(auto it:adj[nd]){
-		if(vis[it]==-1){
-			dfs(it,c^1);
-		}
-		if(vis[nd]==vis[it]){
-			cout<<-1;
-			exit(0);
+bool vis[N];
+ll color[N];
+ll f=0;
+vector<ll> v1,v2;
+void bfs(ll nd){
+	queue<pll> q;
+	q.push({nd,1});
+	color[nd]=1;
+	vis[nd]=true;
+	while(!q.empty()){
+		ll x=q.front().ff;
+		ll c=q.front().ss;
+		q.pop();
+		// debug(x,c);
+		// arr_(color,1,n);
+		for(auto it:adj[x]){
+			if(!vis[it]){
+				color[it]=3-c;
+				vis[it]=true;
+				q.push({it,3-c});
+			}
+			else if(color[x]==color[it]){
+				f=1;
+				return;
+			}
 		}
 	}
 }
@@ -145,19 +152,33 @@ void solve(int tc)
 		adj[x].pb(y);
 		adj[y].pb(x);
 	}
-	mem(vis,-1);
 	for(ll i=1;i<=n;i++){
-		if(vis[i]==-1 && sz(adj[i])>=1){
-			dfs(i,0);
-
+		if(!vis[i]){
+			bfs(i);
+			if(f){
+				break;
+			}
 		}
 	}
-	cout<<sz(v0)<<endl;
-	for(auto it:v0) cout<<it<<" ";
-	cout<<endl;
-	cout<<sz(v1)<<endl;
-	for(auto it:v1) cout<<it<<" ";
-	cout<<endl;
+	if(f){
+		cout<<-1;
+	}
+	else{
+		for(ll i=1;i<=n;i++){
+			if(color[i]==1 && sz(adj[i])>=1){
+				v1.pb(i);
+			}
+			else if(sz(adj[i])>=1){
+				v2.pb(i);
+			}
+		}
+		cout<<sz(v1)<<endl;
+		for(auto it:v1) cout<<it<<" ";
+		cout<<endl;
+		cout<<sz(v2)<<endl;
+		for(auto it:v2) cout<<it<<" ";
+		cout<<endl;
+	}
 }
 int main(){
 	start();
