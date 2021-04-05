@@ -117,26 +117,48 @@ void solve(int tc)
 	string s;
 	cin>>s;
 	int ans=0;
-	for(char i='0';i<='9';i++){
-		for(char j='0';j<='9';j++){
-			char x=i;
-			char y=j;
+	for(int i=0;i<=9;i++){
+		for(int j=i+1;j<=9;j++){
+			int f=-1;
 			int cnt=0;
 			for(auto it:s){
-				if(it==x){
+				int x=it-'0';
+				if(f==-1 && (x==i || x==j)){
+					if(x==i){
+						f=2;		
+					}
+					else{
+						f=1;
+					}
 					cnt++;
-					swap(x,y);	
 				}
+				else if(f==1 && x==i){
+					cnt++;
+					f=2;
+				}
+				else if(f==2 && x==j){
+					cnt++;
+					f=1;
+				}
+				// if(i*j==10){
+					// debug(f,cnt);
+				// }
 			}
-			if(x==y){
-				ans=max(ans,cnt);
-			}
-			else{
-				ans=max(ans,cnt&(~1));
-			}
+			ans=max(ans,cnt-(cnt&1));
+			// if(i*j==10){
+				// debug(ans);
+			// }
 		}
 	}
-	cout<<sz(s)-ans<<endl;
+	ans=sz(s)-ans;
+	map<char,int> m;
+	for(auto it:s){
+		m[it]++;
+	}
+	for(auto it:m){
+		ans=min(ans,sz(s)-it.ss);
+	}
+	cout<<ans<<endl;
 }
 int main(){
 	start();
