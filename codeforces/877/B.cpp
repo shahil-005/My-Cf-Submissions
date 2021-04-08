@@ -114,21 +114,50 @@ const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
 void solve(int tc)
 {
-	//Dp sol
-	//https://codeforces.com/blog/entry/55362?#comment-392024
+	//Using Prefix and suffix sum : O(n^2)
+	//dp sol : https://codeforces.com/blog/entry/55362?#comment-392024
+	
+	//a
+	//b
+	//aba
+	//ab
+	//ba
 	string s;
 	cin>>s;
 	ll n=sz(s);
-	s='.'+s;
-	ll dp[n+1][3];
-	mem(dp,0);
-	for(int i=1;i<=n;i++){
-		dp[i][0]=dp[i-1][0]+(s[i]=='a');	//max cnt of 'a'
-		dp[i][1]=max(dp[i-1][0],dp[i-1][1])+(s[i]=='b');	//max cnt of a or ab or b
-		dp[i][2]=max(dp[i-1][1],dp[i-1][2])+(s[i]=='a');	//max. count of (a) or (ab) or (b) or (ba) or (aba)
-		// cout<<dp[i][0]<<" "<<dp[i][1]<<" "<<dp[i][2]<<endl;
+	ll px[n+5],sx[n+5];
+	mem(px,0);
+	mem(sx,0);
+	for(int i=0;i<n;i++){
+		px[i+1]=px[i];
+		if(s[i]=='a'){
+			px[i+1]++;
+		}
 	}
-	cout<<max({dp[n][0],dp[n][1],dp[n][2]});
+	for(int i=n-1;i>=0;i--){
+		sx[i+1]=sx[i+2];
+		if(s[i]=='a'){
+			sx[i+1]++;
+		}
+	}
+	// arr_(px,1,n);
+	// arr_(sx,1,n);
+	ll ans=0;
+	for(int i=0;i<=n-1;i++){
+		ll cnt=0;
+		for(int j=i;j<=n-1;j++){
+			if(s[j]=='b'){
+				cnt++;
+			}
+			ans=max(ans,px[i]+cnt+sx[j+2]);
+		}
+	}
+	ll a=0,b=0;
+	for(auto it:s){
+		a+=(it=='a');
+		b+=(it=='b');
+	}
+	cout<<max({ans,a,b});
 }
 int main(){
 	start();
