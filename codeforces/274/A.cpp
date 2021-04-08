@@ -112,30 +112,47 @@ bool overflow(long double a, long double b){return a * b > 1e18 + 10;}
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
-
+vector<ll> adj[N];
+bool vis[N];
+void dfs(ll nd,ll &cnt){
+	vis[nd]=1;
+	cnt++;
+	for(auto it:adj[nd]){
+		if(!vis[it]){
+			dfs(it,cnt);
+		}
+	}
+}
 void solve(int tc)
 {
-	//Editorial greedy sol
+	//kind of bipartite coloring
+	//all connected comps are linear always, so no need to color
+	//just find length of each comp and use len/2 for ans
 	ll n,k;
 	cin>>n>>k;
 	ll a[n+1];
-	set<ll> s;
+	map<ll,ll> m;
 	for(int i=1;i<=n;i++){
 		cin>>a[i];
+		m[a[i]]=i;
 	}
-	sort(a+1,a+1+n);
 	for(int i=1;i<=n;i++){
-		if(a[i]%k!=0){
-			s.insert(a[i]);
+		ll x=a[i]*k;
+		if(m.count(x)){
+			adj[i].pb(m[x]);
+			adj[m[x]].pb(i);
 		}
-		else{
-			if(!s.count(a[i]/k)){
-				s.insert(a[i]);
-			}
-		}
-		// debug(i,s);
 	}
-	cout<<sz(s);
+	ll ans=0;
+	for(int i=1;i<=n;i++){
+		// debug(a[i],adj[i]);
+		if(!vis[i]){
+			ll cnt=0;
+			dfs(i,cnt);
+			ans+=(cnt+1)/2;
+		}
+	}
+	cout<<ans;
 }
 int main(){
 	start();
