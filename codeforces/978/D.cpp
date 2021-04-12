@@ -124,28 +124,27 @@ void fun(ll i,ll j,ll d,ll cnt){
 	if(dp[i][j]!=d){
 		return;
 	}
-	if(j<=3){	//cur element is decreased by 1
+	if(j<=3){
 		for(int k=1;k<=3;k++){
-			fun(i+1,3*k-2,d,cnt+1);	//1,2,3 can only go to 1,4,7
+			fun(i+1,3*k-2,d,cnt+1);
 		}
 	}
-	else if(j<=6){	//cur element is constant
+	else if(j<=6){
 		for(int k=1;k<=3;k++){
-			fun(i+1,3*k-1,d,cnt);	//4,5,6 can only go to 2,5,8
+			fun(i+1,3*k-1,d,cnt);
 		}
 	}
-	else if(j<=9){	//cur element is increased by 1
+	else if(j<=9){
 		for(int k=1;k<=3;k++){
-			fun(i+1,3*k,d,cnt+1);	//7,8,9 can only go to 3,6,9
+			fun(i+1,3*k,d,cnt+1);
 		}
 	}
 }
 void solve(int tc)
-{	//same sol as prev with explanations : 
+{
 	//Create a table for all scenarios
 	//run a dfs from starting cell if the common diff is present in each cell
 	//choose the most optimal scenario
-
 	cin>>n;
 	ll a[n+1];
 	for(int i=1;i<=n;i++){
@@ -187,18 +186,18 @@ void solve(int tc)
 	// arr2_(dp,1,n,1,9);
 	set<ll> s;
 	for(auto it:m){
-		if(it.ss==n-1){	//that d is present in all cells
+		if(it.ss==n-1){
 			// cout<<it.ff<<" ";
-			s.insert(it.ff);	
+			s.insert(it.ff);
 		}
 	}
 	for(int i=1;i<=9;i++){
 		if(s.count(dp[2][i])){
 			ll cnt;
-			if(i%3==2){	//i ∈{2,5,8}, that means no change in prev element 
+			if(i%3==2){
 				cnt=0;
 			}
-			else{	//i ∈{1,3,4,6,7,9}, that means prev element was either increased or decreased
+			else{
 				cnt=1;
 			}
 			fun(2,i,dp[2][i],cnt);
@@ -211,8 +210,6 @@ void solve(int tc)
 	else{
 		cout<<ans;
 	}
-	
-	
 	
 }
 int main(){
