@@ -114,17 +114,13 @@ const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
 void solve(int tc)
 {
-	// O(nlogn + nlogn + 2*k) sol : https://codeforces.com/contest/978/submission/113362844
-	
-	//Editorial sol : O(2*(nlogn+k)) , without using upper_bound
 	ll n,k;
 	cin>>n>>k;
-	vector<pll> v;
+	vector<ll> v;
 	ll a[n+1];
-	v.pb({-1,-1});
 	for(int i=1;i<=n;i++){
 		cin>>a[i];
-		v.pb({a[i],i});
+		v.pb(-a[i]);
 	}
 	sort(all(v));
 	vector<ll> adj[n+1];
@@ -134,24 +130,16 @@ void solve(int tc)
 		adj[x].pb(y);
 		adj[y].pb(x);
 	}
-	map<ll,ll> m;
-	ll ans[n+1];
-	for(ll i=1;i<=n;i++){
-		ll x=v[i].ff;
-		ll y=v[i].ss;
-		ll cur=i-1-m[x];
-		// debug(i,x,y,cur,adj[y]);
-		for(auto it:adj[y]){
-			if(x>a[it]){
+	for(int i=1;i<=n;i++){
+		ll cur=upper_bound(all(v),-a[i])-v.begin();
+		cur=n-cur;
+		// debug(i,cur);
+		for(auto it:adj[i]){
+			if(a[it]<a[i]){
 				cur--;
 			}
 		}
-		ans[y]=cur;
-		
-		m[x]++;
-	}
-	for(int i=1;i<=n;i++){
-		cout<<ans[i]<<" ";
+		cout<<cur<<" ";
 	}
 }
 int main(){
