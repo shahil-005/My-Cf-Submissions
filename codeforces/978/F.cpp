@@ -112,72 +112,47 @@ bool overflow(long double a, long double b){return a * b > 1e18 + 10;}
 const long long N=(long long)(1e5+1);
 const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
-struct custom_hash{
-    static uint64_t splitmix64(uint64_t x){
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
-    size_t operator()(uint64_t a) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(a + FIXED_RANDOM);
-    }
-    template<class T> size_t operator()(T a) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        hash<T> x;
-        return splitmix64(x(a) + FIXED_RANDOM);
-    }
-    template<class T, class H> size_t operator()(pair<T, H> a) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        hash<T> x;
-        hash<H> y;
-        return splitmix64(x(a.first) * 37 + y(a.second) + FIXED_RANDOM);
-    }
-};
-template<class T, class H>using umap=unordered_map<T,H,custom_hash>;
 void solve(int tc)
 {
-	//My O(nlogn + nlogn + 2*k) sol : https://codeforces.com/contest/978/submission/113362844
-	//Editorial sol : O(2*(nlogn+k)) , without using upper_bound : https://codeforces.com/contest/978/submission/113364414
+	// O(nlogn + nlogn + 2*k) sol : https://codeforces.com/contest/978/submission/113362844
 	
-	//O(nlogn) sol : 
+	//Editorial sol : O(2*(nlogn+k)) , without using upper_bound
 	ll n,k;
 	cin>>n>>k;
 	vector<pll> v;
 	ll a[n+1];
 	v.pb({-1,-1});
 	for(int i=1;i<=n;i++){
-		ll x;cin>>x;
-		a[i]=x;
-		v.pb({x,i});
+		cin>>a[i];
+		v.pb({a[i],i});
 	}
 	sort(all(v));
-	// debug(v);
-	ll ans[n+1];
-	ans[v[1].ss]=0;
-	for(ll i=2;i<=n;i++){
-		if(v[i].ff > v[i-1].ff){
-			ans[v[i].ss]=i-1;
-		}
-		else{
-			ans[v[i].ss]=ans[v[i-1].ss];
-		}
-	}
+	vector<ll> adj[n+1];
 	while(k--){
 		ll x,y;
 		cin>>x>>y;
-		if(a[x]>a[y]){
-			ans[x]--;
+		adj[x].pb(y);
+		adj[y].pb(x);
+	}
+	map<ll,ll> m;
+	ll ans[n+1];
+	for(ll i=1;i<=n;i++){
+		ll x=v[i].ff;
+		ll y=v[i].ss;
+		ll cur=i-1-m[x];
+		// debug(i,x,y,cur,adj[y]);
+		for(auto it:adj[y]){
+			if(x>a[it]){
+				cur--;
+			}
 		}
-		else if(a[y]>a[x]){
-			ans[y]--;
-		}
+		ans[y]=cur;
+		
+		m[x]++;
 	}
 	for(int i=1;i<=n;i++){
 		cout<<ans[i]<<" ";
 	}
-	
 }
 int main(){
 	start();
