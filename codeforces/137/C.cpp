@@ -115,35 +115,25 @@ const long long MOD=(long long)(1e9+7);
 const long long inf=(long long)(1e18);
 void solve(int tc)
 {
-	//other VVI approach
+	//sort starting time and keep track of max ending time
 	ll n;
 	cin>>n;
 	vector<pll> v;
-	set<ll> s;	//separations
 	for(int i=1;i<=n;i++){
 		ll x,y;
 		cin>>x>>y;
 		v.pb({x,y});
-		v.pb({y,-1});
 	}
 	sort(all(v));
+	ll maxe=v[0].ss;
 	ll ans=0;
-	for(int i=1;i<=2*n;i++){
-		ll x=v[i-1].ff;
-		ll y=v[i-1].ss;
-		
-		if(y==-1){
-			s.erase(x);
+	// debug(v);
+	for(int i=1;i<n;i++){
+		if(v[i].ss<maxe){
+			ans++;
 		}
-		else{
-			s.insert(y);
-			
-			if(s.upper_bound(y)!=s.end()){
-				ans++;
-			}
-			// debug(x,y,s,ans);
-		}
-		// debug(x,y,ans);
+		maxe=max(maxe,v[i].ss);
+		// debug(v[i],maxe,ans);
 	}
 	cout<<ans;
 }
