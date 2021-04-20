@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF113575439": {
+    "contest_id": 960,
+    "language": "GNU C++17",
+    "path": "codeforces/960/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Minimize the error",
+    "problem_url": "https://codeforces.com/contest/960/problem/B",
+    "submission_id": "CF113575439",
+    "submission_url": "https://codeforces.com/contest/960/submission/113575439",
+    "tags": [
+      "data structures",
+      "greedy",
+      "sortings",
+      "*1500"
+    ],
+    "timestamp": "Apr/20/2021 09:30"
+  },
   "CF113632156": {
     "contest_id": 427,
     "language": "GNU C++17",
