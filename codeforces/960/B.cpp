@@ -121,23 +121,42 @@ void solve(int tc)
 	ll a[n+1],b[n+1];
 	for(int i=1;i<=n;i++) cin>>a[i];
 	for(int i=1;i<=n;i++) cin>>b[i];
-	priority_queue<ll> pq;
+	priority_queue<pll> pq;
 	for(int i=1;i<=n;i++){
-		pq.push(abs(a[i]-b[i]));
+		pq.push({abs(a[i]-b[i]),i});
 	}
-	while(k--){	//another way
-		ll x=pq.top();
+	// pqueue_(pq);
+	while(1){
+		if(k==0){
+			break;
+		}
+		pll p=pq.top();
+		ll x=p.ff;
+		ll y=p.ss;
 		pq.pop();
-		pq.push(abs(x-1));
+		if(x==0){break;}
+		
+		if(a[y]>b[y]){
+			a[y]--;
+			pq.push({x-1,y});
+		}
+		else{
+			a[y]++;
+			pq.push({x-1,y});
+		}
+		k--;
+		
 	}
-	ll ans=0;
-	while(!pq.empty()){
-		ll x=pq.top();
-		ans+=power(x,2ll);
-		pq.pop();
+	if(k&1){
+		cout<<1<<endl;
 	}
-	cout<<ans;
-	
+	else{
+		ll ans=0;
+		for(int i=1;i<=n;i++){
+			ans+=power(abs(a[i]-b[i]),2ll);
+		}
+		cout<<ans;
+	}
 	
 }
 int main(){
