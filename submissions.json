@@ -6774,6 +6774,23 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF113905150": {
+    "contest_id": 490,
+    "language": "GNU C++17",
+    "path": "codeforces/490/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Queue",
+    "problem_url": "https://codeforces.com/contest/490/problem/B",
+    "submission_id": "CF113905150",
+    "submission_url": "https://codeforces.com/contest/490/submission/113905150",
+    "tags": [
+      "dsu",
+      "implementation",
+      "*1500"
+    ],
+    "timestamp": "Apr/22/2021 21:46"
+  },
   "CF113990040": {
     "contest_id": 1517,
     "language": "GNU C++17",
