@@ -126,8 +126,8 @@ const long long inf=(long long)(1e18);
 int n;
 int a[501];
 int b[501][501];
-const int fx[]={+0, -1, +1, +0};
-const int fy[]={-1, +0, +0, +1};
+const int fx[]={-1, +0, +1, +0};
+const int fy[]={+0, -1, +0, +1};
 void fun(int i,int j,int &cnt,int x,int ind){	
 	if(i<=0 || j<=0 || i>n || j>n){
 		return;
@@ -149,7 +149,7 @@ void fun(int i,int j,int &cnt,int x,int ind){
 	b[i][j]=x;
 	cnt--;
 	for(int k=0;k<4;k++){
-		fun(i+fx[k],j+fy[k],cnt,x,ind);	//left,up,down,right
+		fun(i+fx[k],j+fy[k],cnt,x,ind);	//up,left,down,right
 	}
 }
 void solve(int tc)
