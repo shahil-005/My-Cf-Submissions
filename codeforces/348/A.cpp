@@ -125,6 +125,7 @@ const long long N=(long long)(1e5+1);
 const long long inf=(long long)(1e18);
 void solve(int tc)
 {
+	//binary search
 	ll n;
 	cin>>n;
 	ll sum=0;
@@ -135,9 +136,22 @@ void solve(int tc)
 		sum+=a[i];
 		maxe=max(maxe,a[i]);
 	}
-	ll num=(sum+n-2)/(n-1);
-	
-	cout<<max(maxe,num);
+	sum=(sum+n-2)/(n-1);
+	ll x=sum;
+	ll y=1e14;
+	ll ans=1e14;
+	while(x<=y){
+		ll m=(x+y)/2;
+		
+		if(m>=sum && m>=maxe){
+			ans=min(ans,m);
+			y=m-1;
+		}
+		else{
+			x=m+1;
+		}
+	}
+	cout<<ans;
 	
 	//Idea is we have to keep smallest element static and decrease all other elements by1
 	//Again in next step, the smallest will remain static and all elements will be dec by -1
@@ -145,6 +159,7 @@ void solve(int tc)
 	//So, in 1 operation, we are dec sum of array by (n-1)
 	//so ans would be >= ceil of (sum/(n-1))
 	//Another condition is ans > each a[i]
+	//BS from x to y and choose the min ans in that range
 }
 int main(){
 	start();
