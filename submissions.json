@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114306095": {
+    "contest_id": 353,
+    "language": "GNU C++17",
+    "path": "codeforces/353/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Find Maximum",
+    "problem_url": "https://codeforces.com/contest/353/problem/C",
+    "submission_id": "CF114306095",
+    "submission_url": "https://codeforces.com/contest/353/submission/114306095",
+    "tags": [
+      "implementation",
+      "math",
+      "number theory",
+      "*1600"
+    ],
+    "timestamp": "Apr/26/2021 23:57"
+  },
   "CF114314580": {
     "contest_id": 845,
     "language": "GNU C++17",
