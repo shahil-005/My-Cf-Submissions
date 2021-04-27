@@ -6774,6 +6774,23 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114389648": {
+    "contest_id": 835,
+    "language": "GNU C++17",
+    "path": "codeforces/835/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Star sky",
+    "problem_url": "https://codeforces.com/contest/835/problem/C",
+    "submission_id": "CF114389648",
+    "submission_url": "https://codeforces.com/contest/835/submission/114389648",
+    "tags": [
+      "dp",
+      "implementation",
+      "*1600"
+    ],
+    "timestamp": "Apr/27/2021 23:36"
+  },
   "CF114402264": {
     "contest_id": 715,
     "language": "GNU C++17",
