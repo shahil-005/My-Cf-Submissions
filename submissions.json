@@ -6774,6 +6774,25 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114328809": {
+    "contest_id": 372,
+    "language": "GNU C++17",
+    "path": "codeforces/372/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Counting Kangaroos is Fun",
+    "problem_url": "https://codeforces.com/contest/372/problem/A",
+    "submission_id": "CF114328809",
+    "submission_url": "https://codeforces.com/contest/372/submission/114328809",
+    "tags": [
+      "binary search",
+      "greedy",
+      "sortings",
+      "two pointers",
+      "*1600"
+    ],
+    "timestamp": "Apr/27/2021 10:06"
+  },
   "CF114389648": {
     "contest_id": 835,
     "language": "GNU C++17",
