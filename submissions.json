@@ -6774,6 +6774,23 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114402264": {
+    "contest_id": 715,
+    "language": "GNU C++17",
+    "path": "codeforces/715/A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Plus and Square Root",
+    "problem_url": "https://codeforces.com/contest/715/problem/A",
+    "submission_id": "CF114402264",
+    "submission_url": "https://codeforces.com/contest/715/submission/114402264",
+    "tags": [
+      "constructive algorithms",
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Apr/28/2021 03:39"
+  },
   "CF114475857": {
     "contest_id": 534,
     "language": "GNU C++17",
