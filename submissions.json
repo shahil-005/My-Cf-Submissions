@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114484874": {
+    "contest_id": 681,
+    "language": "GNU C++17",
+    "path": "codeforces/681/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Heap Operations",
+    "problem_url": "https://codeforces.com/contest/681/problem/C",
+    "submission_id": "CF114484874",
+    "submission_url": "https://codeforces.com/contest/681/submission/114484874",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "greedy",
+      "*1600"
+    ],
+    "timestamp": "Apr/29/2021 02:50"
+  },
   "CF114491210": {
     "contest_id": 453,
     "language": "GNU C++17",
