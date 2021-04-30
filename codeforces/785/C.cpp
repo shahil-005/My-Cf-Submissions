@@ -136,23 +136,11 @@ void solve(int tc)
 	else{
 		ll x=m;
 		ll cur=n-m;
-		ll l=1;
-		ll r=1e10;
-		ll ans=1e18;
-		while(l<=r){	//same sol as previous but using BS
-			ll k=(l+r)/2;
-			
-			ll val=cur+m*k-x*k-k*(k+1)/2;
-			// debug(l,k,r,val);
-			if(val<=0){
-				ans=min(ans,k);
-				r=k-1;
-			}
-			else{
-				l=k+1;
-			}
-		}
-		cout<<m+ans;
+		ld k=(sqrt(power((2*x +1-2*m),2ll)+8*cur)-1);	//quadratic inequality : cur + m*k - x*k - k(k+1)/2 <=0, solve it for k
+		k/=2;
+		
+		ll ans=m+ceil(k);
+		cout<<ans;
 	}
 	
 }
