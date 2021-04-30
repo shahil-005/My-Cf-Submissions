@@ -125,46 +125,24 @@ template<typename T> bool cmp2(const pair<T,T> &a, const pair<T,T> &b) {  return
 bool overflow(long double a, long double b){return a * b > 1e18 + 10;}
 const long long N=(long long)(1e5+1);
 const long long inf=(long long)(1e18);
-__int128 read() {
-    __int128 x = 0, f = 1;
-    char ch = getchar();
-    while (ch < '0' || ch > '9') {
-        if (ch == '-') f = -1;
-        ch = getchar();
-    }
-    while (ch >= '0' && ch <= '9') {
-        x = x * 10 + ch - '0';
-        ch = getchar();
-    }
-    return x * f;
-}
-void print(__int128 x) {
-    if (x < 0) {
-        putchar('-');
-        x = -x;
-    }
-    if (x > 9) print(x / 10);
-    putchar(x % 10 + '0');
-}
 void solve(int tc)
 {
-	__int128 n,m;
-	n=read();
-	m=read();
+	ll n,m;
+	cin>>n>>m;
 	
 	if(n<=m){	//on nth day, n->n-n=0
-		print(n);
+		cout<<n;
 	}
 	else{
-		__int128 x=m;
-		__int128 cur=n-m;
-		__int128 l=1;
-		__int128 r=1e18;
-		__int128 ans=1e18;
+		ll x=m;
+		ll cur=n-m;
+		ll l=1;
+		ll r=1e10;
+		ll ans=1e18;
 		while(l<=r){	//same sol as previous but using BS
-			__int128 k=(l+r)/2;
+			ll k=(l+r)/2;
 			
-			__int128 val=cur+m*k-x*k-k*(k+1)/2;
+			ll val=cur+m*k-x*k-k*(k+1)/2;
 			// debug(l,k,r,val);
 			if(val<=0){
 				ans=min(ans,k);
@@ -174,7 +152,7 @@ void solve(int tc)
 				l=k+1;
 			}
 		}
-		print(m+ans);
+		cout<<m+ans;
 	}
 	
 }
