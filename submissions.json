@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF114933110": {
+    "contest_id": 1515,
+    "language": "GNU C++17",
+    "path": "codeforces/1515/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Phoenix and Towers",
+    "problem_url": "https://codeforces.com/contest/1515/problem/C",
+    "submission_id": "CF114933110",
+    "submission_url": "https://codeforces.com/contest/1515/submission/114933110",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "greedy",
+      "*1400"
+    ],
+    "timestamp": "May/02/2021 21:37"
+  },
   "CF115063468": {
     "contest_id": 924,
     "language": "GNU C++17",
