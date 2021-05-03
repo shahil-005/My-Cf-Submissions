@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF115065065": {
+    "contest_id": 916,
+    "language": "GNU C++17",
+    "path": "codeforces/916/C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Jamie and Interesting Graph",
+    "problem_url": "https://codeforces.com/contest/916/problem/C",
+    "submission_id": "CF115065065",
+    "submission_url": "https://codeforces.com/contest/916/submission/115065065",
+    "tags": [
+      "constructive algorithms",
+      "graphs",
+      "shortest paths",
+      "*1600"
+    ],
+    "timestamp": "May/04/2021 00:28"
+  },
   "CF115077551": {
     "contest_id": 777,
     "language": "GNU C++17",
