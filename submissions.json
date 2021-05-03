@@ -6774,6 +6774,24 @@
     ],
     "timestamp": "Mar/10/2021 04:03"
   },
+  "CF115063468": {
+    "contest_id": 924,
+    "language": "GNU C++17",
+    "path": "codeforces/924/B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Three-level Laser",
+    "problem_url": "https://codeforces.com/contest/924/problem/B",
+    "submission_id": "CF115063468",
+    "submission_url": "https://codeforces.com/contest/924/submission/115063468",
+    "tags": [
+      "binary search",
+      "greedy",
+      "two pointers",
+      "*1600"
+    ],
+    "timestamp": "May/04/2021 00:01"
+  },
   "CF115065065": {
     "contest_id": 916,
     "language": "GNU C++17",
