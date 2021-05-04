@@ -141,25 +141,20 @@ void solve(int tc)
 			cin>>a[i][j];
 		}
 	}
-	ll dp[n+1][m+1];
+	ll b[n+1][m+1];
 	for(int j=1;j<=m;j++){
-		for(int i=1;i<=n;i++){
-			if(i==1){
-				dp[i][j]=1;
+		for(int i=n;i>=1;i--){
+			if(a[i][j]<=a[i+1][j]){
+				b[i][j]=b[i+1][j];
 			}
 			else{
-				if(a[i-1][j]<=a[i][j]){
-					dp[i][j]=dp[i-1][j]+1;
-				}
-				else{
-					dp[i][j]=1;
-				}
+				b[i][j]=i;
 			}
 		}
 	}
 	// for(int i=1;i<=n;i++){
 		// for(int j=1;j<=m;j++){
-			// cout<<dp[i][j]<<" ";
+			// cout<<b[i][j]<<" ";
 		// }
 		// cout<<endl;
 	// }
@@ -167,7 +162,7 @@ void solve(int tc)
 	mem(c,0);
 	for(int i=1;i<=n;i++){
 		for(int j=1;j<=m;j++){
-			c[i]=max(c[i],dp[i][j]);
+			c[i]=max(c[i],b[i][j]);
 		}
 	}
 	// arr_(c,1,n);
@@ -176,17 +171,13 @@ void solve(int tc)
 	while(q--){
 		ll x,y;
 		cin>>x>>y;
-		if(y-x+1<=c[y]){
-			cout<<"Yes"<<endl;
+		if(y<=c[x]){
+			Yes;
 		}
 		else{
-			cout<<"No"<<endl;
+			No;
 		}
 	}
-	
-	//ref : https://codeforces.com/blog/entry/50613?#comment-345633 (edi approach)
-	
-	//https://codeforces.com/blog/entry/50613?#comment-345668 : dp sol
 }
 int main(){
 	start();
